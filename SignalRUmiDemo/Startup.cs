@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SignalRUmiDemo.Hubs;
 
 namespace SignalRUmiDemo
 {
@@ -22,6 +23,8 @@ namespace SignalRUmiDemo
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            //添加Signal注入
+            services.AddSignalR();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -46,6 +49,12 @@ namespace SignalRUmiDemo
             // app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+
+            //配置SignalR
+            app.UseSignalR(option =>
+            {
+                option.MapHub<NoticeHub>("/notice");
+            });
 
             app.UseMvc(routes =>
             {
