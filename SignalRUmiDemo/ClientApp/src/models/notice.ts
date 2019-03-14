@@ -1,3 +1,4 @@
+import { message } from 'antd';
 import { INoticeItem } from './notice';
 //引入 Effect,Subscription,Reducer
 import { Effect, Subscription } from 'dva';
@@ -41,15 +42,17 @@ const NoticeModel: INoticeModel = {
     loading: false,
   },
   effects: {
-    *send(payload, { call, put, select }) {
-      yield call(connection.send('NewMessage', payload.name, payload.message));
+    *send({ payload }, { call, put, select }) {
+      const { username, message } = payload;
+      yield connection.send('NewMessage', username, message);
     },
   },
   reducers: {
-    saveNotices(state, { payload }) {
+    saveNotices(state, action) {
+      console.log(action.payload);
       return {
         ...state,
-        notices: state.notices.push({ ...payload }),
+        notices: state.notices.push(action.payload),
       };
     },
   },
@@ -62,11 +65,11 @@ const NoticeModel: INoticeModel = {
         });
       }
       //监听消息
-      connection.on('MessageReceive', ({ name, message }) => {
+      connection.on('MessageReceive', (username, message) => {
         dispatch({
           type: 'saveNotices',
           payload: {
-            name,
+            username,
             message,
           },
         });
