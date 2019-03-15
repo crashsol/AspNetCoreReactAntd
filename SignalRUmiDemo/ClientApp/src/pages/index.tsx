@@ -43,8 +43,7 @@ class index extends PureComponent<IIndexProps> {
               // tslint:disable-next-line:jsx-no-lambda
               renderItem={(item: INoticeItem) => (
                 <List.Item>
-                  {' '}
-                  {item.username}-{item.message}{' '}
+                  {item.username}-{item.message}
                 </List.Item>
               )}
             />
