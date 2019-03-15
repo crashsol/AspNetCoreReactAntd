@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SignalRUmiDemo.HostServices;
 using SignalRUmiDemo.Hubs;
 
 namespace SignalRUmiDemo
@@ -30,6 +31,9 @@ namespace SignalRUmiDemo
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            //添加后台服务  
+            services.AddHostedService<NoticeSVTime>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

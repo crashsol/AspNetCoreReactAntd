@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.SignalR;
+using System;
 using System.Threading.Tasks;
 
 namespace SignalRUmiDemo.Hubs
 {
-    public class NoticeHub : Hub
+    public class NoticeHub : Hub<INotice>
     {
 
         /// <summary>
@@ -14,8 +15,15 @@ namespace SignalRUmiDemo.Hubs
         /// <returns></returns>
         public async Task NewMessage(string name, string message)
         {
-            await Clients.Others.SendAsync("MessageReceive", name, message);
+            await Clients.Others.MessageReceive(name, message);
         }
+
+
+        public async Task SentTimeToClients(DateTime dateTime)
+        {
+            await Clients.All.ShowTime(dateTime);
+        }
+
 
     }
 }
