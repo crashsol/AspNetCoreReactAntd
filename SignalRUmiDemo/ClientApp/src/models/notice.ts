@@ -1,7 +1,7 @@
 import { message } from 'antd';
 import { INoticeItem } from './notice';
 //引入 Effect,Subscription,Reducer
-import { Effect, Subscription } from 'dva';
+import { Effect, Subscription, connect } from 'dva';
 import { Reducer } from 'redux';
 //引入SignalR
 import * as signalR from '@aspnet/signalr';
@@ -18,6 +18,7 @@ export interface INoticeItem {
 //定义Dva model中的state具备的属性
 export interface INoticeModelState {
   notices: INoticeItem[];
+  serverTimes: string[];
   loading: boolean;
 }
 
@@ -30,6 +31,7 @@ export interface INoticeModel {
   };
   reducers: {
     saveNotices: Reducer<INoticeModelState>;
+    saveServerTimes: Reducer<any>;
   };
   subscriptions: {
     setup: Subscription;
@@ -40,6 +42,7 @@ const NoticeModel: INoticeModel = {
   state: {
     notices: [],
     loading: false,
+    serverTimes: [],
   },
   effects: {
     *send({ payload }, { call, put, select }) {
@@ -52,6 +55,12 @@ const NoticeModel: INoticeModel = {
       return {
         ...state,
         notices: [...state.notices, payload],
+      };
+    },
+    saveServerTimes(state, { payload }) {
+      return {
+        ...state,
+        serverTimes: [...state.serverTimes, payload.time],
       };
     },
   },
@@ -70,6 +79,15 @@ const NoticeModel: INoticeModel = {
           payload: {
             userName,
             message,
+          },
+        });
+      });
+      // 获取服务后台定时发过来的消息
+      connection.on('ShowTime', time => {
+        dispatch({
+          type: 'saveServerTimes',
+          payload: {
+            time,
           },
         });
       });

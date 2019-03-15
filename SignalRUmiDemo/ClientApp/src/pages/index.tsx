@@ -67,7 +67,7 @@ class index extends Component<IIndexPageProps> {
     return (
       <React.Fragment>
         <Row className={styles.notice} gutter={24}>
-          <Col span={12}>
+          <Col span={6}>
             <List
               header={<div>Header</div>}
               footer={<div>Footer</div>}
@@ -81,7 +81,16 @@ class index extends Component<IIndexPageProps> {
               )}
             />
           </Col>
-
+          <Col span={6}>
+            <List
+              header={<div>来自服务的时间</div>}
+              footer={<div>接受消息</div>}
+              bordered={true}
+              dataSource={notice.serverTimes}
+              // tslint:disable-next-line:jsx-no-lambda
+              renderItem={(item: INoticeItem) => <List.Item>{item}</List.Item>}
+            />
+          </Col>
           <Col span={12}>
             <Form onSubmit={this.handleSubmit} {...formItemLayout}>
               <Form.Item

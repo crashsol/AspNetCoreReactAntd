@@ -31,7 +31,7 @@ namespace SignalRUmiDemo.HostServices
 
                 _logger.LogInformation($"Worker running at: {DateTime.Now}");
                 await _noticeHub.Clients.All.ShowTime(DateTime.Now);
-                await Task.Delay(1000);
+                await Task.Delay(5000);
 
             }
         }
