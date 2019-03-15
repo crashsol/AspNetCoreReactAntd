@@ -11,7 +11,7 @@ const connection = new signalR.HubConnectionBuilder().withUrl('/notice').build()
 
 //定义消息通知
 export interface INoticeItem {
-  username: string;
+  userName: string;
   message: string;
 }
 
@@ -43,8 +43,8 @@ const NoticeModel: INoticeModel = {
   },
   effects: {
     *send({ payload }, { call, put, select }) {
-      const { username, message } = payload;
-      yield connection.send('NewMessage', username, message);
+      const { userName, message } = payload;
+      yield connection.send('NewMessage', userName, message);
     },
   },
   reducers: {
@@ -64,11 +64,11 @@ const NoticeModel: INoticeModel = {
         });
       }
       //监听消息
-      connection.on('MessageReceive', (username, message) => {
+      connection.on('MessageReceive', (userName, message) => {
         dispatch({
           type: 'saveNotices',
           payload: {
-            username,
+            userName,
             message,
           },
         });
