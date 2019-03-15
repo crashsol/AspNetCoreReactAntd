@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import styles from './index.css';
 import { Button, message, Icon, Col, Row, List } from 'antd';
-import { INoticeModelState } from '@/models/notice';
+import { INoticeModelState, INoticeItem } from '@/models/notice';
 import { connect } from 'dva';
 import Item from 'antd/lib/list/Item';
 
@@ -31,18 +31,25 @@ class index extends PureComponent<IIndexProps> {
   };
   render() {
     const { notice, submitting } = this.props;
-    console.log(notice.notices);
     return (
       <React.Fragment>
-        <Row className={styles.notice}>
-          <Col span={12} />
-          <List
-            header={<div>Header</div>}
-            footer={<div>Footer</div>}
-            bordered={true}
-            dataSource={notice.notices}
-            renderItem={item => <List.Item>{item}</List.Item>}
-          />
+        <Row className={styles.notice} gutter={24}>
+          <Col span={12}>
+            <List
+              header={<div>Header</div>}
+              footer={<div>Footer</div>}
+              bordered={true}
+              dataSource={notice.notices}
+              // tslint:disable-next-line:jsx-no-lambda
+              renderItem={(item: INoticeItem) => (
+                <List.Item>
+                  {' '}
+                  {item.username}-{item.message}{' '}
+                </List.Item>
+              )}
+            />
+          </Col>
+
           <Col span={6}>
             <Button type="primary" onClick={this.onClick}>
               <Icon type="plus" /> 发送消息

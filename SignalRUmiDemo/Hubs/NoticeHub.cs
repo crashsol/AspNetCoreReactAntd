@@ -14,7 +14,7 @@ namespace SignalRUmiDemo.Hubs
         /// <returns></returns>
         public async Task NewMessage(string name, string message)
         {
-            await Clients.Others.SendAsync("MessageReceive", arg1: name, arg2: message);
+            await Clients.Others.SendAsync("MessageReceive", name, message);
         }
 
     }

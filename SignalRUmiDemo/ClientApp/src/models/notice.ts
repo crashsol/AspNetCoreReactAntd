@@ -11,7 +11,7 @@ const connection = new signalR.HubConnectionBuilder().withUrl('/notice').build()
 
 //定义消息通知
 export interface INoticeItem {
-  name: string;
+  username: string;
   message: string;
 }
 
@@ -29,7 +29,7 @@ export interface INoticeModel {
     send: Effect;
   };
   reducers: {
-    saveNotices: Reducer<any>;
+    saveNotices: Reducer<INoticeModelState>;
   };
   subscriptions: {
     setup: Subscription;
@@ -48,11 +48,10 @@ const NoticeModel: INoticeModel = {
     },
   },
   reducers: {
-    saveNotices(state, action) {
-      console.log(action.payload);
+    saveNotices(state, { payload }) {
       return {
         ...state,
-        notices: state.notices.push(action.payload),
+        notices: [...state.notices, payload],
       };
     },
   },
