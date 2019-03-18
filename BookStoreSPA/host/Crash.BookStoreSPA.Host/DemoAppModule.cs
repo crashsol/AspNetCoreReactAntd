@@ -25,6 +25,7 @@ namespace Crash.BookStoreSPA.Host
         typeof(BookStoreSPAApplicationModule),
         typeof(BookStoreSPAEntityFrameworkCoreModule),
         typeof(BookStoreSPAHttpApiModule),
+
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
         typeof(AbpSettingManagementEntityFrameworkCoreModule),
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),
