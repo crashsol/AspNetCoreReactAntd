@@ -1,0 +1,14 @@
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\bin\Debug\netstandard2.0\Crash.BookStoreSAP.EntityFrameworkCore.deps.json
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\bin\Debug\netstandard2.0\Crash.BookStoreSAP.EntityFrameworkCore.dll
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\bin\Debug\netstandard2.0\Crash.BookStoreSAP.EntityFrameworkCore.pdb
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\bin\Debug\netstandard2.0\Crash.BookStoreSAP.Domain.dll
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\bin\Debug\netstandard2.0\Crash.BookStoreSAP.Domain.Shared.dll
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\bin\Debug\netstandard2.0\Crash.BookStoreSAP.Domain.pdb
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\bin\Debug\netstandard2.0\Crash.BookStoreSAP.Domain.Shared.pdb
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\obj\Debug\netstandard2.0\Crash.BookStoreSAP.EntityFrameworkCore.csprojAssemblyReference.cache
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\obj\Debug\netstandard2.0\Crash.BookStoreSAP.EntityFrameworkCore.csproj.CoreCompileInputs.cache
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\obj\Debug\netstandard2.0\Crash.BookStoreSAP.EntityFrameworkCore.AssemblyInfoInputs.cache
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\obj\Debug\netstandard2.0\Crash.BookStoreSAP.EntityFrameworkCore.AssemblyInfo.cs
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\obj\Debug\netstandard2.0\Crash.BookStoreSAP.EntityFrameworkCore.csproj.CopyComplete
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\obj\Debug\netstandard2.0\Crash.BookStoreSAP.EntityFrameworkCore.dll
+d:\Visual Studio 2017\Projects\AspNetCoreReactAntd\BookStoreSAP\src\Crash.BookStoreSAP.EntityFrameworkCore\obj\Debug\netstandard2.0\Crash.BookStoreSAP.EntityFrameworkCore.pdb
