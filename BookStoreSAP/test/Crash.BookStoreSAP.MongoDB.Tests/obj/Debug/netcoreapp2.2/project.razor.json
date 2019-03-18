@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "d:\\Visual Studio 2017\\Projects\\AspNetCoreReactAntd\\BookStoreSAP\\test\\Crash.BookStoreSAP.MongoDB.Tests\\Crash.BookStoreSAP.MongoDB.Tests.csproj",
+  "TargetFramework": "netcoreapp2.2",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}
