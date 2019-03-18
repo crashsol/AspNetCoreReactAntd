@@ -1,0 +1,1 @@
+dotnet sql-cache create "Server=localhost;Database=BookStoreSPACache;Trusted_Connection=True;MultipleActiveResultSets=true" dbo TestCache
