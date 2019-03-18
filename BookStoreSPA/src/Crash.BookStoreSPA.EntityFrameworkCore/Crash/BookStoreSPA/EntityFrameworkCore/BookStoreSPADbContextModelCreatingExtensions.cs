@@ -1,6 +1,8 @@
 ﻿using System;
+using Crash.BookStoreSPA.Books;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace Crash.BookStoreSPA.EntityFrameworkCore
 {
@@ -16,23 +18,16 @@ namespace Crash.BookStoreSPA.EntityFrameworkCore
 
             optionsAction?.Invoke(options);
 
-            /* Configure all entities here. Example:
+            ///* Configure all entities here. Example:*/
+            builder.Entity<Book>(a =>
+            {               
+                a.ToTable(options.TablePrefix + "Books", options.Schema);
 
-            builder.Entity<Question>(b =>
-            {
-                //Configure table & schema name
-                //b.ToTable(options.TablePrefix + "Questions", options.Schema);
-                
-                //Properties
-                //b.Property(q => q.Title).IsRequired().HasMaxLength(QuestionConsts.MaxTitleLength);
-                
-                //Configure relations
-                //b.HasMany(question => question.Tags).WithOne().HasForeignKey(qt => qt.QuestionId);
+                a.Property(b => b.Name).IsRequired().HasMaxLength(128);
+                //AuditedAggregateRoot 基类 
+                a.ConfigureExtraProperties();
 
-                //Configure indexes
-                //b.HasIndex(q => q.CreationTime);
             });
-            */
         }
     }
 }

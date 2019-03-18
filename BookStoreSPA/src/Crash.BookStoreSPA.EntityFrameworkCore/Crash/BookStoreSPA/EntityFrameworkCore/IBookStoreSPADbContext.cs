@@ -1,4 +1,6 @@
-﻿using Volo.Abp.Data;
+﻿using Crash.BookStoreSPA.Books;
+using Microsoft.EntityFrameworkCore;
+using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace Crash.BookStoreSPA.EntityFrameworkCore
@@ -9,5 +11,7 @@ namespace Crash.BookStoreSPA.EntityFrameworkCore
         /* Add DbSet for each Aggregate Root here. Example:
          * DbSet<Question> Questions { get; }
          */
+        
+        DbSet<Book> Books { get; }
     }
 }

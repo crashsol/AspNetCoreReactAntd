@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Crash.BookStoreSPA.Books;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -14,6 +15,8 @@ namespace Crash.BookStoreSPA.EntityFrameworkCore
         /* Add DbSet for each Aggregate Root here. Example:
          * public DbSet<Question> Questions { get; set; }
          */
+        public DbSet<Book> Books { get; set; }
+
 
         public BookStoreSPADbContext(DbContextOptions<BookStoreSPADbContext> options) 
             : base(options)

@@ -4,14 +4,16 @@ using Crash.BookStoreSPA.Host;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Crash.BookStoreSPA.Host.Migrations
 {
     [DbContext(typeof(DemoAppDbContext))]
-    partial class DemoAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190318083350_add_book")]
+    partial class add_book
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
