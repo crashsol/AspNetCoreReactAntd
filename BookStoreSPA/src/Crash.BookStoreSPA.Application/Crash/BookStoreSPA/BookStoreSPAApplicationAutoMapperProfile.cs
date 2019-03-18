@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Crash.BookStoreSPA.Books;
 
 namespace Crash.BookStoreSPA
 {
@@ -6,7 +7,9 @@ namespace Crash.BookStoreSPA
     {
         public BookStoreSPAApplicationAutoMapperProfile()
         {
-            
+
+            CreateMap<Book, BookDto>();
+            CreateMap<CreateUpdateBookDto, Book>();
         }
     }
 }
