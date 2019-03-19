@@ -14,7 +14,7 @@ namespace Crash.BookStoreSPA.Books
     /// RemoveService 用于生成 Swagger API相关文档
     /// </summary>
     [RemoteService]
-    [Area("BookStoreSPA")]
+    //[Area("BookStoreSPA")]
     [Route("api/BookStoreSPA/books")]
     //[Authorize] 是否启用认证
     public class BooksController : AbpController, IBookAppService

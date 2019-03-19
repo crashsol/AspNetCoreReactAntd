@@ -58,12 +58,17 @@ namespace Crash.BookStoreSPA.Host
                 });
             }
 
+            ///用于配置生成Swagger documents
             context.Services.AddSwaggerGen(
                 options =>
                 {
                     options.SwaggerDoc("v1", new Info { Title = "BookStoreSPA API", Version = "v1" });
                     options.DocInclusionPredicate((docName, description) => true);
-                    options.CustomSchemaIds(type => type.FullName);
+                    ///使用model的命名空间区分model，(e.g. "RequestModels.Product" & "ResponseModels.Product")
+                    //options.CustomSchemaIds(type => type.Name);                   
+
+                    //将enum装换成字符串
+                    options.DescribeAllEnumsAsStrings();                  
                 });
 
             Configure<AbpLocalizationOptions>(options =>
@@ -100,9 +105,14 @@ namespace Crash.BookStoreSPA.Host
 
             app.UseVirtualFiles();
 
+            //swagger中间件
             app.UseSwagger();
+            //swagger UI显示
             app.UseSwaggerUI(options =>
             {
+                ///显示方法调用名称
+                //options.DisplayOperationId();
+
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Support APP API");
             });
 
