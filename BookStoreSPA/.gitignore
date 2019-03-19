@@ -252,4 +252,4 @@ paket-files/
 *.sln.iml
 
 # BookStore
-src/Acme.BookStore.Web/Logs/logs.txt
+host/Crash.BookStoreSPA.Host/Logs/logs.txt
