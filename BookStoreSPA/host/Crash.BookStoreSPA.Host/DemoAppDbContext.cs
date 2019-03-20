@@ -12,13 +12,12 @@ namespace Crash.BookStoreSPA.Host
         public DemoAppDbContext(DbContextOptions<DemoAppDbContext> options)
             : base(options)
         {
-        
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
             modelBuilder.ConfigurePermissionManagement();
             modelBuilder.ConfigureSettingManagement();
             modelBuilder.ConfigureBookStoreSPA();

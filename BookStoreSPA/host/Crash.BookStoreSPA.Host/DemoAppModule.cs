@@ -17,14 +17,16 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.Security.Claims;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.VirtualFileSystem;
+using Volo.Abp.AspNetCore.Mvc;
 
 namespace Crash.BookStoreSPA.Host
 {
     [DependsOn(
         typeof(AbpAutofacModule),
+        typeof(AbpAspNetCoreMvcModule),
         typeof(BookStoreSPAApplicationModule),
         typeof(BookStoreSPAEntityFrameworkCoreModule),
-        typeof(BookStoreSPAHttpApiModule),
+        //typeof(BookStoreSPAHttpApiModule),
 
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
         typeof(AbpSettingManagementEntityFrameworkCoreModule),
@@ -38,11 +40,24 @@ namespace Crash.BookStoreSPA.Host
             var hostingEnvironment = context.Services.GetHostingEnvironment();
             var configuration = context.Services.BuildConfiguration();
 
-            Configure<DbConnectionOptions>(options =>
+            //修改默认Api对外暴露接口
+            /* Configure<AbpAspNetCoreMvcOptions>(options =>
             {
-                options.ConnectionStrings.Default = configuration.GetConnectionString("Default");
-            });
+                options.ConventionalControllers
+                    .Create(typeof(AbpAspNetCoreMvcModule).Assembly, opts =>
+                        {
+                            //设置是否生成给该Module下的生成动态代理API
+                            opts.TypePredicate = type => { return false; };
+                            //设置是自动生成Api路劲
+                            opts.RootPath = "abp";
+                        });
+            }); */
 
+
+            Configure<DbConnectionOptions>(options =>
+             {
+                 options.ConnectionStrings.Default = configuration.GetConnectionString("Default");
+             });
             Configure<AbpDbContextOptions>(options =>
             {
                 options.UseSqlServer();
@@ -68,7 +83,7 @@ namespace Crash.BookStoreSPA.Host
                     //options.CustomSchemaIds(type => type.Name);                   
 
                     //将enum装换成字符串
-                    options.DescribeAllEnumsAsStrings();                  
+                    options.DescribeAllEnumsAsStrings();
                 });
 
             Configure<AbpLocalizationOptions>(options =>

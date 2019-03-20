@@ -1882,3 +1882,295 @@ Autofac.Core.Registration.ComponentNotRegisteredException: The requested service
 2019-03-19 14:05:05.758 +08:00 [INF] Request finished in 1.2145ms 200 text/html
 2019-03-19 14:05:06.824 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
 2019-03-19 14:05:06.832 +08:00 [INF] Request finished in 7.9451ms 200 application/json
+2019-03-20 10:13:52.345 +08:00 [INF] Starting web host.
+2019-03-20 10:13:54.453 +08:00 [INF] User profile is available. Using 'C:\Users\crashsol\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-20 10:13:54.588 +08:00 [INF] Loaded modules:
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainSharedModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainModule
+2019-03-20 10:13:54.588 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationContractsModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Crash.BookStoreSPA.EntityFrameworkCore.BookStoreSPAEntityFrameworkCoreModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2019-03-20 10:13:54.589 +08:00 [INF] - Crash.BookStoreSPA.Host.DemoAppModule
+2019-03-20 10:13:54.670 +08:00 [DBG] No class found with auto mapping attributes.
+2019-03-20 10:14:01.591 +08:00 [INF] Initialized all modules.
+2019-03-20 10:14:01.829 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-20 10:14:01.861 +08:00 [INF] Request finished in 33.7787ms 200 text/html
+2019-03-20 10:14:03.608 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 10:14:04.302 +08:00 [INF] Request finished in 694.3991ms 200 application/json
+2019-03-20 10:14:47.119 +08:00 [INF] Starting web host.
+2019-03-20 10:14:48.376 +08:00 [INF] User profile is available. Using 'C:\Users\crashsol\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-20 10:14:48.453 +08:00 [INF] Loaded modules:
+2019-03-20 10:14:48.453 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-03-20 10:14:48.453 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-03-20 10:14:48.453 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainSharedModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationContractsModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Crash.BookStoreSPA.EntityFrameworkCore.BookStoreSPAEntityFrameworkCoreModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2019-03-20 10:14:48.454 +08:00 [INF] - Crash.BookStoreSPA.Host.DemoAppModule
+2019-03-20 10:14:48.507 +08:00 [DBG] No class found with auto mapping attributes.
+2019-03-20 10:14:50.484 +08:00 [INF] Initialized all modules.
+2019-03-20 10:15:04.997 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-20 10:15:05.029 +08:00 [INF] Request finished in 33.2947ms 200 text/html
+2019-03-20 10:15:05.245 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 10:15:05.296 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png  
+2019-03-20 10:15:05.307 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2019-03-20 10:15:05.307 +08:00 [INF] Request finished in 11.6649ms 200 image/png
+2019-03-20 10:15:05.533 +08:00 [INF] Request finished in 287.8616ms 200 application/json
+2019-03-20 10:15:11.797 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-20 10:15:11.797 +08:00 [INF] Request finished in 0.3227ms 200 text/html
+2019-03-20 10:15:11.905 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 10:15:11.910 +08:00 [INF] Request finished in 5.0371ms 200 application/json
+2019-03-20 10:15:12.130 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png  
+2019-03-20 10:15:12.130 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2019-03-20 10:15:12.131 +08:00 [INF] Request finished in 0.642ms 200 image/png
+2019-03-20 10:15:12.195 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-16x16.png  
+2019-03-20 10:15:12.195 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-20 10:15:12.196 +08:00 [INF] Request finished in 0.4899ms 200 text/html
+2019-03-20 10:15:12.196 +08:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2019-03-20 10:15:12.196 +08:00 [INF] Request finished in 0.5276ms 200 image/png
+2019-03-20 10:15:12.327 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 10:15:12.332 +08:00 [INF] Request finished in 5.4616ms 200 application/json
+2019-03-20 10:15:13.220 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-20 10:15:13.220 +08:00 [INF] Request finished in 0.2691ms 200 text/html
+2019-03-20 10:15:13.322 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 10:15:13.327 +08:00 [INF] Request finished in 5.7658ms 200 application/json
+2019-03-20 10:15:13.543 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png  
+2019-03-20 10:15:13.544 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2019-03-20 10:15:13.544 +08:00 [INF] Request finished in 0.6753ms 200 image/png
+2019-03-20 10:15:13.570 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-20 10:15:13.570 +08:00 [INF] Request finished in 0.3948ms 200 text/html
+2019-03-20 10:15:13.570 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-16x16.png  
+2019-03-20 10:15:13.571 +08:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2019-03-20 10:15:13.571 +08:00 [INF] Request finished in 0.3912ms 200 image/png
+2019-03-20 10:15:13.717 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 10:15:13.725 +08:00 [INF] Request finished in 8.0978ms 200 application/json
+2019-03-20 10:15:14.204 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-20 10:15:14.204 +08:00 [INF] Request finished in 0.2213ms 200 text/html
+2019-03-20 10:15:14.304 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 10:15:14.310 +08:00 [INF] Request finished in 5.8476ms 200 application/json
+2019-03-20 10:15:14.567 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png  
+2019-03-20 10:15:14.568 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2019-03-20 10:15:14.568 +08:00 [INF] Request finished in 0.5318ms 200 image/png
+2019-03-20 10:15:47.212 +08:00 [INF] Starting web host.
+2019-03-20 10:15:48.094 +08:00 [INF] User profile is available. Using 'C:\Users\crashsol\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-20 10:15:48.160 +08:00 [INF] Loaded modules:
+2019-03-20 10:15:48.160 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-03-20 10:15:48.160 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainSharedModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationContractsModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Crash.BookStoreSPA.EntityFrameworkCore.BookStoreSPAEntityFrameworkCoreModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2019-03-20 10:15:48.161 +08:00 [INF] - Crash.BookStoreSPA.Host.DemoAppModule
+2019-03-20 10:15:48.204 +08:00 [DBG] No class found with auto mapping attributes.
+2019-03-20 10:15:49.584 +08:00 [INF] Initialized all modules.
+2019-03-20 10:15:49.962 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-20 10:15:49.994 +08:00 [INF] Request finished in 33.7056ms 200 text/html
+2019-03-20 10:15:50.182 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 10:15:50.214 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png  
+2019-03-20 10:15:50.239 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2019-03-20 10:15:50.239 +08:00 [INF] Request finished in 24.485ms 200 image/png
+2019-03-20 10:15:50.464 +08:00 [INF] Request finished in 281.8008ms 200 application/json
+2019-03-20 10:19:22.685 +08:00 [INF] Starting web host.
+2019-03-20 10:19:23.732 +08:00 [INF] User profile is available. Using 'C:\Users\crashsol\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-20 10:19:23.829 +08:00 [INF] Loaded modules:
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-03-20 10:19:23.829 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainSharedModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationContractsModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Crash.BookStoreSPA.EntityFrameworkCore.BookStoreSPAEntityFrameworkCoreModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2019-03-20 10:19:23.830 +08:00 [INF] - Crash.BookStoreSPA.Host.DemoAppModule
+2019-03-20 10:19:23.911 +08:00 [DBG] No class found with auto mapping attributes.
+2019-03-20 10:19:25.486 +08:00 [INF] Initialized all modules.
+2019-03-20 10:20:46.660 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-20 10:20:46.692 +08:00 [INF] Request finished in 33.1825ms 200 text/html
+2019-03-20 10:20:46.885 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 10:20:46.921 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png  
+2019-03-20 10:20:46.940 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2019-03-20 10:20:46.944 +08:00 [INF] Request finished in 18.9282ms 200 image/png
+2019-03-20 10:20:47.171 +08:00 [INF] Request finished in 286.0923ms 200 application/json
+2019-03-20 10:22:24.610 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-20 10:22:24.612 +08:00 [INF] Request finished in 1.6767ms 200 text/html
+2019-03-20 10:22:24.640 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css  
+2019-03-20 10:22:24.642 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js  
+2019-03-20 10:22:24.642 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js  
+2019-03-20 10:22:24.674 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2019-03-20 10:22:24.674 +08:00 [INF] Request finished in 33.8721ms 200 text/css
+2019-03-20 10:22:24.696 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2019-03-20 10:22:24.699 +08:00 [INF] Request finished in 56.9483ms 200 application/javascript
+2019-03-20 10:22:24.708 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2019-03-20 10:22:24.708 +08:00 [INF] Request finished in 66.2911ms 200 application/javascript
+2019-03-20 10:22:25.503 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 10:22:25.508 +08:00 [INF] Request finished in 5.0763ms 200 application/json
+2019-03-20 10:22:25.729 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png  
+2019-03-20 10:22:25.729 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2019-03-20 10:22:25.729 +08:00 [INF] Request finished in 0.4946ms 200 image/png
+2019-03-20 10:26:32.998 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 10:26:33.012 +08:00 [INF] Request finished in 13.7371ms 200 application/json
+2019-03-20 10:26:43.515 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 10:26:43.518 +08:00 [INF] Request finished in 3.208ms 200 application/json
