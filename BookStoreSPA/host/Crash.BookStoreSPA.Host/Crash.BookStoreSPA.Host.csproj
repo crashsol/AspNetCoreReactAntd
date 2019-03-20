@@ -12,8 +12,7 @@
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.6.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Crash.BookStoreSPA.HttpApi\Crash.BookStoreSPA.HttpApi.csproj" />
+  <ItemGroup>   
     <ProjectReference Include="..\..\src\Crash.BookStoreSPA.Application\Crash.BookStoreSPA.Application.csproj" />
     <ProjectReference Include="..\..\src\Crash.BookStoreSPA.EntityFrameworkCore\Crash.BookStoreSPA.EntityFrameworkCore.csproj" />
     <PackageReference Include="Volo.Abp.Autofac" Version="0.14.0" />

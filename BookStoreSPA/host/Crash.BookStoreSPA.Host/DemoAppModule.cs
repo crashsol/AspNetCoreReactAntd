@@ -40,18 +40,18 @@ namespace Crash.BookStoreSPA.Host
             var hostingEnvironment = context.Services.GetHostingEnvironment();
             var configuration = context.Services.BuildConfiguration();
 
-            //修改默认Api对外暴露接口
-            /* Configure<AbpAspNetCoreMvcOptions>(options =>
+            //添加服务自动生成Controllers
+            Configure<AbpAspNetCoreMvcOptions>(options =>
             {
                 options.ConventionalControllers
-                    .Create(typeof(AbpAspNetCoreMvcModule).Assembly, opts =>
+                    .Create(typeof(BookStoreSPAApplicationModule).Assembly, opts =>
                         {
-                            //设置是否生成给该Module下的生成动态代理API
-                            opts.TypePredicate = type => { return false; };
-                            //设置是自动生成Api路劲
-                            opts.RootPath = "abp";
+                            /*  //设置是否生成给该Module下的生成动态代理API
+                             opts.TypePredicate = type => { return false; };
+                             //设置是自动生成Api路劲
+                             opts.RootPath = "abp"; */
                         });
-            }); */
+            });
 
 
             Configure<DbConnectionOptions>(options =>

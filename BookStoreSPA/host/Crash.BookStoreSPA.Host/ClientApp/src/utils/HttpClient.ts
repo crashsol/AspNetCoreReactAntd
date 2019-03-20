@@ -7,7 +7,7 @@
 //----------------------
 // ReSharper disable InconsistentNaming
 
-export class BooksClient {
+export class AbpClient {
     private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
     private baseUrl: string;
     protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
@@ -18,18 +18,295 @@ export class BooksClient {
     }
 
     /**
+     * @return Success
+     */
+    apiDefinition(): Promise<ApplicationApiDescriptionModel> {
+        let url_ = this.baseUrl + "/api/abp/api-definition";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ = <RequestInit>{
+            method: "GET",
+            headers: {
+                "Accept": "application/json"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processApiDefinition(_response);
+        });
+    }
+
+    protected processApiDefinition(response: Response): Promise<ApplicationApiDescriptionModel> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            result200 = _responseText === "" ? null : <ApplicationApiDescriptionModel>JSON.parse(_responseText, this.jsonParseReviver);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<ApplicationApiDescriptionModel>(<any>null);
+    }
+
+    /**
+     * @return Success
+     */
+    applicationConfiguration(): Promise<ApplicationConfigurationDto> {
+        let url_ = this.baseUrl + "/api/abp/application-configuration";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ = <RequestInit>{
+            method: "GET",
+            headers: {
+                "Accept": "application/json"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processApplicationConfiguration(_response);
+        });
+    }
+
+    protected processApplicationConfiguration(response: Response): Promise<ApplicationConfigurationDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            result200 = _responseText === "" ? null : <ApplicationConfigurationDto>JSON.parse(_responseText, this.jsonParseReviver);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<ApplicationConfigurationDto>(<any>null);
+    }
+}
+
+export class AbpClient {
+    private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
+        this.http = http ? http : <any>window;
+        this.baseUrl = baseUrl ? baseUrl : "";
+    }
+
+    /**
+     * @return Success
+     */
+    applicationConfigurationScript(): Promise<string> {
+        let url_ = this.baseUrl + "/Abp/ApplicationConfigurationScript";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ = <RequestInit>{
+            method: "GET",
+            headers: {
+                "Accept": "text/javascript"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processApplicationConfigurationScript(_response);
+        });
+    }
+
+    protected processApplicationConfigurationScript(response: Response): Promise<string> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            result200 = _responseText === "" ? null : <string>JSON.parse(_responseText, this.jsonParseReviver);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<string>(<any>null);
+    }
+
+    /**
+     * @param type (optional) 
+     * @param modules (optional) 
+     * @param controllers (optional) 
+     * @param actions (optional) 
+     * @return Success
+     */
+    serviceProxyScript(type: string | null | undefined, useCache: boolean, modules: string | null | undefined, controllers: string | null | undefined, actions: string | null | undefined): Promise<string> {
+        let url_ = this.baseUrl + "/Abp/ServiceProxyScript?";
+        if (type !== undefined)
+            url_ += "Type=" + encodeURIComponent("" + type) + "&"; 
+        if (useCache === undefined || useCache === null)
+            throw new Error("The parameter 'useCache' must be defined and cannot be null.");
+        else
+            url_ += "UseCache=" + encodeURIComponent("" + useCache) + "&"; 
+        if (modules !== undefined)
+            url_ += "Modules=" + encodeURIComponent("" + modules) + "&"; 
+        if (controllers !== undefined)
+            url_ += "Controllers=" + encodeURIComponent("" + controllers) + "&"; 
+        if (actions !== undefined)
+            url_ += "Actions=" + encodeURIComponent("" + actions) + "&"; 
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ = <RequestInit>{
+            method: "GET",
+            headers: {
+                "Accept": "text/javascript"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processServiceProxyScript(_response);
+        });
+    }
+
+    protected processServiceProxyScript(response: Response): Promise<string> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            result200 = _responseText === "" ? null : <string>JSON.parse(_responseText, this.jsonParseReviver);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<string>(<any>null);
+    }
+}
+
+export class LanguagesClient {
+    private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
+        this.http = http ? http : <any>window;
+        this.baseUrl = baseUrl ? baseUrl : "";
+    }
+
+    /**
+     * @param culture (optional) 
+     * @param uiCulture (optional) 
+     * @param returnUrl (optional) 
+     * @return Success
+     */
+    switch(culture: string | null | undefined, uiCulture: string | null | undefined, returnUrl: string | null | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/Abp/Languages/Switch?";
+        if (culture !== undefined)
+            url_ += "culture=" + encodeURIComponent("" + culture) + "&"; 
+        if (uiCulture !== undefined)
+            url_ += "uiCulture=" + encodeURIComponent("" + uiCulture) + "&"; 
+        if (returnUrl !== undefined)
+            url_ += "returnUrl=" + encodeURIComponent("" + returnUrl) + "&"; 
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ = <RequestInit>{
+            method: "GET",
+            headers: {
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processSwitch(_response);
+        });
+    }
+
+    protected processSwitch(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(<any>null);
+    }
+}
+
+export class AppClient {
+    private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
+        this.http = http ? http : <any>window;
+        this.baseUrl = baseUrl ? baseUrl : "";
+    }
+
+    /**
+     * @return Success
+     */
+    bookGet(id: string): Promise<BookDto> {
+        let url_ = this.baseUrl + "/api/app/book/{id}";
+        if (id === undefined || id === null)
+            throw new Error("The parameter 'id' must be defined.");
+        url_ = url_.replace("{id}", encodeURIComponent("" + id)); 
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ = <RequestInit>{
+            method: "GET",
+            headers: {
+                "Accept": "application/json"
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processBookGet(_response);
+        });
+    }
+
+    protected processBookGet(response: Response): Promise<BookDto> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            let result200: any = null;
+            result200 = _responseText === "" ? null : <BookDto>JSON.parse(_responseText, this.jsonParseReviver);
+            return result200;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<BookDto>(<any>null);
+    }
+
+    /**
      * @param input (optional) 
      * @return Success
      */
-    create(input: CreateUpdateBookDto | null | undefined): Promise<BookDto> {
-        let url_ = this.baseUrl + "/api/BookStoreSPA/books/create";
+    bookPut(id: string, input: CreateUpdateBookDto | null | undefined): Promise<BookDto> {
+        let url_ = this.baseUrl + "/api/app/book/{id}";
+        if (id === undefined || id === null)
+            throw new Error("The parameter 'id' must be defined.");
+        url_ = url_.replace("{id}", encodeURIComponent("" + id)); 
         url_ = url_.replace(/[?&]$/, "");
 
         const content_ = JSON.stringify(input);
 
         let options_ = <RequestInit>{
             body: content_,
-            method: "POST",
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json", 
                 "Accept": "application/json"
@@ -37,11 +314,11 @@ export class BooksClient {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processCreate(_response);
+            return this.processBookPut(_response);
         });
     }
 
-    protected processCreate(response: Response): Promise<BookDto> {
+    protected processBookPut(response: Response): Promise<BookDto> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
@@ -61,8 +338,8 @@ export class BooksClient {
     /**
      * @return Success
      */
-    delete(id: string): Promise<void> {
-        let url_ = this.baseUrl + "/api/BookStoreSPA/books/delete/{id}";
+    bookDelete(id: string): Promise<void> {
+        let url_ = this.baseUrl + "/api/app/book/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
         url_ = url_.replace("{id}", encodeURIComponent("" + id)); 
@@ -75,11 +352,11 @@ export class BooksClient {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processDelete(_response);
+            return this.processBookDelete(_response);
         });
     }
 
-    protected processDelete(response: Response): Promise<void> {
+    protected processBookDelete(response: Response): Promise<void> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
@@ -95,105 +372,11 @@ export class BooksClient {
     }
 
     /**
-     * @return Success
-     */
-    book(id: string): Promise<BookDto> {
-        let url_ = this.baseUrl + "/api/BookStoreSPA/books/book/{id}";
-        if (id === undefined || id === null)
-            throw new Error("The parameter 'id' must be defined.");
-        url_ = url_.replace("{id}", encodeURIComponent("" + id)); 
-        url_ = url_.replace(/[?&]$/, "");
-
-        let options_ = <RequestInit>{
-            method: "GET",
-            headers: {
-                "Accept": "application/json"
-            }
-        };
-
-        return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processBook(_response);
-        });
-    }
-
-    protected processBook(response: Response): Promise<BookDto> {
-        const status = response.status;
-        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
-        if (status === 200) {
-            return response.text().then((_responseText) => {
-            let result200: any = null;
-            result200 = _responseText === "" ? null : <BookDto>JSON.parse(_responseText, this.jsonParseReviver);
-            return result200;
-            });
-        } else if (status !== 200 && status !== 204) {
-            return response.text().then((_responseText) => {
-            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
-            });
-        }
-        return Promise.resolve<BookDto>(<any>null);
-    }
-
-    /**
-     * @param input (optional) 
-     * @return Success
-     */
-    update(id: string, input: CreateUpdateBookDto | null | undefined): Promise<BookDto> {
-        let url_ = this.baseUrl + "/api/BookStoreSPA/books/update/{id}";
-        if (id === undefined || id === null)
-            throw new Error("The parameter 'id' must be defined.");
-        url_ = url_.replace("{id}", encodeURIComponent("" + id)); 
-        url_ = url_.replace(/[?&]$/, "");
-
-        const content_ = JSON.stringify(input);
-
-        let options_ = <RequestInit>{
-            body: content_,
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json", 
-                "Accept": "application/json"
-            }
-        };
-
-        return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processUpdate(_response);
-        });
-    }
-
-    protected processUpdate(response: Response): Promise<BookDto> {
-        const status = response.status;
-        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
-        if (status === 200) {
-            return response.text().then((_responseText) => {
-            let result200: any = null;
-            result200 = _responseText === "" ? null : <BookDto>JSON.parse(_responseText, this.jsonParseReviver);
-            return result200;
-            });
-        } else if (status !== 200 && status !== 204) {
-            return response.text().then((_responseText) => {
-            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
-            });
-        }
-        return Promise.resolve<BookDto>(<any>null);
-    }
-}
-
-export class BookStoreSPAClient {
-    private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
-    private baseUrl: string;
-    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
-
-    constructor(baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
-        this.http = http ? http : <any>window;
-        this.baseUrl = baseUrl ? baseUrl : "";
-    }
-
-    /**
      * @param sorting (optional) 
      * @return Success
      */
-    books(sorting: string | null | undefined, skipCount: number, maxResultCount: number): Promise<PagedResultDtoOfBookDto> {
-        let url_ = this.baseUrl + "/api/BookStoreSPA/books?";
+    bookGet(sorting: string | null | undefined, skipCount: number, maxResultCount: number): Promise<PagedResultDtoOfBookDto> {
+        let url_ = this.baseUrl + "/api/app/book?";
         if (sorting !== undefined)
             url_ += "Sorting=" + encodeURIComponent("" + sorting) + "&"; 
         if (skipCount === undefined || skipCount === null)
@@ -214,11 +397,11 @@ export class BookStoreSPAClient {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processBooks(_response);
+            return this.processBookGet(_response);
         });
     }
 
-    protected processBooks(response: Response): Promise<PagedResultDtoOfBookDto> {
+    protected processBookGet(response: Response): Promise<PagedResultDtoOfBookDto> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
@@ -236,31 +419,36 @@ export class BookStoreSPAClient {
     }
 
     /**
+     * @param input (optional) 
      * @return Success
      */
-    todos(): Promise<PagedResultDtoOfTodoDto> {
-        let url_ = this.baseUrl + "/api/BookStoreSPA/todos";
+    bookPost(input: CreateUpdateBookDto | null | undefined): Promise<BookDto> {
+        let url_ = this.baseUrl + "/api/app/book";
         url_ = url_.replace(/[?&]$/, "");
 
+        const content_ = JSON.stringify(input);
+
         let options_ = <RequestInit>{
-            method: "GET",
+            body: content_,
+            method: "POST",
             headers: {
+                "Content-Type": "application/json", 
                 "Accept": "application/json"
             }
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processTodos(_response);
+            return this.processBookPost(_response);
         });
     }
 
-    protected processTodos(response: Response): Promise<PagedResultDtoOfTodoDto> {
+    protected processBookPost(response: Response): Promise<BookDto> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
             return response.text().then((_responseText) => {
             let result200: any = null;
-            result200 = _responseText === "" ? null : <PagedResultDtoOfTodoDto>JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = _responseText === "" ? null : <BookDto>JSON.parse(_responseText, this.jsonParseReviver);
             return result200;
             });
         } else if (status !== 200 && status !== 204) {
@@ -268,7 +456,7 @@ export class BookStoreSPAClient {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             });
         }
-        return Promise.resolve<PagedResultDtoOfTodoDto>(<any>null);
+        return Promise.resolve<BookDto>(<any>null);
     }
 }
 
@@ -351,13 +539,6 @@ export interface CurrentUserDto {
     userName: string | undefined;
 }
 
-export interface CreateUpdateBookDto {
-    name: string;
-    type: CreateUpdateBookDtoType;
-    publishDate: Date;
-    price: number;
-}
-
 export interface BookDto {
     name: string | undefined;
     type: BookDtoType | undefined;
@@ -370,22 +551,19 @@ export interface BookDto {
     id: string | undefined;
 }
 
+export interface CreateUpdateBookDto {
+    name: string;
+    type: CreateUpdateBookDtoType;
+    publishDate: Date;
+    price: number;
+}
+
 export interface PagedResultDtoOfBookDto {
     totalCount: number | undefined;
     items: BookDto[] | undefined;
 }
 
-export interface PagedResultDtoOfTodoDto {
-    totalCount: number | undefined;
-    items: TodoDto[] | undefined;
-}
-
-export interface TodoDto {
-    text: string | undefined;
-    id: string | undefined;
-}
-
-export enum CreateUpdateBookDtoType {
+export enum BookDtoType {
     Undefined = "Undefined", 
     Advanture = "Advanture", 
     Biography = "Biography", 
@@ -397,7 +575,7 @@ export enum CreateUpdateBookDtoType {
     Poetry = "Poetry", 
 }
 
-export enum BookDtoType {
+export enum CreateUpdateBookDtoType {
     Undefined = "Undefined", 
     Advanture = "Advanture", 
     Biography = "Biography", 
