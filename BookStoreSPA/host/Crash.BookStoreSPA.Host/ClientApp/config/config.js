@@ -59,6 +59,12 @@ export default {
           component: './Welcome',
         },
         {
+          path: '/books/index',
+          name: 'books',
+          icon: 'smile',
+          component: './books/index',
+        },
+        {
           path: 'https://github.com/umijs/umi-blocks/tree/master/ant-design-pro',
           name: 'more-blocks',
           icon: 'block',

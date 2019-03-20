@@ -1,6 +1,6 @@
 import { Effect } from 'dva';
 import { Reducer } from 'redux';
-import { BookDto, BookDtoType, CreateUpdateBookDto, Client } from '../../../utils/HttpClient';
+import { BookDto, Client } from '../../../utils/HttpClient';
 
 const http = new Client();
 
@@ -34,10 +34,11 @@ const BookModel: IBookModel = {
   effects: {
     *fetch({ payload }, { put, call, select }) {
       const { sorting, skipCount, maxResultCount } = payload;
-      const response = yield call(http.apiAppBookGet(sorting, skipCount, maxResultCount));
+      const response = yield http.apiAppBookGet(sorting, skipCount, maxResultCount);
+      console.log(response);
       yield put({
         type: 'save',
-        payload: Array.isArray(response) ? response : [],
+        payload: response,
       });
     },
     *add({ payload }, { put, call, select }) {},
