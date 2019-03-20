@@ -2174,3 +2174,210 @@ Autofac.Core.Registration.ComponentNotRegisteredException: The requested service
 2019-03-20 10:26:33.012 +08:00 [INF] Request finished in 13.7371ms 200 application/json
 2019-03-20 10:26:43.515 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
 2019-03-20 10:26:43.518 +08:00 [INF] Request finished in 3.208ms 200 application/json
+2019-03-20 10:49:40.338 +08:00 [INF] Starting web host.
+2019-03-20 10:49:43.036 +08:00 [INF] User profile is available. Using 'C:\Users\crashsol\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-20 10:49:43.172 +08:00 [INF] Loaded modules:
+2019-03-20 10:49:43.172 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-03-20 10:49:43.172 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainSharedModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationContractsModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Crash.BookStoreSPA.EntityFrameworkCore.BookStoreSPAEntityFrameworkCoreModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2019-03-20 10:49:43.173 +08:00 [INF] - Crash.BookStoreSPA.Host.DemoAppModule
+2019-03-20 10:49:43.232 +08:00 [DBG] No class found with auto mapping attributes.
+2019-03-20 10:49:45.183 +08:00 [INF] Initialized all modules.
+2019-03-20 10:56:15.209 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/welcome  
+2019-03-20 10:56:15.498 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 10:56:15.503 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 10:56:16.593 +08:00 [INF] Request finished in 1385.0484ms 404 
+2019-03-20 10:56:31.197 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/  
+2019-03-20 10:56:31.197 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 10:56:31.197 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 10:56:31.331 +08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing action Crash.BookStoreSPA.Host.Controllers.HomeController.Index (Crash.BookStoreSPA.Host)
+2019-03-20 10:56:31.363 +08:00 [INF] Executing action method Crash.BookStoreSPA.Host.Controllers.HomeController.Index (Crash.BookStoreSPA.Host) - Validation state: "Valid"
+2019-03-20 10:56:31.366 +08:00 [INF] Executed action method Crash.BookStoreSPA.Host.Controllers.HomeController.Index (Crash.BookStoreSPA.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.12050000000000001ms.
+2019-03-20 10:56:31.372 +08:00 [INF] Executing RedirectResult, redirecting to /swagger.
+2019-03-20 10:56:31.374 +08:00 [INF] Executed action Crash.BookStoreSPA.Host.Controllers.HomeController.Index (Crash.BookStoreSPA.Host) in 41.5736ms
+2019-03-20 10:56:31.375 +08:00 [INF] Request finished in 178.2403ms 302 
+2019-03-20 10:56:31.394 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-20 10:56:31.413 +08:00 [INF] Request finished in 19.4502ms 200 text/html
+2019-03-20 10:56:32.490 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css.map  
+2019-03-20 10:56:32.500 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 10:56:32.500 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 10:56:32.500 +08:00 [INF] Request finished in 9.6247ms 404 
+2019-03-20 10:56:33.010 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js.map  
+2019-03-20 10:56:33.010 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js.map  
+2019-03-20 10:56:33.011 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 10:56:33.011 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 10:56:33.011 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 10:56:33.011 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 10:56:33.011 +08:00 [INF] Request finished in 1.4274ms 404 
+2019-03-20 10:56:33.011 +08:00 [INF] Request finished in 0.5015ms 404 
+2019-03-20 10:56:33.119 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 10:56:33.472 +08:00 [INF] Request finished in 352.1982ms 200 application/json
+2019-03-20 11:00:06.444 +08:00 [INF] Starting web host.
+2019-03-20 11:00:07.432 +08:00 [INF] User profile is available. Using 'C:\Users\crashsol\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-20 11:00:07.489 +08:00 [INF] Loaded modules:
+2019-03-20 11:00:07.489 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-03-20 11:00:07.489 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-03-20 11:00:07.489 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainSharedModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationContractsModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Crash.BookStoreSPA.EntityFrameworkCore.BookStoreSPAEntityFrameworkCoreModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2019-03-20 11:00:07.490 +08:00 [INF] - Crash.BookStoreSPA.Host.DemoAppModule
+2019-03-20 11:00:07.530 +08:00 [DBG] No class found with auto mapping attributes.
+2019-03-20 11:00:08.790 +08:00 [INF] Initialized all modules.
+2019-03-20 11:01:01.223 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 11:01:01.467 +08:00 [INF] Request finished in 245.1187ms 200 application/json
+2019-03-20 11:02:43.382 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 11:02:43.390 +08:00 [INF] Request finished in 7.451ms 200 application/json
+2019-03-20 11:02:49.723 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 11:02:49.732 +08:00 [INF] Request finished in 9.4634ms 200 application/json
+2019-03-20 11:09:17.885 +08:00 [INF] Starting web host.
+2019-03-20 11:09:23.075 +08:00 [INF] User profile is available. Using 'C:\Users\crashsol\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-20 11:09:23.254 +08:00 [INF] Loaded modules:
+2019-03-20 11:09:23.254 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-03-20 11:09:23.254 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-03-20 11:09:23.254 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-03-20 11:09:23.254 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-03-20 11:09:23.254 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-03-20 11:09:23.254 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-03-20 11:09:23.254 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-03-20 11:09:23.254 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2019-03-20 11:09:23.254 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-03-20 11:09:23.254 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainSharedModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationContractsModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Crash.BookStoreSPA.EntityFrameworkCore.BookStoreSPAEntityFrameworkCoreModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2019-03-20 11:09:23.255 +08:00 [INF] - Crash.BookStoreSPA.Host.DemoAppModule
+2019-03-20 11:09:23.315 +08:00 [DBG] No class found with auto mapping attributes.
+2019-03-20 11:09:25.891 +08:00 [INF] Initialized all modules.
+2019-03-20 11:09:38.399 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/  
+2019-03-20 11:09:38.681 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:09:38.684 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:09:39.431 +08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing action Crash.BookStoreSPA.Host.Controllers.HomeController.Index (Crash.BookStoreSPA.Host)
+2019-03-20 11:09:39.470 +08:00 [INF] Executing action method Crash.BookStoreSPA.Host.Controllers.HomeController.Index (Crash.BookStoreSPA.Host) - Validation state: "Valid"
+2019-03-20 11:09:39.473 +08:00 [INF] Executed action method Crash.BookStoreSPA.Host.Controllers.HomeController.Index (Crash.BookStoreSPA.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.1689ms.
+2019-03-20 11:09:39.478 +08:00 [INF] Executing RedirectResult, redirecting to /swagger.
+2019-03-20 11:09:39.482 +08:00 [INF] Executed action Crash.BookStoreSPA.Host.Controllers.HomeController.Index (Crash.BookStoreSPA.Host) in 46.7822ms
+2019-03-20 11:09:39.515 +08:00 [INF] Request finished in 1118.105ms 302 
+2019-03-20 11:09:39.518 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-20 11:09:39.547 +08:00 [INF] Request finished in 28.9069ms 200 text/html
+2019-03-20 11:09:40.900 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 11:09:41.150 +08:00 [INF] Request finished in 250.4614ms 200 application/json

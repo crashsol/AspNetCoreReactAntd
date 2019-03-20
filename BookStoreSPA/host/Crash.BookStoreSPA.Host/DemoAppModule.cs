@@ -92,6 +92,13 @@ namespace Crash.BookStoreSPA.Host
                 //...add other languages
             });
 
+            // 配置Sap
+            context.Services.AddSpaStaticFiles(config =>
+             {
+                 //设置Sap访问的根目录，与ClientApp bulid文件输出路径一致
+                 config.RootPath = "wwwroot/dist";
+             });
+
             /*    context.Services.AddDistributedSqlServerCache(options =>
                {
                    options.ConnectionString = configuration.GetConnectionString("SqlServerCache");
@@ -117,9 +124,15 @@ namespace Crash.BookStoreSPA.Host
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
             var app = context.GetApplicationBuilder();
-
             app.UseVirtualFiles();
 
+
+            app.UseCors(option =>
+             {
+                 option.AllowAnyHeader().AllowAnyMethod()
+                 .AllowAnyOrigin()
+                 .AllowCredentials();
+             });
             //swagger中间件
             app.UseSwagger();
             //swagger UI显示
@@ -134,8 +147,16 @@ namespace Crash.BookStoreSPA.Host
             app.UseAuthentication();
             app.UseAbpRequestLocalization();
             app.UseAuditing();
+            //静态文件
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc();
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+                spa.UseProxyToSpaDevelopmentServer("http://localhost:8000");
+            });
         }
     }
 }
