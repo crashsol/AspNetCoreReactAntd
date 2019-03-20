@@ -2381,3 +2381,323 @@ Autofac.Core.Registration.ComponentNotRegisteredException: The requested service
 2019-03-20 11:09:39.547 +08:00 [INF] Request finished in 28.9069ms 200 text/html
 2019-03-20 11:09:40.900 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
 2019-03-20 11:09:41.150 +08:00 [INF] Request finished in 250.4614ms 200 application/json
+2019-03-20 11:14:28.515 +08:00 [INF] Starting web host.
+2019-03-20 11:14:29.534 +08:00 [INF] User profile is available. Using 'C:\Users\crashsol\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-20 11:14:29.640 +08:00 [INF] Loaded modules:
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainSharedModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationContractsModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Crash.BookStoreSPA.EntityFrameworkCore.BookStoreSPAEntityFrameworkCoreModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-03-20 11:14:29.640 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-03-20 11:14:29.641 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-03-20 11:14:29.641 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-03-20 11:14:29.641 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-03-20 11:14:29.641 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-03-20 11:14:29.641 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-03-20 11:14:29.641 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-03-20 11:14:29.641 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-03-20 11:14:29.641 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-03-20 11:14:29.641 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2019-03-20 11:14:29.641 +08:00 [INF] - Crash.BookStoreSPA.Host.DemoAppModule
+2019-03-20 11:14:29.704 +08:00 [DBG] No class found with auto mapping attributes.
+2019-03-20 11:14:31.058 +08:00 [INF] Initialized all modules.
+2019-03-20 11:15:15.101 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/  
+2019-03-20 11:15:15.165 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:15:15.171 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:15:18.055 +08:00 [ERR] Connection id "0HLLCS92OVRLP", Request id "0HLLCS92OVRLP:00000001": An unhandled exception was thrown by the application.
+System.Net.Http.HttpRequestException: Failed to proxy the request to http://localhost:8000/, because the request to the proxy target failed. Check that the proxy target server is running and accepting requests to http://localhost:8000/.
+
+The underlying exception message was '由于目标计算机积极拒绝，无法连接。'.Check the InnerException for more details. ---> System.Net.Http.HttpRequestException: 由于目标计算机积极拒绝，无法连接。 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.CreateConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.WaitForCreatedConnectionAsync(ValueTask`1 creationTask)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.Invoke(HttpContext httpContext) in D:\Github\abp\framework\src\Volo.Abp.AspNetCore\Volo\Abp\AspNetCore\Auditing\AbpAuditingMiddleware.cs:line 35
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-03-20 11:15:18.623 +08:00 [INF] Request finished in 3523.4679ms 500 
+2019-03-20 11:16:54.308 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 11:16:54.592 +08:00 [INF] Request finished in 283.1151ms 200 application/json
+2019-03-20 11:17:19.605 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/welcome  
+2019-03-20 11:17:19.606 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:19.606 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:20.705 +08:00 [INF] Request finished in 1099.5506ms 200 text/html; charset=utf-8
+2019-03-20 11:17:20.763 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/umi.css  
+2019-03-20 11:17:20.764 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:20.764 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:20.769 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/umi.js  
+2019-03-20 11:17:20.769 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:20.769 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:20.860 +08:00 [INF] Request finished in 97.198ms 200 text/css; charset=UTF-8
+2019-03-20 11:17:21.154 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/umi.css.map  
+2019-03-20 11:17:21.155 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:21.155 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:21.158 +08:00 [INF] Request finished in 3.0664ms 200 application/json; charset=UTF-8
+2019-03-20 11:17:22.009 +08:00 [INF] Request finished in 1240.6662ms 200 application/javascript; charset=UTF-8
+2019-03-20 11:17:22.379 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vendors.chunk.css  
+2019-03-20 11:17:22.380 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.380 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.388 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vendors.async.js  
+2019-03-20 11:17:22.389 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.389 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.390 +08:00 [INF] Request finished in 10.1411ms 200 text/css; charset=UTF-8
+2019-03-20 11:17:22.390 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/1.chunk.css  
+2019-03-20 11:17:22.390 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/1.async.js  
+2019-03-20 11:17:22.390 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.391 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.392 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.392 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.398 +08:00 [INF] Request finished in 7.6388ms 200 application/javascript; charset=UTF-8
+2019-03-20 11:17:22.434 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/umi.js.map  
+2019-03-20 11:17:22.434 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.435 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.476 +08:00 [INF] Request finished in 87.6728ms 200 application/javascript; charset=UTF-8
+2019-03-20 11:17:22.555 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sockjs-node/info?t=1553051842540  
+2019-03-20 11:17:22.557 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.557 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.571 +08:00 [INF] Request finished in 16.1576ms 200 application/json; charset=UTF-8
+2019-03-20 11:17:22.579 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/1.async.js.map  
+2019-03-20 11:17:22.579 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.579 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.585 +08:00 [INF] Request finished in 5.8378ms 200 application/json; charset=UTF-8
+2019-03-20 11:17:22.596 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sockjs-node/251/v0jmvil5/websocket  
+2019-03-20 11:17:22.604 +08:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-03-20 11:17:22.605 +08:00 [INF] CORS policy execution successful.
+2019-03-20 11:17:22.605 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.605 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.708 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vendors.chunk.css.map  
+2019-03-20 11:17:22.708 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.708 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.720 +08:00 [INF] Request finished in 12.1919ms 200 application/json; charset=UTF-8
+2019-03-20 11:17:22.747 +08:00 [INF] Request finished in 313.2171ms 200 application/json; charset=UTF-8
+2019-03-20 11:17:22.954 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vendors.async.js.map  
+2019-03-20 11:17:22.954 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:22.954 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:23.014 +08:00 [INF] Request finished in 60.667ms 200 application/json; charset=UTF-8
+2019-03-20 11:17:23.293 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/sockjs-node/251/dfa3obsg/xhr_streaming?t=1553051843288  0
+2019-03-20 11:17:23.293 +08:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-03-20 11:17:23.293 +08:00 [INF] CORS policy execution successful.
+2019-03-20 11:17:23.293 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:23.293 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:23.340 +08:00 [INF] Request finished in 744.0921ms 0 
+2019-03-20 11:17:23.402 +08:00 [INF] Request finished in 1012.4532ms 200 text/css; charset=UTF-8
+2019-03-20 11:17:23.607 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/0.async.js  
+2019-03-20 11:17:23.607 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:23.607 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:23.609 +08:00 [INF] Request finished in 2.3971ms 200 application/javascript; charset=UTF-8
+2019-03-20 11:17:23.663 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/currentUser  
+2019-03-20 11:17:23.663 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:23.664 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:23.666 +08:00 [INF] Request finished in 2.8912ms 200 application/json; charset=utf-8
+2019-03-20 11:17:23.763 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/1.chunk.css.map  
+2019-03-20 11:17:23.764 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:23.764 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:23.766 +08:00 [INF] Request finished in 2.8996ms 200 application/json; charset=UTF-8
+2019-03-20 11:17:23.929 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/0.async.js.map  
+2019-03-20 11:17:23.929 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:23.929 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:23.938 +08:00 [INF] Request finished in 9.0084ms 200 application/json; charset=UTF-8
+2019-03-20 11:17:23.979 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.png  
+2019-03-20 11:17:23.979 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:23.980 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:17:23.981 +08:00 [INF] Request finished in 2.1ms 200 image/png; charset=UTF-8
+2019-03-20 11:17:59.453 +08:00 [INF] Request finished in 36160.2162ms 200 application/javascript; charset=UTF-8
+2019-03-20 11:18:00.124 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/sockjs-node/251/dfa3obsg/xhr_streaming?t=1553051880121  0
+2019-03-20 11:18:00.124 +08:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-03-20 11:18:00.124 +08:00 [INF] CORS policy execution successful.
+2019-03-20 11:18:00.124 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:18:00.124 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:18:02.134 +08:00 [ERR] Connection id "0HLLCS92OVRLU", Request id "0HLLCS92OVRLU:00000005": An unhandled exception was thrown by the application.
+System.Net.Http.HttpRequestException: Failed to proxy the request to http://localhost:8000/sockjs-node/251/dfa3obsg/xhr_streaming?t=1553051880121, because the request to the proxy target failed. Check that the proxy target server is running and accepting requests to http://localhost:8000/.
+
+The underlying exception message was '由于目标计算机积极拒绝，无法连接。'.Check the InnerException for more details. ---> System.Net.Http.HttpRequestException: 由于目标计算机积极拒绝，无法连接。 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.CreateConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.WaitForCreatedConnectionAsync(ValueTask`1 creationTask)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.Invoke(HttpContext httpContext) in D:\Github\abp\framework\src\Volo.Abp.AspNetCore\Volo\Abp\AspNetCore\Auditing\AbpAuditingMiddleware.cs:line 43
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.Invoke(HttpContext httpContext) in D:\Github\abp\framework\src\Volo.Abp.AspNetCore\Volo\Abp\AspNetCore\Auditing\AbpAuditingMiddleware.cs:line 47
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-03-20 11:18:02.156 +08:00 [INF] Request finished in 2031.6634ms 500 
+2019-03-20 11:18:06.093 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sockjs-node/info?t=1553051886091  
+2019-03-20 11:18:06.093 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:18:06.094 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:18:08.107 +08:00 [ERR] Connection id "0HLLCS92OVRLU", Request id "0HLLCS92OVRLU:00000006": An unhandled exception was thrown by the application.
+System.Net.Http.HttpRequestException: Failed to proxy the request to http://localhost:8000/sockjs-node/info?t=1553051886091, because the request to the proxy target failed. Check that the proxy target server is running and accepting requests to http://localhost:8000/.
+
+The underlying exception message was '由于目标计算机积极拒绝，无法连接。'.Check the InnerException for more details. ---> System.Net.Http.HttpRequestException: 由于目标计算机积极拒绝，无法连接。 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.CreateConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.WaitForCreatedConnectionAsync(ValueTask`1 creationTask)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.Invoke(HttpContext httpContext) in D:\Github\abp\framework\src\Volo.Abp.AspNetCore\Volo\Abp\AspNetCore\Auditing\AbpAuditingMiddleware.cs:line 35
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-03-20 11:18:08.113 +08:00 [INF] Request finished in 2020.0534ms 500 
+2019-03-20 11:18:09.091 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/welcome  
+2019-03-20 11:18:09.091 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:18:09.091 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:18:11.099 +08:00 [ERR] Connection id "0HLLCS92OVRLU", Request id "0HLLCS92OVRLU:00000007": An unhandled exception was thrown by the application.
+System.Net.Http.HttpRequestException: Failed to proxy the request to http://localhost:8000/welcome, because the request to the proxy target failed. Check that the proxy target server is running and accepting requests to http://localhost:8000/.
+
+The underlying exception message was '由于目标计算机积极拒绝，无法连接。'.Check the InnerException for more details. ---> System.Net.Http.HttpRequestException: 由于目标计算机积极拒绝，无法连接。 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.CreateConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.WaitForCreatedConnectionAsync(ValueTask`1 creationTask)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.Invoke(HttpContext httpContext) in D:\Github\abp\framework\src\Volo.Abp.AspNetCore\Volo\Abp\AspNetCore\Auditing\AbpAuditingMiddleware.cs:line 35
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-03-20 11:18:11.101 +08:00 [INF] Request finished in 2010.0641ms 500 
+2019-03-20 11:18:11.108 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/welcome  
+2019-03-20 11:18:11.108 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-20 11:18:11.108 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-20 11:18:13.115 +08:00 [ERR] Connection id "0HLLCS92OVRLU", Request id "0HLLCS92OVRLU:00000008": An unhandled exception was thrown by the application.
+System.Net.Http.HttpRequestException: Failed to proxy the request to http://localhost:8000/welcome, because the request to the proxy target failed. Check that the proxy target server is running and accepting requests to http://localhost:8000/.
+
+The underlying exception message was '由于目标计算机积极拒绝，无法连接。'.Check the InnerException for more details. ---> System.Net.Http.HttpRequestException: 由于目标计算机积极拒绝，无法连接。 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.CreateConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.WaitForCreatedConnectionAsync(ValueTask`1 creationTask)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.Invoke(HttpContext httpContext) in D:\Github\abp\framework\src\Volo.Abp.AspNetCore\Volo\Abp\AspNetCore\Auditing\AbpAuditingMiddleware.cs:line 35
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIIndexMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-03-20 11:18:13.117 +08:00 [INF] Request finished in 2008.8035ms 500 
+2019-03-20 11:20:05.974 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-20 11:20:05.984 +08:00 [INF] Request finished in 10.8149ms 200 text/html
+2019-03-20 11:20:06.541 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-20 11:20:06.549 +08:00 [INF] Request finished in 8.553ms 200 application/json
+2019-03-20 11:20:06.957 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png  
+2019-03-20 11:20:07.031 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2019-03-20 11:20:07.031 +08:00 [INF] Request finished in 74.7075ms 200 image/png
