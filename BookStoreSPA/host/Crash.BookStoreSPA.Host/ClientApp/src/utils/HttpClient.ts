@@ -7,7 +7,7 @@
 //----------------------
 // ReSharper disable InconsistentNaming
 
-export class AbpClient {
+export class Client {
     private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
     private baseUrl: string;
     protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
@@ -20,7 +20,7 @@ export class AbpClient {
     /**
      * @return Success
      */
-    apiDefinition(): Promise<ApplicationApiDescriptionModel> {
+    apiAbpApiDefinitionGet(): Promise<ApplicationApiDescriptionModel> {
         let url_ = this.baseUrl + "/api/abp/api-definition";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -32,11 +32,11 @@ export class AbpClient {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processApiDefinition(_response);
+            return this.processApiAbpApiDefinitionGet(_response);
         });
     }
 
-    protected processApiDefinition(response: Response): Promise<ApplicationApiDescriptionModel> {
+    protected processApiAbpApiDefinitionGet(response: Response): Promise<ApplicationApiDescriptionModel> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
@@ -56,7 +56,7 @@ export class AbpClient {
     /**
      * @return Success
      */
-    applicationConfiguration(): Promise<ApplicationConfigurationDto> {
+    apiAbpApplicationConfigurationGet(): Promise<ApplicationConfigurationDto> {
         let url_ = this.baseUrl + "/api/abp/application-configuration";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -68,11 +68,11 @@ export class AbpClient {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processApplicationConfiguration(_response);
+            return this.processApiAbpApplicationConfigurationGet(_response);
         });
     }
 
-    protected processApplicationConfiguration(response: Response): Promise<ApplicationConfigurationDto> {
+    protected processApiAbpApplicationConfigurationGet(response: Response): Promise<ApplicationConfigurationDto> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
@@ -88,22 +88,11 @@ export class AbpClient {
         }
         return Promise.resolve<ApplicationConfigurationDto>(<any>null);
     }
-}
-
-export class AbpClient {
-    private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
-    private baseUrl: string;
-    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
-
-    constructor(baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
-        this.http = http ? http : <any>window;
-        this.baseUrl = baseUrl ? baseUrl : "";
-    }
 
     /**
      * @return Success
      */
-    applicationConfigurationScript(): Promise<string> {
+    abpApplicationConfigurationScriptGet(): Promise<string> {
         let url_ = this.baseUrl + "/Abp/ApplicationConfigurationScript";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -115,11 +104,11 @@ export class AbpClient {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processApplicationConfigurationScript(_response);
+            return this.processAbpApplicationConfigurationScriptGet(_response);
         });
     }
 
-    protected processApplicationConfigurationScript(response: Response): Promise<string> {
+    protected processAbpApplicationConfigurationScriptGet(response: Response): Promise<string> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
@@ -137,13 +126,55 @@ export class AbpClient {
     }
 
     /**
+     * @param culture (optional) 
+     * @param uiCulture (optional) 
+     * @param returnUrl (optional) 
+     * @return Success
+     */
+    abpLanguagesSwitchGet(culture: string | null | undefined, uiCulture: string | null | undefined, returnUrl: string | null | undefined): Promise<void> {
+        let url_ = this.baseUrl + "/Abp/Languages/Switch?";
+        if (culture !== undefined)
+            url_ += "culture=" + encodeURIComponent("" + culture) + "&"; 
+        if (uiCulture !== undefined)
+            url_ += "uiCulture=" + encodeURIComponent("" + uiCulture) + "&"; 
+        if (returnUrl !== undefined)
+            url_ += "returnUrl=" + encodeURIComponent("" + returnUrl) + "&"; 
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ = <RequestInit>{
+            method: "GET",
+            headers: {
+            }
+        };
+
+        return this.http.fetch(url_, options_).then((_response: Response) => {
+            return this.processAbpLanguagesSwitchGet(_response);
+        });
+    }
+
+    protected processAbpLanguagesSwitchGet(response: Response): Promise<void> {
+        const status = response.status;
+        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
+        if (status === 200) {
+            return response.text().then((_responseText) => {
+            return;
+            });
+        } else if (status !== 200 && status !== 204) {
+            return response.text().then((_responseText) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            });
+        }
+        return Promise.resolve<void>(<any>null);
+    }
+
+    /**
      * @param type (optional) 
      * @param modules (optional) 
      * @param controllers (optional) 
      * @param actions (optional) 
      * @return Success
      */
-    serviceProxyScript(type: string | null | undefined, useCache: boolean, modules: string | null | undefined, controllers: string | null | undefined, actions: string | null | undefined): Promise<string> {
+    abpServiceProxyScriptGet(type: string | null | undefined, useCache: boolean, modules: string | null | undefined, controllers: string | null | undefined, actions: string | null | undefined): Promise<string> {
         let url_ = this.baseUrl + "/Abp/ServiceProxyScript?";
         if (type !== undefined)
             url_ += "Type=" + encodeURIComponent("" + type) + "&"; 
@@ -167,11 +198,11 @@ export class AbpClient {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processServiceProxyScript(_response);
+            return this.processAbpServiceProxyScriptGet(_response);
         });
     }
 
-    protected processServiceProxyScript(response: Response): Promise<string> {
+    protected processAbpServiceProxyScriptGet(response: Response): Promise<string> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
@@ -187,75 +218,11 @@ export class AbpClient {
         }
         return Promise.resolve<string>(<any>null);
     }
-}
-
-export class LanguagesClient {
-    private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
-    private baseUrl: string;
-    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
-
-    constructor(baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
-        this.http = http ? http : <any>window;
-        this.baseUrl = baseUrl ? baseUrl : "";
-    }
-
-    /**
-     * @param culture (optional) 
-     * @param uiCulture (optional) 
-     * @param returnUrl (optional) 
-     * @return Success
-     */
-    switch(culture: string | null | undefined, uiCulture: string | null | undefined, returnUrl: string | null | undefined): Promise<void> {
-        let url_ = this.baseUrl + "/Abp/Languages/Switch?";
-        if (culture !== undefined)
-            url_ += "culture=" + encodeURIComponent("" + culture) + "&"; 
-        if (uiCulture !== undefined)
-            url_ += "uiCulture=" + encodeURIComponent("" + uiCulture) + "&"; 
-        if (returnUrl !== undefined)
-            url_ += "returnUrl=" + encodeURIComponent("" + returnUrl) + "&"; 
-        url_ = url_.replace(/[?&]$/, "");
-
-        let options_ = <RequestInit>{
-            method: "GET",
-            headers: {
-            }
-        };
-
-        return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processSwitch(_response);
-        });
-    }
-
-    protected processSwitch(response: Response): Promise<void> {
-        const status = response.status;
-        let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
-        if (status === 200) {
-            return response.text().then((_responseText) => {
-            return;
-            });
-        } else if (status !== 200 && status !== 204) {
-            return response.text().then((_responseText) => {
-            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
-            });
-        }
-        return Promise.resolve<void>(<any>null);
-    }
-}
-
-export class AppClient {
-    private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
-    private baseUrl: string;
-    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
-
-    constructor(baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
-        this.http = http ? http : <any>window;
-        this.baseUrl = baseUrl ? baseUrl : "";
-    }
 
     /**
      * @return Success
      */
-    bookGet(id: string): Promise<BookDto> {
+    apiAppBookByIdGet(id: string): Promise<BookDto> {
         let url_ = this.baseUrl + "/api/app/book/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -270,11 +237,11 @@ export class AppClient {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processBookGet(_response);
+            return this.processApiAppBookByIdGet(_response);
         });
     }
 
-    protected processBookGet(response: Response): Promise<BookDto> {
+    protected processApiAppBookByIdGet(response: Response): Promise<BookDto> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
@@ -295,7 +262,7 @@ export class AppClient {
      * @param input (optional) 
      * @return Success
      */
-    bookPut(id: string, input: CreateUpdateBookDto | null | undefined): Promise<BookDto> {
+    apiAppBookByIdPut(id: string, input: CreateUpdateBookDto | null | undefined): Promise<BookDto> {
         let url_ = this.baseUrl + "/api/app/book/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -314,11 +281,11 @@ export class AppClient {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processBookPut(_response);
+            return this.processApiAppBookByIdPut(_response);
         });
     }
 
-    protected processBookPut(response: Response): Promise<BookDto> {
+    protected processApiAppBookByIdPut(response: Response): Promise<BookDto> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
@@ -338,7 +305,7 @@ export class AppClient {
     /**
      * @return Success
      */
-    bookDelete(id: string): Promise<void> {
+    apiAppBookByIdDelete(id: string): Promise<void> {
         let url_ = this.baseUrl + "/api/app/book/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -352,11 +319,11 @@ export class AppClient {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processBookDelete(_response);
+            return this.processApiAppBookByIdDelete(_response);
         });
     }
 
-    protected processBookDelete(response: Response): Promise<void> {
+    protected processApiAppBookByIdDelete(response: Response): Promise<void> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
@@ -375,7 +342,7 @@ export class AppClient {
      * @param sorting (optional) 
      * @return Success
      */
-    bookGet(sorting: string | null | undefined, skipCount: number, maxResultCount: number): Promise<PagedResultDtoOfBookDto> {
+    apiAppBookGet(sorting: string | null | undefined, skipCount: number, maxResultCount: number): Promise<PagedResultDtoOfBookDto> {
         let url_ = this.baseUrl + "/api/app/book?";
         if (sorting !== undefined)
             url_ += "Sorting=" + encodeURIComponent("" + sorting) + "&"; 
@@ -397,11 +364,11 @@ export class AppClient {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processBookGet(_response);
+            return this.processApiAppBookGet(_response);
         });
     }
 
-    protected processBookGet(response: Response): Promise<PagedResultDtoOfBookDto> {
+    protected processApiAppBookGet(response: Response): Promise<PagedResultDtoOfBookDto> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {
@@ -422,7 +389,7 @@ export class AppClient {
      * @param input (optional) 
      * @return Success
      */
-    bookPost(input: CreateUpdateBookDto | null | undefined): Promise<BookDto> {
+    apiAppBookPost(input: CreateUpdateBookDto | null | undefined): Promise<BookDto> {
         let url_ = this.baseUrl + "/api/app/book";
         url_ = url_.replace(/[?&]$/, "");
 
@@ -438,11 +405,11 @@ export class AppClient {
         };
 
         return this.http.fetch(url_, options_).then((_response: Response) => {
-            return this.processBookPost(_response);
+            return this.processApiAppBookPost(_response);
         });
     }
 
-    protected processBookPost(response: Response): Promise<BookDto> {
+    protected processApiAppBookPost(response: Response): Promise<BookDto> {
         const status = response.status;
         let _headers: any = {}; if (response.headers && response.headers.forEach) { response.headers.forEach((v: any, k: any) => _headers[k] = v); };
         if (status === 200) {

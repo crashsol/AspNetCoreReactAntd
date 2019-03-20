@@ -14,7 +14,6 @@ using Volo.Abp.EntityFrameworkCore.SqlServer;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
-using Volo.Abp.Security.Claims;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.VirtualFileSystem;
 using Volo.Abp.AspNetCore.Mvc;
@@ -27,7 +26,6 @@ namespace Crash.BookStoreSPA.Host
         typeof(BookStoreSPAApplicationModule),
         typeof(BookStoreSPAEntityFrameworkCoreModule),
         //typeof(BookStoreSPAHttpApiModule),
-
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
         typeof(AbpSettingManagementEntityFrameworkCoreModule),
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),
@@ -40,19 +38,18 @@ namespace Crash.BookStoreSPA.Host
             var hostingEnvironment = context.Services.GetHostingEnvironment();
             var configuration = context.Services.BuildConfiguration();
 
-            //添加服务自动生成Controllers
+            //添加服务自动生成Controllers            
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {
                 options.ConventionalControllers
                     .Create(typeof(BookStoreSPAApplicationModule).Assembly, opts =>
                         {
-                            /*  //设置是否生成给该Module下的生成动态代理API
-                             opts.TypePredicate = type => { return false; };
-                             //设置是自动生成Api路劲
-                             opts.RootPath = "abp"; */
+                            //设置是否生成给该Module下的生成动态代理API
+                            //opts.TypePredicate = type => { return false; };
+                            //设置是自动生成Api路劲
+                            // opts.RootPath = "book-store";
                         });
             });
-
 
             Configure<DbConnectionOptions>(options =>
              {

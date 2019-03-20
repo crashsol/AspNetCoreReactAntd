@@ -10,12 +10,9 @@ using Volo.Abp.AspNetCore.Mvc;
 
 namespace Crash.BookStoreSPA.Books
 {
-    /// <summary>
-    /// RemoveService 用于生成 Swagger API相关文档
-    /// </summary>
     [RemoteService]
     //[Area("BookStoreSPA")]
-    [Route("api/BookStoreSPA/books")]
+    [Route("api/app/books")]
     //[Authorize] 是否启用认证
     public class BooksController : AbpController, IBookAppService
     {
@@ -26,32 +23,32 @@ namespace Crash.BookStoreSPA.Books
             _bookAppService = bookAppService;
         }
 
-        [HttpPost("create")]
+        [HttpPost]
         public async Task<BookDto> CreateAsync(CreateUpdateBookDto input)
         {
             return await _bookAppService.CreateAsync(input);
         }
 
-        [HttpDelete("delete/{id}")]
-        public  Task DeleteAsync(Guid id)
+        [HttpDelete("{id}")]
+        public Task DeleteAsync(Guid id)
         {
 
             return _bookAppService.DeleteAsync(id);
         }
 
-        [HttpGet("book/{id}")]
+        [HttpGet("{id}")]
         public async Task<BookDto> GetAsync(Guid id)
         {
             return await _bookAppService.GetAsync(id);
         }
 
-        [HttpGet("")]
+        [HttpGet("list")]
         public async Task<PagedResultDto<BookDto>> GetListAsync(PagedAndSortedResultRequestDto input)
         {
-           return await _bookAppService.GetListAsync(input);
+            return await _bookAppService.GetListAsync(input);
         }
 
-        [HttpPost("update/{id}")]
+        [HttpPut("{id}")]
         public async Task<BookDto> UpdateAsync(Guid id, CreateUpdateBookDto input)
         {
             return await _bookAppService.UpdateAsync(id, input);

@@ -12,16 +12,16 @@
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.6.0" />
   </ItemGroup>
 
-  <ItemGroup>   
-    <ProjectReference Include="..\..\src\Crash.BookStoreSPA.Application\Crash.BookStoreSPA.Application.csproj" />
+  <ItemGroup>      
+   <ProjectReference Include="..\..\src\Crash.BookStoreSPA.Application\Crash.BookStoreSPA.Application.csproj" />
     <ProjectReference Include="..\..\src\Crash.BookStoreSPA.EntityFrameworkCore\Crash.BookStoreSPA.EntityFrameworkCore.csproj" />
+    <!-- <ProjectReference Include="..\..\src\Crash.BookStoreSPA.HttpApi\Crash.BookStoreSPA.HttpApi.csproj" />-->
     <PackageReference Include="Volo.Abp.Autofac" Version="0.14.0" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="0.14.0" />
     <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" Version="0.14.0" />
     <PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" Version="0.14.0" />
     <PackageReference Include="Volo.Abp.AuditLogging.EntityFrameworkCore" Version="0.14.0" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="0.14.0" />
-  
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="0.14.0" />  
   </ItemGroup>
 
   <ItemGroup>
@@ -30,5 +30,4 @@
     <EmbeddedResource Remove="Logs\**" />
     <None Remove="Logs\**" />
   </ItemGroup>  
-
 </Project>
