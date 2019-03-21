@@ -147,6 +147,8 @@ class Index extends Component<IIndexProps, IIndexState> {
     {
       title: '价格',
       dataIndex: 'price',
+      // 服务器排序设定
+      sorter: true,
     },
     {
       title: '发布时间',
@@ -336,14 +338,15 @@ class Index extends Component<IIndexProps, IIndexState> {
     const params = {
       current: pagination.current,
       pageSize: pagination.pageSize,
-      sorter: '',
+      sorting: '',
       ...formValues,
       ...filters,
     };
     if (sorter.field) {
-      params.sorter = `${sorter.field}_${sorter.order}`;
+      // 将AntdTable内置的排序转换成服务端排序
+      const serverSort = sorter.order === 'ascend' ? 'Asc' : 'Desc';
+      params.sorting = `${sorter.field} ${serverSort}`;
     }
-    console.log(params);
     dispatch({
       type: 'book/fetch',
       payload: params,

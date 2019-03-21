@@ -1,5 +1,4 @@
 import { Effect } from 'dva';
-import { replace } from 'react-router-redux';
 import { Reducer } from 'redux';
 import { BookDto, Client } from '../../../utils/HttpClient';
 
@@ -53,14 +52,14 @@ const BookModel: IBookModel = {
   effects: {
     *fetch({ payload }, { put, call, select }) {
       // 请求前构建后台查询
-      const { pageSize, current, sorter } = payload;
+      const { pageSize, current, sorting } = payload;
       let skipCount = 0;
       let maxResultCount = 10;
       if (pageSize && current) {
         skipCount = pageSize * (current - 1);
         maxResultCount = pageSize;
       }
-      const response = yield http.apiAppBookGet(sorter, skipCount, maxResultCount);
+      const response = yield http.apiAppBookGet(sorting, skipCount, maxResultCount);
       const data = {
         list: response.items,
         pagination: {
