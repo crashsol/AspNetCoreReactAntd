@@ -47,6 +47,13 @@ export default [
           },
         ],
       },
+      // book
+      {
+        path: '/book',
+        icon: 'form',
+        name: 'book',
+        component: './Book/Index',
+      },
       // forms
       {
         path: '/form',
