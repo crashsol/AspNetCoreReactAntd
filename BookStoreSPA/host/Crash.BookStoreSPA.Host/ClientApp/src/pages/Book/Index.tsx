@@ -1,14 +1,30 @@
+import PageHeaderWrapper from '@/components/PageHeaderWrapper';
+import StandardTable from '@/components/StandardTable';
+import {
+  Button,
+  Card,
+  Col,
+  DatePicker,
+  Divider,
+  Dropdown,
+  Icon,
+  Input,
+  InputNumber,
+  Menu,
+  message,
+  Modal,
+  Row,
+  Select,
+} from 'antd';
 import Form, { FormComponentProps } from 'antd/lib/form';
 import FormItem from 'antd/lib/form/FormItem';
+import { PaginationConfig, SorterResult } from 'antd/lib/table';
 import { connect } from 'dva';
 import React, { Component, Fragment, PureComponent } from 'react';
 import styles from './Index.less';
 import { IBookModelState } from './models/book';
 
-import PageHeaderWrapper from '@/components/PageHeaderWrapper';
-import StandardTable from '@/components/StandardTable';
-import { Button, Card, Col, Divider, Dropdown, Icon, Input, Menu, message, Modal, Row } from 'antd';
-import { PaginationConfig, SorterResult, TableCurrentDataSource } from 'antd/lib/table';
+const SelectOption = Select.Option;
 
 const getValue = obj =>
   Object.keys(obj)
@@ -38,24 +54,64 @@ const CreateFormFunc: React.SFC<ICreateFormProps> = props => {
       handleAdd(fieldsValue);
     });
   };
+  const formLayout = {
+    labelCol: {
+      xs: { span: 24 },
+      sm: { span: 6 },
+    },
+    wrapperCol: {
+      xs: { span: 24 },
+      sm: { span: 16 },
+    },
+  };
+
   return (
     <Modal
+      width={640}
       destroyOnClose={true}
       title="新增数据"
       visible={modalVisible}
       onOk={okHandle}
       onCancel={() => handleModalVisible()}
     >
-      <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="书籍名称">
-        {form.getFieldDecorator('name', {
-          rules: [{ required: true, message: '请输入至少5个字符的规则描述！', min: 5 }],
-        })(<Input placeholder="请输入书籍名称" />)}
-      </FormItem>
-      <FormItem labelCol={{ span: 5 }} wrapperCol={{ span: 15 }} label="书籍类型">
-        {form.getFieldDecorator('type', {
-          rules: [{ required: true, message: '请输入至少五个字符的规则描述！', min: 5 }],
-        })(<Input placeholder="请选择类型" />)}
-      </FormItem>
+      <Form>
+        <FormItem {...formLayout} label="书籍名称">
+          {form.getFieldDecorator('name', {
+            rules: [{ required: true, message: '请输入书籍名称！' }],
+          })(<Input placeholder="请输入书籍名称" />)}
+        </FormItem>
+        <FormItem {...formLayout} label="书籍价格">
+          {form.getFieldDecorator('price', {
+            rules: [{ required: true, message: '请输入书籍价格' }],
+            initialValue: 0.0,
+          })(<InputNumber />)}
+        </FormItem>
+
+        <FormItem {...formLayout} label="书籍类型">
+          {form.getFieldDecorator('type', {
+            rules: [{ required: true, message: '请选择书籍类型' }],
+            initialValue: 'Undefined',
+          })(
+            <Select placeholder="选择书籍类型">
+              <SelectOption value="Undefined">Undefined</SelectOption>
+              <SelectOption value="Advanture">Advanture</SelectOption>
+              <SelectOption value="Biography">Biography</SelectOption>
+              <SelectOption value="Dystopia">Dystopia</SelectOption>
+              <SelectOption value="Fantastic">Fantastic</SelectOption>
+              <SelectOption value="Horror">Horror</SelectOption>
+              <SelectOption value="Science">Science</SelectOption>
+              <SelectOption value="ScienceFiction">ScienceFiction</SelectOption>
+              <SelectOption value="Poetry">Poetry</SelectOption>
+            </Select>
+          )}
+        </FormItem>
+
+        <FormItem {...formLayout} label="发布时间">
+          {form.getFieldDecorator('publishDate', {
+            rules: [{ required: true, message: '请选择发布时间' }],
+          })(<DatePicker placeholder="请选择类型" format="YYYY-MM-DD" />)}
+        </FormItem>
+      </Form>
     </Modal>
   );
 };
@@ -96,8 +152,14 @@ class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
     };
 
     this.formLayout = {
-      labelCol: { span: 7 },
-      wrapperCol: { span: 13 },
+      labelCol: {
+        xs: { span: 24 },
+        sm: { span: 8 },
+      },
+      wrapperCol: {
+        xs: { span: 24 },
+        sm: { span: 16 },
+      },
     };
   }
 }
@@ -236,7 +298,7 @@ class Index extends Component<IIndexProps, IIndexState> {
     dispatch({
       type: 'book/add',
       payload: {
-        desc: fields.desc,
+        model: fields,
       },
     }).then(() => {
       message.success('添加成功');
@@ -256,7 +318,7 @@ class Index extends Component<IIndexProps, IIndexState> {
     const { dispatch } = this.props;
     const { formValues } = this.state;
     dispatch({
-      type: 'rule/update',
+      type: 'book/update',
       payload: {
         query: formValues,
         body: {

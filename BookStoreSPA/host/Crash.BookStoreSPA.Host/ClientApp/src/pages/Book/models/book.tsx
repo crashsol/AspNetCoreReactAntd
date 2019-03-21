@@ -16,8 +16,6 @@ export interface IBookModelState {
     list: BookDto[];
     pagination: IPagination;
   };
-  totalCount: number;
-  items: BookDto[];
 }
 
 // 定义bookModel
@@ -46,8 +44,6 @@ const BookModel: IBookModel = {
         current: 1,
       },
     },
-    items: [],
-    totalCount: 0,
   },
   effects: {
     *fetch({ payload }, { put, call, select }) {
@@ -73,7 +69,22 @@ const BookModel: IBookModel = {
         payload: data,
       });
     },
-    *add({ payload }, { put, call, select }) {},
+    *add({ payload }, { put, select }) {
+      const response = yield http.apiAppBookPost(payload.model);
+      const tempData: IBookModelState = yield select(state => state.book);
+      const data = {
+        list: [response, ...tempData.data.list.splice(0, 9)],
+        pagination: {
+          total: tempData.data.pagination.total + 1,
+          pageSize: tempData.data.pagination.pageSize,
+          current: tempData.data.pagination.current,
+        },
+      };
+      yield put({
+        type: 'save',
+        payload: data,
+      });
+    },
     *remove({ payload }, { put, call, select }) {},
     *update({ payload }, { put, call, select }) {},
   },
