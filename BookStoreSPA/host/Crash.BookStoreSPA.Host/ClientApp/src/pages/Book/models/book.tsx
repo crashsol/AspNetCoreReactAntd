@@ -24,6 +24,7 @@ export interface IBookModel {
   state: IBookModelState;
   effects: {
     fetch: Effect;
+    get: Effect;
     add: Effect;
     remove: Effect;
     update: Effect;
@@ -69,15 +70,18 @@ const BookModel: IBookModel = {
         payload: data,
       });
     },
+    *get({ payload }, {}) {
+      const response = yield http.apiAppBookByIdGet(payload.id);
+      return response;
+    },
     *add({ payload }, { put, select }) {
       const response = yield http.apiAppBookPost(payload.model);
-      const tempData: IBookModelState = yield select(state => state.book);
+      const stateTemp: IBookModelState = yield select(state => state.book);
       const data = {
-        list: [response, ...tempData.data.list.splice(0, 9)],
+        list: [response, ...stateTemp.data.list.splice(0, 9)],
         pagination: {
-          total: tempData.data.pagination.total + 1,
-          pageSize: tempData.data.pagination.pageSize,
-          current: tempData.data.pagination.current,
+          ...stateTemp.data.pagination,
+          total: stateTemp.data.pagination.total + 1,
         },
       };
       yield put({
@@ -85,8 +89,41 @@ const BookModel: IBookModel = {
         payload: data,
       });
     },
-    *remove({ payload }, { put, call, select }) {},
-    *update({ payload }, { put, call, select }) {},
+    *update({ payload }, { put, call, select }) {
+      const { id, model } = payload;
+      const response = yield http.apiAppBookByIdPut(id, model);
+      const stateTemp: IBookModelState = yield select(state => state.book);
+      const data = {
+        list: stateTemp.data.list.map(item => {
+          if (item.id === id) {
+            return response;
+          } else {
+            return item;
+          }
+        }),
+        pagination: stateTemp.data.pagination,
+      };
+      yield put({
+        type: 'save',
+        payload: data,
+      });
+    },
+    *remove({ payload }, { put, call, select }) {
+      const { id } = payload;
+      yield http.apiAppBookByIdDelete(id);
+      const stateTemp: IBookModelState = yield select(state => state.book);
+      const data = {
+        list: stateTemp.data.list.filter(b => b.id !== id),
+        pagination: {
+          ...stateTemp.data.pagination,
+          total: stateTemp.data.pagination.total - 1,
+        },
+      };
+      yield put({
+        type: 'save',
+        payload: data,
+      });
+    },
   },
   reducers: {
     save(state, action) {

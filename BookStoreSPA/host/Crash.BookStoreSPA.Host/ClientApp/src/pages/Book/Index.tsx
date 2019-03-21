@@ -1,6 +1,7 @@
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import StandardTable from '@/components/StandardTable';
 import {
+  Badge,
   Button,
   Card,
   Col,
@@ -13,6 +14,7 @@ import {
   Menu,
   message,
   Modal,
+  Popconfirm,
   Row,
   Select,
 } from 'antd';
@@ -20,11 +22,25 @@ import Form, { FormComponentProps } from 'antd/lib/form';
 import FormItem from 'antd/lib/form/FormItem';
 import { PaginationConfig, SorterResult } from 'antd/lib/table';
 import { connect } from 'dva';
+import moment from 'moment';
 import React, { Component, Fragment, PureComponent } from 'react';
+import { CreateUpdateBookDto } from '../../utils/HttpClient';
 import styles from './Index.less';
 import { IBookModelState } from './models/book';
-
 const SelectOption = Select.Option;
+
+// enmu类型转化
+const statusMap = [
+  'Undefined',
+  'Advanture',
+  'Biography',
+  'Dystopia',
+  'Fantastic',
+  'Horror',
+  'Science',
+  'ScienceFiction',
+  'Poetry',
+];
 
 const getValue = obj =>
   Object.keys(obj)
@@ -131,7 +147,7 @@ interface IUpdateFormProps extends FormComponentProps {
   handleUpdate: (e?: any) => void;
   handleUpdateModalVisible: (flag?: boolean, record?: any) => void;
   updateModalVisible: boolean;
-  values: {};
+  values: CreateUpdateBookDto;
 }
 
 /**
@@ -139,7 +155,7 @@ interface IUpdateFormProps extends FormComponentProps {
  * @interface IUpdateFormState
  */
 interface IUpdateFormState {
-  formVals: {};
+  updateModel: CreateUpdateBookDto;
 }
 
 class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
@@ -148,19 +164,84 @@ class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
   constructor(props) {
     super(props);
     this.state = {
-      formVals: {},
+      updateModel: props.values,
     };
-
     this.formLayout = {
       labelCol: {
         xs: { span: 24 },
-        sm: { span: 8 },
+        sm: { span: 6 },
       },
       wrapperCol: {
         xs: { span: 24 },
         sm: { span: 16 },
       },
     };
+  }
+
+  public handleUpdateFunc = () => {
+    const { form, handleUpdate } = this.props;
+    const { updateModel: oldValue } = this.state;
+    form.validateFields((err, fieldsValue) => {
+      if (err) {
+        return;
+      }
+      const formVals = { ...oldValue, ...fieldsValue };
+      handleUpdate(formVals);
+    });
+  };
+
+  public render() {
+    const { form, updateModalVisible, handleUpdateModalVisible, values } = this.props;
+    const { updateModel } = this.state;
+    return (
+      <Modal
+        width={640}
+        bodyStyle={{ padding: '32px 40px 48px' }}
+        title="更新书籍"
+        visible={updateModalVisible}
+        onCancel={() => handleUpdateModalVisible(false, values)}
+        onOk={this.handleUpdateFunc}
+      >
+        <Form>
+          <FormItem {...this.formLayout} label="书籍名称">
+            {form.getFieldDecorator('name', {
+              rules: [{ required: true, message: '请输入书籍名称！' }],
+              initialValue: updateModel.name,
+            })(<Input placeholder="请输入书籍名称" />)}
+          </FormItem>
+          <FormItem {...this.formLayout} label="书籍价格">
+            {form.getFieldDecorator('price', {
+              rules: [{ required: true, message: '请输入书籍价格' }],
+              initialValue: updateModel.price,
+            })(<InputNumber />)}
+          </FormItem>
+          <FormItem {...this.formLayout} label="书籍类型">
+            {form.getFieldDecorator('type', {
+              rules: [{ required: true, message: '请选择书籍类型' }],
+              initialValue: statusMap[updateModel.type],
+            })(
+              <Select placeholder="选择书籍类型">
+                <SelectOption value="Undefined">Undefined</SelectOption>
+                <SelectOption value="Advanture">Advanture</SelectOption>
+                <SelectOption value="Biography">Biography</SelectOption>
+                <SelectOption value="Dystopia">Dystopia</SelectOption>
+                <SelectOption value="Fantastic">Fantastic</SelectOption>
+                <SelectOption value="Horror">Horror</SelectOption>
+                <SelectOption value="Science">Science</SelectOption>
+                <SelectOption value="ScienceFiction">ScienceFiction</SelectOption>
+                <SelectOption value="Poetry">Poetry</SelectOption>
+              </Select>
+            )}
+          </FormItem>
+          <FormItem {...this.formLayout} label="发布时间">
+            {form.getFieldDecorator('publishDate', {
+              rules: [{ required: true, message: '请选择发布时间' }],
+              initialValue: moment(updateModel.publishDate, 'YYYY-MM-DD'),
+            })(<DatePicker placeholder="请选择类型" format="YYYY-MM-DD" />)}
+          </FormItem>
+        </Form>
+      </Modal>
+    );
   }
 }
 const UpdateForm = Form.create()(UpateFormClass);
@@ -205,6 +286,9 @@ class Index extends Component<IIndexProps, IIndexState> {
     {
       title: '类型',
       dataIndex: 'type',
+      render(val) {
+        return <Badge status="success" text={statusMap[val]} />;
+      },
     },
     {
       title: '价格',
@@ -221,9 +305,11 @@ class Index extends Component<IIndexProps, IIndexState> {
       title: '操作',
       render: (text, record) => (
         <Fragment>
-          <a>修改</a>
+          <a onClick={() => this.handleUpdateModalVisible(true, record.id)}>编辑</a>
           <Divider type="vertical" />
-          <a href="">订阅警报</a>
+          <Popconfirm title="是否要删除此行？" onConfirm={() => this.handleDelete(record.id)}>
+            <a>删除</a>
+          </Popconfirm>
         </Fragment>
       ),
     },
@@ -291,7 +377,7 @@ class Index extends Component<IIndexProps, IIndexState> {
   };
   //#endregion
 
-  //#region 更新操作
+  //#region 创建、更新操作
   // 处理创建操作
   public handleCreate = fields => {
     const { dispatch } = this.props;
@@ -317,15 +403,13 @@ class Index extends Component<IIndexProps, IIndexState> {
   public handleUpdate = fields => {
     const { dispatch } = this.props;
     const { formValues } = this.state;
+    console.log(fields);
+    console.log(formValues.id);
     dispatch({
       type: 'book/update',
       payload: {
-        query: formValues,
-        body: {
-          name: fields.name,
-          desc: fields.desc,
-          key: fields.key,
-        },
+        id: formValues.id,
+        model: fields,
       },
     }).then(() => {
       message.success('更新成功');
@@ -334,13 +418,45 @@ class Index extends Component<IIndexProps, IIndexState> {
   };
 
   // 控制UpdateModel的显示与隐藏
-  public handleUpdateModalVisible: (flag?: boolean, record?: any) => void = (flag, record) => {
-    this.setState({
-      updateModelVisiable: !!flag,
-      formValues: record || {},
-    });
+  public handleUpdateModalVisible: (flag?: boolean, id?: any) => void = (flag, id) => {
+    const { dispatch } = this.props;
+    if (id) {
+      dispatch({
+        type: 'book/get',
+        payload: {
+          id,
+        },
+      }).then(res => {
+        this.setState({
+          updateModelVisiable: !!flag,
+          formValues: res || {},
+        });
+      });
+    } else {
+      this.setState({
+        updateModelVisiable: !!flag,
+        formValues: {},
+      });
+    }
   };
 
+  //#endregion
+
+  //#region 删除操作
+  public handleDelete = id => {
+    const { dispatch } = this.props;
+    if (!id) {
+      return;
+    }
+    dispatch({
+      type: 'book/remove',
+      payload: {
+        id,
+      },
+    }).then(() => {
+      message.info('删除成功');
+    });
+  };
   //#endregion
 
   //#region 菜单操作
