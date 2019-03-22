@@ -7,6 +7,8 @@
 //----------------------
 // ReSharper disable InconsistentNaming
 
+import * as moment from 'moment';
+
 export class Client {
   private http: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> };
   private baseUrl: string;
@@ -609,11 +611,11 @@ export interface CurrentUserDto {
 export interface BookDto {
   name: string | undefined;
   type: BookDtoType | undefined;
-  publishDate: Date | undefined;
+  publishDate: moment.Moment | undefined;
   price: number | undefined;
-  lastModificationTime: Date | undefined;
+  lastModificationTime: moment.Moment | undefined;
   lastModifierId: string | undefined;
-  creationTime: Date | undefined;
+  creationTime: moment.Moment | undefined;
   creatorId: string | undefined;
   id: string | undefined;
 }
@@ -621,7 +623,7 @@ export interface BookDto {
 export interface CreateUpdateBookDto {
   name: string;
   type: CreateUpdateBookDtoType;
-  publishDate: Date;
+  publishDate: moment.Moment;
   price: number;
 }
 

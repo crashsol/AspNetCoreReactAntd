@@ -24,7 +24,7 @@ import { PaginationConfig, SorterResult } from 'antd/lib/table';
 import { connect } from 'dva';
 import moment from 'moment';
 import React, { Component, Fragment, PureComponent } from 'react';
-import { CreateUpdateBookDto } from '../../utils/HttpClient';
+import { CreateUpdateBookDto, CreateUpdateBookDtoType } from '../../utils/HttpClient';
 import styles from './Index.less';
 import { IBookModelState } from './models/book';
 const SelectOption = Select.Option;
@@ -125,7 +125,8 @@ const CreateFormFunc: React.SFC<ICreateFormProps> = props => {
         <FormItem {...formLayout} label="发布时间">
           {form.getFieldDecorator('publishDate', {
             rules: [{ required: true, message: '请选择发布时间' }],
-          })(<DatePicker placeholder="请选择类型" format="YYYY-MM-DD" />)}
+            initialValue: moment(),
+          })(<DatePicker placeholder="请选择日期" format="YYYY-MM-DD" />)}
         </FormItem>
       </Form>
     </Modal>
@@ -191,7 +192,7 @@ class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
   };
 
   public render() {
-    const { form, updateModalVisible, handleUpdateModalVisible, values } = this.props;
+    const { form, updateModalVisible, handleUpdateModalVisible } = this.props;
     const { updateModel } = this.state;
     return (
       <Modal
@@ -199,7 +200,7 @@ class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
         bodyStyle={{ padding: '32px 40px 48px' }}
         title="更新书籍"
         visible={updateModalVisible}
-        onCancel={() => handleUpdateModalVisible(false, values)}
+        onCancel={() => handleUpdateModalVisible(false)}
         onOk={this.handleUpdateFunc}
       >
         <Form>
@@ -300,6 +301,7 @@ class Index extends Component<IIndexProps, IIndexState> {
       title: '发布时间',
       dataIndex: 'publishDate',
       sorter: true,
+      render: val => <span>{moment(val).format('YYYY-MM-DD')}</span>,
     },
     {
       title: '操作',
@@ -403,8 +405,6 @@ class Index extends Component<IIndexProps, IIndexState> {
   public handleUpdate = fields => {
     const { dispatch } = this.props;
     const { formValues } = this.state;
-    console.log(fields);
-    console.log(formValues.id);
     dispatch({
       type: 'book/update',
       payload: {
