@@ -265,7 +265,8 @@ interface IIndexState {
   updateModelVisiable: boolean;
   expandForm: boolean; // 是否展开查询Form
   selectedRows: any[]; // 已经选中的行
-  formValues: object; // 页面要更新的对象
+  searchForm: object; // 查询对象的值
+  updateModel: object; // 页面要更新的对象
 }
 // tslint:disable-next-line:max-classes-per-file
 @connect(({ book, loading }) => ({
@@ -318,7 +319,8 @@ class Index extends Component<IIndexProps, IIndexState> {
       updateModelVisiable: false,
       expandForm: false,
       selectedRows: [],
-      formValues: {},
+      updateModel: {},
+      searchForm: {},
     };
   }
 
@@ -345,6 +347,9 @@ class Index extends Component<IIndexProps, IIndexState> {
       const values = {
         ...fieldsValues,
       };
+      this.setState({
+        searchForm: values,
+      });
       // 进行查询
       dispatch({
         type: 'book/fetch',
@@ -363,7 +368,7 @@ class Index extends Component<IIndexProps, IIndexState> {
     form.resetFields();
     // 清空正在编辑
     this.setState({
-      formValues: {},
+      searchForm: {},
     });
     /// 发出请求
     dispatch({
@@ -398,11 +403,11 @@ class Index extends Component<IIndexProps, IIndexState> {
   // 处理更新操作
   public handleUpdate = fields => {
     const { dispatch } = this.props;
-    const { formValues } = this.state;
+    const { updateModel } = this.state;
     dispatch({
       type: 'book/update',
       payload: {
-        id: formValues.id,
+        id: updateModel.id,
         model: fields,
       },
     }).then(() => {
@@ -423,13 +428,13 @@ class Index extends Component<IIndexProps, IIndexState> {
       }).then(res => {
         this.setState({
           updateModelVisiable: !!flag,
-          formValues: res || {},
+          updateModel: res || {},
         });
       });
     } else {
       this.setState({
         updateModelVisiable: !!flag,
-        formValues: {},
+        updateModel: {},
       });
     }
   };
@@ -499,7 +504,7 @@ class Index extends Component<IIndexProps, IIndexState> {
     sorter: SorterResult<any>
   ) => void = (pagination, filtersArg, sorter) => {
     const { dispatch } = this.props;
-    const { formValues } = this.state;
+    const { searchForm } = this.state;
 
     const filters = Object.keys(filtersArg).reduce((obj, key) => {
       const newObj = { ...obj };
@@ -511,7 +516,7 @@ class Index extends Component<IIndexProps, IIndexState> {
       current: pagination.current,
       pageSize: pagination.pageSize,
       sorting: '',
-      ...formValues,
+      ...searchForm,
       ...filters,
     };
     if (sorter.field) {
@@ -559,7 +564,7 @@ class Index extends Component<IIndexProps, IIndexState> {
       book: { data },
       loading,
     } = this.props;
-    const { selectedRows, createModelVisiable, updateModelVisiable, formValues } = this.state;
+    const { selectedRows, createModelVisiable, updateModelVisiable, updateModel } = this.state;
 
     // 选中操作菜单
     const menu = (
@@ -622,11 +627,11 @@ class Index extends Component<IIndexProps, IIndexState> {
           </div>
         </Card>
         <CreateForm {...createMethods} modalVisible={createModelVisiable} />
-        {formValues && Object.keys(formValues).length ? (
+        {updateModel && Object.keys(updateModel).length ? (
           <UpdateForm
             {...updateMethods}
             updateModalVisible={updateModelVisiable}
-            values={formValues}
+            values={updateModel}
           />
         ) : null}
       </PageHeaderWrapper>

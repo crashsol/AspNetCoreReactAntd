@@ -420,15 +420,18 @@ export class Client {
   }
 
   /**
+   * @param name (optional)
    * @param sorting (optional)
    * @return Success
    */
   apiAppBookGet(
+    name: string | null | undefined,
     sorting: string | null | undefined,
     skipCount: number,
     maxResultCount: number
   ): Promise<PagedResultDtoOfBookDto> {
     let url_ = this.baseUrl + '/api/app/book?';
+    if (name !== undefined) url_ += 'Name=' + encodeURIComponent('' + name) + '&';
     if (sorting !== undefined) url_ += 'Sorting=' + encodeURIComponent('' + sorting) + '&';
     if (skipCount === undefined || skipCount === null)
       throw new Error("The parameter 'skipCount' must be defined and cannot be null.");

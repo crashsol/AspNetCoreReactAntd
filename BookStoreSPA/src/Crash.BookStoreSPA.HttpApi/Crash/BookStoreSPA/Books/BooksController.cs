@@ -43,7 +43,7 @@ namespace Crash.BookStoreSPA.Books
         }
 
         [HttpGet("list")]
-        public async Task<PagedResultDto<BookDto>> GetListAsync(PagedAndSortedResultRequestDto input)
+        public async Task<PagedResultDto<BookDto>> GetListAsync(PageAndStortedAndFilterRequestDto input)
         {
             return await _bookAppService.GetListAsync(input);
         }
