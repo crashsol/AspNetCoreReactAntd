@@ -26,11 +26,17 @@ namespace Crash.BookStoreSPA.Books
         /// <returns></returns>
         protected override IQueryable<Book> CreateFilteredQuery(PageAndStortedAndFilterRequestDto input)
         {
+            var temp = Repository.AsQueryable();
+
             if (!string.IsNullOrEmpty(input.Name))
             {
-                return Repository.Where(b => b.Name.Contains(input.Name));
+                temp = temp.Where(b => b.Name.Contains(input.Name));
             }
-            return Repository;
+            if (input.TypeFilters?.Count > 0)
+            {
+                temp = temp.Where(b => input.TypeFilters.Contains(b.Type));
+            }
+            return temp;
 
         }
 

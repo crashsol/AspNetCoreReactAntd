@@ -421,17 +421,24 @@ export class Client {
 
   /**
    * @param name (optional)
+   * @param typeFilters (optional)
    * @param sorting (optional)
    * @return Success
    */
   apiAppBookGet(
     name: string | null | undefined,
+    typeFilters: TypeFilters[] | null | undefined,
     sorting: string | null | undefined,
     skipCount: number,
     maxResultCount: number
   ): Promise<PagedResultDtoOfBookDto> {
     let url_ = this.baseUrl + '/api/app/book?';
     if (name !== undefined) url_ += 'Name=' + encodeURIComponent('' + name) + '&';
+    if (typeFilters !== undefined)
+      typeFilters &&
+        typeFilters.forEach(item => {
+          url_ += 'TypeFilters=' + encodeURIComponent('' + item) + '&';
+        });
     if (sorting !== undefined) url_ += 'Sorting=' + encodeURIComponent('' + sorting) + '&';
     if (skipCount === undefined || skipCount === null)
       throw new Error("The parameter 'skipCount' must be defined and cannot be null.");
@@ -633,6 +640,18 @@ export interface CreateUpdateBookDto {
 export interface PagedResultDtoOfBookDto {
   totalCount: number | undefined;
   items: BookDto[] | undefined;
+}
+
+export enum TypeFilters {
+  Undefined = 'Undefined',
+  Advanture = 'Advanture',
+  Biography = 'Biography',
+  Dystopia = 'Dystopia',
+  Fantastic = 'Fantastic',
+  Horror = 'Horror',
+  Science = 'Science',
+  ScienceFiction = 'ScienceFiction',
+  Poetry = 'Poetry',
 }
 
 export enum BookDtoType {

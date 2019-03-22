@@ -25,8 +25,8 @@ import { connect } from 'dva';
 import moment from 'moment';
 import React, { Component, Fragment, PureComponent } from 'react';
 import { CreateUpdateBookDto, CreateUpdateBookDtoType } from '../../utils/HttpClient';
+import styles from './Index.less';
 import { IBookModelState } from './models/book';
-import styles from '/Index.less';
 const SelectOption = Select.Option;
 
 // enmu类型转化
@@ -41,6 +41,13 @@ const statusMap = [
   'ScienceFiction',
   'Poetry',
 ];
+
+const fileterMap = Object.keys(CreateUpdateBookDtoType).map((item, index) => {
+  return {
+    text: item,
+    value: item,
+  };
+});
 
 const ConvertEnumToSelectOptions = enumType => {
   return Object.keys(enumType).map(key => {
@@ -282,6 +289,7 @@ class Index extends Component<IIndexProps, IIndexState> {
     {
       title: '类型',
       dataIndex: 'type',
+      filters: fileterMap,
       render(val) {
         return <Badge status="success" text={statusMap[val]} />;
       },
@@ -505,20 +513,15 @@ class Index extends Component<IIndexProps, IIndexState> {
   ) => void = (pagination, filtersArg, sorter) => {
     const { dispatch } = this.props;
     const { searchForm } = this.state;
-
-    const filters = Object.keys(filtersArg).reduce((obj, key) => {
-      const newObj = { ...obj };
-      newObj[key] = getValue(filtersArg[key]);
-      return newObj;
-    }, {});
-
+    // filtersArg 为table过滤参数
     const params = {
       current: pagination.current,
       pageSize: pagination.pageSize,
       sorting: '',
+      ...filtersArg,
       ...searchForm,
-      ...filters,
     };
+    // 排序条件
     if (sorter.field) {
       // 将AntdTable内置的排序转换成服务端排序
       const serverSort = sorter.order === 'ascend' ? 'Asc' : 'Desc';
@@ -543,7 +546,16 @@ class Index extends Component<IIndexProps, IIndexState> {
               {getFieldDecorator('name')(<Input placeholder="请输入书籍名称进行查询" />)}
             </FormItem>
           </Col>
-          <Col md={8} sm={24}>
+          <Col md={12} sm={24}>
+            <FormItem label="书籍类型">
+              {getFieldDecorator('type')(
+                <Select placeholder="书籍类型" mode="multiple">
+                  {ConvertEnumToSelectOptions(CreateUpdateBookDtoType)}
+                </Select>
+              )}
+            </FormItem>
+          </Col>
+          <Col md={4} sm={24}>
             <span>
               <Button type="primary" htmlType="submit">
                 查询
