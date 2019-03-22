@@ -25,8 +25,8 @@ import { connect } from 'dva';
 import moment from 'moment';
 import React, { Component, Fragment, PureComponent } from 'react';
 import { CreateUpdateBookDto, CreateUpdateBookDtoType } from '../../utils/HttpClient';
-import styles from './Index.less';
 import { IBookModelState } from './models/book';
+import styles from '/Index.less';
 const SelectOption = Select.Option;
 
 // enmu类型转化

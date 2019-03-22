@@ -1,4 +1,5 @@
 import { Effect } from 'dva';
+import { Function } from 'estree';
 import { Reducer } from 'redux';
 import { BookDto, Client } from '../../../utils/HttpClient';
 
@@ -8,6 +9,7 @@ interface IPagination {
   total: number;
   pageSize: number;
   current: number;
+  showTotal: (total, range) => void;
 }
 
 // 定义BookStateModel
@@ -34,6 +36,7 @@ export interface IBookModel {
   };
 }
 // 生成BookModel
+// tslint:disable-next-line:one-variable-per-declaration
 const BookModel: IBookModel = {
   namespace: 'book',
   state: {
@@ -43,6 +46,7 @@ const BookModel: IBookModel = {
         total: 0,
         pageSize: 10,
         current: 1,
+        showTotal: (total, range) => `第 ${range[0]} 至 ${range[1]} 项, 共 ${total} 数据`,
       },
     },
   },
