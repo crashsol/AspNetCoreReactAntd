@@ -42,6 +42,16 @@ const statusMap = [
   'Poetry',
 ];
 
+const ConvertEnumToSelectOptions = enumType => {
+  return Object.keys(enumType).map(key => {
+    return (
+      <SelectOption key={key} value={key}>
+        {enumType[key]}
+      </SelectOption>
+    );
+  });
+};
+
 const getValue = obj =>
   Object.keys(obj)
     .map(key => obj[key])
@@ -109,15 +119,7 @@ const CreateFormFunc: React.SFC<ICreateFormProps> = props => {
             initialValue: 'Undefined',
           })(
             <Select placeholder="选择书籍类型">
-              <SelectOption value="Undefined">Undefined</SelectOption>
-              <SelectOption value="Advanture">Advanture</SelectOption>
-              <SelectOption value="Biography">Biography</SelectOption>
-              <SelectOption value="Dystopia">Dystopia</SelectOption>
-              <SelectOption value="Fantastic">Fantastic</SelectOption>
-              <SelectOption value="Horror">Horror</SelectOption>
-              <SelectOption value="Science">Science</SelectOption>
-              <SelectOption value="ScienceFiction">ScienceFiction</SelectOption>
-              <SelectOption value="Poetry">Poetry</SelectOption>
+              {ConvertEnumToSelectOptions(CreateUpdateBookDtoType)}
             </Select>
           )}
         </FormItem>
@@ -222,15 +224,7 @@ class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
               initialValue: statusMap[updateModel.type],
             })(
               <Select placeholder="选择书籍类型">
-                <SelectOption value="Undefined">Undefined</SelectOption>
-                <SelectOption value="Advanture">Advanture</SelectOption>
-                <SelectOption value="Biography">Biography</SelectOption>
-                <SelectOption value="Dystopia">Dystopia</SelectOption>
-                <SelectOption value="Fantastic">Fantastic</SelectOption>
-                <SelectOption value="Horror">Horror</SelectOption>
-                <SelectOption value="Science">Science</SelectOption>
-                <SelectOption value="ScienceFiction">ScienceFiction</SelectOption>
-                <SelectOption value="Poetry">Poetry</SelectOption>
+                {ConvertEnumToSelectOptions(CreateUpdateBookDtoType)}
               </Select>
             )}
           </FormItem>
