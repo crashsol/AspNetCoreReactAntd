@@ -1,5 +1,7 @@
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import StandardTable from '@/components/StandardTable';
+import { EnumToStatusMap, EnumToTableFilter } from '@/utils/AbpUtils';
+import { CreateUpdateBookDto, CreateUpdateBookDtoType } from '@/utils/HttpClient';
 import {
   Badge,
   Button,
@@ -20,36 +22,17 @@ import {
 } from 'antd';
 import Form, { FormComponentProps } from 'antd/lib/form';
 import FormItem from 'antd/lib/form/FormItem';
-import { PaginationConfig, SorterResult } from 'antd/lib/table';
 import { connect } from 'dva';
 import moment from 'moment';
 import React, { Component, Fragment, PureComponent } from 'react';
-import { CreateUpdateBookDto, CreateUpdateBookDtoType } from '../../utils/HttpClient';
 import styles from './Index.less';
 import { IBookModelState } from './models/book';
 const SelectOption = Select.Option;
 
-// enmu类型转化
-const statusMap = [
-  'Undefined',
-  'Advanture',
-  'Biography',
-  'Dystopia',
-  'Fantastic',
-  'Horror',
-  'Science',
-  'ScienceFiction',
-  'Poetry',
-];
+const statusMap = EnumToStatusMap(CreateUpdateBookDtoType);
+const fileterMap = EnumToTableFilter(CreateUpdateBookDtoType);
 
-const fileterMap = Object.keys(CreateUpdateBookDtoType).map((item, index) => {
-  return {
-    text: item,
-    value: item,
-  };
-});
-
-const ConvertEnumToSelectOptions = enumType => {
+const EnumToSelectOptions = enumType => {
   return Object.keys(enumType).map(key => {
     return (
       <SelectOption key={key} value={key}>
@@ -59,10 +42,6 @@ const ConvertEnumToSelectOptions = enumType => {
   });
 };
 
-const getValue = obj =>
-  Object.keys(obj)
-    .map(key => obj[key])
-    .join(',');
 //#region Create页面
 
 /**
@@ -119,18 +98,16 @@ const CreateFormFunc: React.SFC<ICreateFormProps> = props => {
             initialValue: 0.0,
           })(<InputNumber />)}
         </FormItem>
-
         <FormItem {...formLayout} label="书籍类型">
           {form.getFieldDecorator('type', {
             rules: [{ required: true, message: '请选择书籍类型' }],
             initialValue: 'Undefined',
           })(
             <Select placeholder="选择书籍类型">
-              {ConvertEnumToSelectOptions(CreateUpdateBookDtoType)}
+              {EnumToSelectOptions(CreateUpdateBookDtoType)}
             </Select>
           )}
         </FormItem>
-
         <FormItem {...formLayout} label="发布时间">
           {form.getFieldDecorator('publishDate', {
             rules: [{ required: true, message: '请选择发布时间' }],
@@ -206,7 +183,6 @@ class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
     return (
       <Modal
         width={640}
-        bodyStyle={{ padding: '32px 40px 48px' }}
         title="更新书籍"
         visible={updateModalVisible}
         onCancel={() => handleUpdateModalVisible(false)}
@@ -231,7 +207,7 @@ class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
               initialValue: statusMap[updateModel.type],
             })(
               <Select placeholder="选择书籍类型">
-                {ConvertEnumToSelectOptions(CreateUpdateBookDtoType)}
+                {EnumToSelectOptions(CreateUpdateBookDtoType)}
               </Select>
             )}
           </FormItem>
@@ -411,11 +387,10 @@ class Index extends Component<IIndexProps, IIndexState> {
   // 处理更新操作
   public handleUpdate = fields => {
     const { dispatch } = this.props;
-    const { updateModel } = this.state;
     dispatch({
       type: 'book/update',
       payload: {
-        id: updateModel.id,
+        id: fields.id,
         model: fields,
       },
     }).then(() => {
@@ -550,7 +525,7 @@ class Index extends Component<IIndexProps, IIndexState> {
             <FormItem label="书籍类型">
               {getFieldDecorator('type')(
                 <Select placeholder="书籍类型" mode="multiple">
-                  {ConvertEnumToSelectOptions(CreateUpdateBookDtoType)}
+                  {EnumToSelectOptions(CreateUpdateBookDtoType)}
                 </Select>
               )}
             </FormItem>

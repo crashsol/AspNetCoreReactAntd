@@ -1,15 +1,9 @@
+import { IPagination } from '@/utils/AbpUtils';
+import { BookDto, Client } from '@/utils/HttpClient';
 import { Effect } from 'dva';
 import { Reducer } from 'redux';
-import { BookDto, Client } from '../../../utils/HttpClient';
 
 const http = new Client();
-
-interface IPagination {
-  total: number;
-  pageSize: number;
-  current: number;
-  showTotal: (total, range) => void;
-}
 
 // 定义BookStateModel
 export interface IBookModelState {
@@ -19,7 +13,7 @@ export interface IBookModelState {
   };
 }
 
-// 定义bookModel
+// 定义BookModel
 export interface IBookModel {
   namespace: 'book';
   state: IBookModelState;
@@ -66,9 +60,11 @@ const BookModel: IBookModel = {
         skipCount,
         maxResultCount
       );
+      const stateTemp: IBookModelState = yield select(state => state.book);
       const data = {
         list: response.items,
         pagination: {
+          ...stateTemp.data.pagination,
           total: response.totalCount,
           pageSize: pageSize ? pageSize : 10,
           current: current ? current : 1,
