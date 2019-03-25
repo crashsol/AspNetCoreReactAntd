@@ -90,11 +90,11 @@ namespace Crash.BookStoreSPA.Host
             });
 
             // 配置Sap
-            context.Services.AddSpaStaticFiles(config =>
-             {
-                 //设置Sap访问的根目录，与ClientApp bulid文件输出路径一致
-                 config.RootPath = "wwwroot/dist";
-             });
+            //context.Services.AddSpaStaticFiles(config =>
+            // {
+            //     //设置Sap访问的根目录，与ClientApp bulid文件输出路径一致
+            //     config.RootPath = "wwwroot/dist";
+            // });
 
             /*    context.Services.AddDistributedSqlServerCache(options =>
                {
@@ -144,16 +144,17 @@ namespace Crash.BookStoreSPA.Host
             app.UseAuthentication();
             app.UseAbpRequestLocalization();
             app.UseAuditing();
-            //静态文件
-            app.UseStaticFiles();
-            app.UseSpaStaticFiles();
 
             app.UseMvc();
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "ClientApp";
-                spa.UseProxyToSpaDevelopmentServer("http://localhost:8000");
-            });
+            //静态文件
+            // app.UseStaticFiles();
+            // app.UseSpaStaticFiles();
+
+            //app.UseSpa(spa =>
+            //{
+            //    spa.Options.SourcePath = "ClientApp";
+            //    spa.UseProxyToSpaDevelopmentServer("http://localhost:8000");
+            //});
         }
     }
 }

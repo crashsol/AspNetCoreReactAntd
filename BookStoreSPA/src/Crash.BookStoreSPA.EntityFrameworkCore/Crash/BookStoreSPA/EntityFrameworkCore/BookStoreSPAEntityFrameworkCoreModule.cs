@@ -17,7 +17,10 @@ namespace Crash.BookStoreSPA.EntityFrameworkCore
                 /* Add custom repositories here. Example:
                  * options.AddRepository<Question, EfCoreQuestionRepository>();
                  */
-                options.AddDefaultRepositories(true);                
+                options.AddDefaultRepositories(true);
+
+                //添加OrganizationUnit Repository
+                //options.AddRepository<IOrganizationUnitRepository, EfCoreOrganizationUnitRepository>();
             });
         }
     }

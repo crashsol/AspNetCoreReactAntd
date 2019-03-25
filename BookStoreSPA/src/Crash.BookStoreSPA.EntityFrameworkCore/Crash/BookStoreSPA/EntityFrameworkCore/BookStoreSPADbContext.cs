@@ -1,4 +1,5 @@
 ﻿using Crash.BookStoreSPA.Books;
+using Crash.BookStoreSPA.Organization;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
@@ -16,6 +17,11 @@ namespace Crash.BookStoreSPA.EntityFrameworkCore
          * public DbSet<Question> Questions { get; set; }
          */
         public DbSet<Book> Books { get; set; }
+
+        /// <summary>
+        /// 组织单元
+        /// </summary>
+        public DbSet<OrganizationUnit> OrganizationUnits { get; set; } 
 
 
         public BookStoreSPADbContext(DbContextOptions<BookStoreSPADbContext> options) 

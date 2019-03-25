@@ -19494,3 +19494,230 @@ The underlying exception message was '由于目标计算机积极拒绝，无法
 2019-03-24 19:33:08.610 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
 2019-03-24 19:33:08.610 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
 2019-03-24 19:33:08.611 +08:00 [INF] Request finished in 1.1981ms 200 
+2019-03-25 16:34:34.797 +08:00 [INF] Starting web host.
+2019-03-25 16:34:35.719 +08:00 [INF] User profile is available. Using 'C:\Users\Crashsol\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-25 16:34:35.770 +08:00 [INF] Loaded modules:
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-03-25 16:34:35.770 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainSharedModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationContractsModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Crash.BookStoreSPA.EntityFrameworkCore.BookStoreSPAEntityFrameworkCoreModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2019-03-25 16:34:35.771 +08:00 [INF] - Crash.BookStoreSPA.Host.DemoAppModule
+2019-03-25 16:34:35.804 +08:00 [DBG] No class found with auto mapping attributes.
+2019-03-25 16:34:36.836 +08:00 [INF] Initialized all modules.
+2019-03-25 16:34:54.492 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-25 16:34:54.520 +08:00 [INF] Request finished in 28.4984ms 200 text/html
+2019-03-25 16:34:54.541 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css  
+2019-03-25 16:34:54.542 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js  
+2019-03-25 16:34:54.542 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js  
+2019-03-25 16:34:54.551 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2019-03-25 16:34:54.551 +08:00 [INF] Request finished in 9.5846ms 200 text/css
+2019-03-25 16:34:54.563 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2019-03-25 16:34:54.565 +08:00 [INF] Request finished in 22.5964ms 200 application/javascript
+2019-03-25 16:34:54.575 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2019-03-25 16:34:54.575 +08:00 [INF] Request finished in 33.7063ms 200 application/javascript
+2019-03-25 16:34:55.144 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-25 16:34:55.389 +08:00 [INF] Request finished in 244.339ms 200 application/json
+2019-03-25 16:43:53.922 +08:00 [INF] Starting web host.
+2019-03-25 16:43:54.586 +08:00 [INF] User profile is available. Using 'C:\Users\Crashsol\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-03-25 16:43:54.636 +08:00 [INF] Loaded modules:
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainSharedModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationContractsModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Crash.BookStoreSPA.EntityFrameworkCore.BookStoreSPAEntityFrameworkCoreModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2019-03-25 16:43:54.636 +08:00 [INF] - Crash.BookStoreSPA.Host.DemoAppModule
+2019-03-25 16:43:54.670 +08:00 [DBG] No class found with auto mapping attributes.
+2019-03-25 16:43:56.069 +08:00 [INF] Initialized all modules.
+2019-03-25 16:44:00.289 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2019-03-25 16:44:00.313 +08:00 [INF] Request finished in 25.6202ms 200 text/html
+2019-03-25 16:44:00.670 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2019-03-25 16:44:00.708 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png  
+2019-03-25 16:44:00.721 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2019-03-25 16:44:00.722 +08:00 [INF] Request finished in 13.8183ms 200 image/png
+2019-03-25 16:44:00.723 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-16x16.png  
+2019-03-25 16:44:00.723 +08:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2019-03-25 16:44:00.723 +08:00 [INF] Request finished in 0.4334ms 200 image/png
+2019-03-25 16:44:00.915 +08:00 [INF] Request finished in 245.1087ms 200 application/json
+2019-03-25 16:44:21.329 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/app/organization/organization application/json-patch+json 41
+2019-03-25 16:44:21.330 +08:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-03-25 16:44:21.330 +08:00 [INF] CORS policy execution successful.
+2019-03-25 16:44:21.348 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-Hans"]'.
+2019-03-25 16:44:21.351 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-Hans"]'.
+2019-03-25 16:44:21.355 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-25 16:44:21.355 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-25 16:44:21.423 +08:00 [INF] Route matched with {action = "AddOrganizationAsync", controller = "Organization", area = ""}. Executing action Crash.BookStoreSPA.Organization.OrganizationAppService.AddOrganizationAsync (Crash.BookStoreSPA.Application)
+2019-03-25 16:44:21.521 +08:00 [INF] Executing action method Crash.BookStoreSPA.Organization.OrganizationAppService.AddOrganizationAsync (Crash.BookStoreSPA.Application) with arguments (["Crash.BookStoreSPA.Organization.CreateOrUpdateOrganizationDto"]) - Validation state: "Valid"
+2019-03-25 16:44:21.684 +08:00 [DBG] Added 0 entity changes to the current audit log
+2019-03-25 16:44:21.684 +08:00 [DBG] Added 0 entity changes to the current audit log
+2019-03-25 16:44:21.706 +08:00 [INF] Executed action method Crash.BookStoreSPA.Organization.OrganizationAppService.AddOrganizationAsync (Crash.BookStoreSPA.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 182.5627ms.
+2019-03-25 16:44:21.709 +08:00 [DBG] Added 0 entity changes to the current audit log
+2019-03-25 16:44:21.719 +08:00 [INF] Executing ObjectResult, writing value of type 'Crash.BookStoreSPA.Organization.OrganizationUnitDto'.
+2019-03-25 16:44:21.728 +08:00 [INF] Executed action Crash.BookStoreSPA.Organization.OrganizationAppService.AddOrganizationAsync (Crash.BookStoreSPA.Application) in 303.16200000000003ms
+2019-03-25 16:44:21.883 +08:00 [DBG] Added 0 entity changes to the current audit log
+2019-03-25 16:44:21.883 +08:00 [DBG] Added 0 entity changes to the current audit log
+2019-03-25 16:44:21.895 +08:00 [INF] Request finished in 566.4974ms 200 application/json; charset=utf-8
+2019-03-25 16:44:43.325 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/app/organization/organization application/json-patch+json 79
+2019-03-25 16:44:43.325 +08:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-03-25 16:44:43.325 +08:00 [INF] CORS policy execution successful.
+2019-03-25 16:44:43.326 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-Hans"]'.
+2019-03-25 16:44:43.326 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-Hans"]'.
+2019-03-25 16:44:43.326 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-25 16:44:43.326 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-25 16:44:43.327 +08:00 [INF] Route matched with {action = "AddOrganizationAsync", controller = "Organization", area = ""}. Executing action Crash.BookStoreSPA.Organization.OrganizationAppService.AddOrganizationAsync (Crash.BookStoreSPA.Application)
+2019-03-25 16:44:43.331 +08:00 [INF] Executing action method Crash.BookStoreSPA.Organization.OrganizationAppService.AddOrganizationAsync (Crash.BookStoreSPA.Application) with arguments (["Crash.BookStoreSPA.Organization.CreateOrUpdateOrganizationDto"]) - Validation state: "Valid"
+2019-03-25 16:44:43.384 +08:00 [ERR] ---------- RemoteServiceErrorInfo ----------
+2019-03-25 16:44:43.387 +08:00 [ERR] {
+  "code": null,
+  "message": "An internal error occurred during your request!",
+  "details": null,
+  "validationErrors": null
+}
+2019-03-25 16:44:43.388 +08:00 [ERR] Value cannot be null.
+Parameter name: source
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Enumerable.TryGetLast[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.LastOrDefault[TSource](IEnumerable`1 source)
+   at Crash.BookStoreSPA.Organization.OrganizationUnit.GetCode() in D:\Projects\AspNetCoreReactAntd\BookStoreSPA\src\Crash.BookStoreSPA.Domain\Crash\BookStoreSPA\Organization\OrganizationUnit.cs:line 134
+   at Crash.BookStoreSPA.Organization.OrganizationUnit.AddChildrenNode(String title) in D:\Projects\AspNetCoreReactAntd\BookStoreSPA\src\Crash.BookStoreSPA.Domain\Crash\BookStoreSPA\Organization\OrganizationUnit.cs:line 78
+   at Crash.BookStoreSPA.Organization.OrganizationAppService.AddOrganizationAsync(CreateOrUpdateOrganizationDto dto) in D:\Projects\AspNetCoreReactAntd\BookStoreSPA\src\Crash.BookStoreSPA.Application\Crash\BookStoreSPA\Organization\OrganizationAppService.cs:line 27
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+2019-03-25 16:44:43.413 +08:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.Http.RemoteServiceErrorResponse'.
+2019-03-25 16:44:43.416 +08:00 [INF] Executed action Crash.BookStoreSPA.Organization.OrganizationAppService.AddOrganizationAsync (Crash.BookStoreSPA.Application) in 88.5617ms
+2019-03-25 16:44:43.422 +08:00 [DBG] Added 0 entity changes to the current audit log
+2019-03-25 16:44:43.422 +08:00 [DBG] Added 0 entity changes to the current audit log
+2019-03-25 16:44:43.422 +08:00 [INF] Request finished in 96.5901ms 500 application/json; charset=utf-8
+2019-03-25 16:44:59.461 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/app/organization/organization application/json-patch+json 79
+2019-03-25 16:44:59.461 +08:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-03-25 16:44:59.461 +08:00 [INF] CORS policy execution successful.
+2019-03-25 16:44:59.461 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported cultures '["zh-Hans"]'.
+2019-03-25 16:44:59.461 +08:00 [WRN] CookieRequestCultureProvider returned the following unsupported UI Cultures '["zh-Hans"]'.
+2019-03-25 16:44:59.461 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-CN","zh"]'.
+2019-03-25 16:44:59.461 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-03-25 16:44:59.462 +08:00 [INF] Route matched with {action = "AddOrganizationAsync", controller = "Organization", area = ""}. Executing action Crash.BookStoreSPA.Organization.OrganizationAppService.AddOrganizationAsync (Crash.BookStoreSPA.Application)
+2019-03-25 16:44:59.464 +08:00 [INF] Executing action method Crash.BookStoreSPA.Organization.OrganizationAppService.AddOrganizationAsync (Crash.BookStoreSPA.Application) with arguments (["Crash.BookStoreSPA.Organization.CreateOrUpdateOrganizationDto"]) - Validation state: "Valid"
+2019-03-25 16:44:59.467 +08:00 [ERR] ---------- RemoteServiceErrorInfo ----------
+2019-03-25 16:44:59.467 +08:00 [ERR] {
+  "code": null,
+  "message": "An internal error occurred during your request!",
+  "details": null,
+  "validationErrors": null
+}
+2019-03-25 16:44:59.467 +08:00 [ERR] Value cannot be null.
+Parameter name: source
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Enumerable.TryGetLast[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.LastOrDefault[TSource](IEnumerable`1 source)
+   at Crash.BookStoreSPA.Organization.OrganizationUnit.GetCode() in D:\Projects\AspNetCoreReactAntd\BookStoreSPA\src\Crash.BookStoreSPA.Domain\Crash\BookStoreSPA\Organization\OrganizationUnit.cs:line 134
+   at Crash.BookStoreSPA.Organization.OrganizationUnit.AddChildrenNode(String title) in D:\Projects\AspNetCoreReactAntd\BookStoreSPA\src\Crash.BookStoreSPA.Domain\Crash\BookStoreSPA\Organization\OrganizationUnit.cs:line 78
+   at Crash.BookStoreSPA.Organization.OrganizationAppService.AddOrganizationAsync(CreateOrUpdateOrganizationDto dto) in D:\Projects\AspNetCoreReactAntd\BookStoreSPA\src\Crash.BookStoreSPA.Application\Crash\BookStoreSPA\Organization\OrganizationAppService.cs:line 27
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+2019-03-25 16:44:59.468 +08:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.Http.RemoteServiceErrorResponse'.
+2019-03-25 16:44:59.468 +08:00 [INF] Executed action Crash.BookStoreSPA.Organization.OrganizationAppService.AddOrganizationAsync (Crash.BookStoreSPA.Application) in 5.3719ms
+2019-03-25 16:44:59.473 +08:00 [DBG] Added 0 entity changes to the current audit log
+2019-03-25 16:44:59.473 +08:00 [DBG] Added 0 entity changes to the current audit log
+2019-03-25 16:44:59.473 +08:00 [INF] Request finished in 12.8215ms 500 application/json; charset=utf-8
