@@ -22,7 +22,7 @@ namespace Crash.BookStoreSPA.Organization
 
         #region 组织单元管理
 
-        public async Task<OrganizationUnitDto> CreateAsync(CreateOrUpdateOrganizationDto dto)
+        public async Task<OrganizationDto> CreateAsync(CreateUpdateOrganizationDto dto)
         {
             if (dto.ParentId.HasValue)
             {
@@ -30,7 +30,7 @@ namespace Crash.BookStoreSPA.Organization
                 var parent = await _repository.GetAsync(dto.ParentId.Value);
                 parent.AddChildrenNode(dto.Title);
                 await _repository.UpdateAsync(parent,true);
-                return ObjectMapper.Map<OrganizationUnit, OrganizationUnitDto>(parent);
+                return ObjectMapper.Map<OrganizationUnit, OrganizationDto>(parent);
             }
             else
             {
@@ -39,7 +39,7 @@ namespace Crash.BookStoreSPA.Organization
                 //添加根节点
                 var rootNode = new OrganizationUnit(id, null, dto.Title, rootCount);
                 await _repository.InsertAsync(rootNode,true);
-                return ObjectMapper.Map<OrganizationUnit, OrganizationUnitDto>(rootNode);
+                return ObjectMapper.Map<OrganizationUnit, OrganizationDto>(rootNode);
             }
         }
 
@@ -52,19 +52,19 @@ namespace Crash.BookStoreSPA.Organization
             }
         }
 
-        public async Task<List<OrganizationUnitDto>> GetListAsync()
+        public async Task<List<OrganizationDto>> GetListAsync()
         {
             var allNodes = await _repository.GetListAsync(true);
-            return ObjectMapper.Map<List<OrganizationUnit>, List<OrganizationUnitDto>>(
+            return ObjectMapper.Map<List<OrganizationUnit>, List<OrganizationDto>>(
                 allNodes.Where(b => b.ParentId == null).ToList());
         }
 
-        public async Task<OrganizationUnitDto> UpdateAsync(Guid id, CreateOrUpdateOrganizationDto dto)
+        public async Task<OrganizationDto> UpdateAsync(Guid id, CreateUpdateOrganizationDto dto)
         {
             var entity =await _repository.GetAsync(id);
             entity.UpdateTitle(dto.Title);
             await _repository.UpdateAsync(entity,true);
-            return ObjectMapper.Map<OrganizationUnit, OrganizationUnitDto>(entity);
+            return ObjectMapper.Map<OrganizationUnit, OrganizationDto>(entity);
         }
      
         

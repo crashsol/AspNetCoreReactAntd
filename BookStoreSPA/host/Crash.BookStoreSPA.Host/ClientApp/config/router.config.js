@@ -47,12 +47,23 @@ export default [
           },
         ],
       },
-      // book
+      // 自定义后台路由功能
       {
-        path: '/book',
+        path: '/system',
         icon: 'form',
-        name: 'book',
-        component: './Book/Index',
+        name: 'system',
+        routes: [
+          {
+            path: '/system/book',
+            name: 'book',
+            component: './Book/Index',
+          },
+          {
+            path: '/system/organization',
+            name: 'organization',
+            component: './Organization/Index',
+          },
+        ],
       },
       // forms
       {

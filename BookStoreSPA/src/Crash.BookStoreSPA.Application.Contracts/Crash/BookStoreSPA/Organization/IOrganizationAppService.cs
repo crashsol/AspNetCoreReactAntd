@@ -12,15 +12,15 @@ namespace Crash.BookStoreSPA.Organization
         /// 获取所有部门节点
         /// </summary>
         /// <returns></returns>
-        Task<List<OrganizationUnitDto>> GetListAsync();
+        Task<List<OrganizationDto>> GetListAsync();
 
 
         /// <summary>
         ///  添加组织节点
         /// </summary>
-        /// <param name="dto"><see cref="CreateOrUpdateOrganizationDto"/></param>
+        /// <param name="dto"><see cref="CreateUpdateOrganizationDto"/></param>
         /// <returns></returns>
-        Task<OrganizationUnitDto> CreateAsync(CreateOrUpdateOrganizationDto dto);
+        Task<OrganizationDto> CreateAsync(CreateUpdateOrganizationDto dto);
 
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace Crash.BookStoreSPA.Organization
         /// <param name="dto">删除</param>
         /// <returns></returns>
 
-        Task<OrganizationUnitDto> UpdateAsync(Guid id, CreateOrUpdateOrganizationDto dto);
+        Task<OrganizationDto> UpdateAsync(Guid id, CreateUpdateOrganizationDto dto);
 
         /// <summary>
         /// 删除组织节点

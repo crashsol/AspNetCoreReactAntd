@@ -6,7 +6,7 @@ using Microsoft.Extensions.Primitives;
 
 namespace Crash.BookStoreSPA.Organization
 {
-    public class CreateOrUpdateOrganizationDto
+    public class CreateUpdateOrganizationDto
     {
         public  Guid?  ParentId { get; set; }
 

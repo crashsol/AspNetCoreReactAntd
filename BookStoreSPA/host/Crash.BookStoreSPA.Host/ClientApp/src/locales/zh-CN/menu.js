@@ -39,4 +39,7 @@ export default {
   'menu.account.trigger': '触发报错',
   'menu.account.logout': '退出登录',
   'menu.book': '书籍管理',
+  'menu.system': '后台管理',
+  'menu.system.book': '书籍管理',
+  'menu.system.organization': '组织机构',
 };

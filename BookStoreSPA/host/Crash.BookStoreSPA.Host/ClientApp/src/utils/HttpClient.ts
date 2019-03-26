@@ -537,6 +537,206 @@ export class Client {
     }
     return Promise.resolve<BookDto>(<any>null);
   }
+
+  /**
+   * @return Success
+   */
+  apiAppOrganizationGet(): Promise<OrganizationDto[]> {
+    let url_ = this.baseUrl + '/api/app/organization';
+    url_ = url_.replace(/[?&]$/, '');
+
+    let options_ = <RequestInit>{
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+      },
+    };
+
+    return this.http.fetch(url_, options_).then((_response: Response) => {
+      return this.processApiAppOrganizationGet(_response);
+    });
+  }
+
+  protected processApiAppOrganizationGet(response: Response): Promise<OrganizationDto[]> {
+    const status = response.status;
+    let _headers: any = {};
+    if (response.headers && response.headers.forEach) {
+      response.headers.forEach((v: any, k: any) => (_headers[k] = v));
+    }
+    if (status === 200) {
+      return response.text().then(_responseText => {
+        let result200: any = null;
+        result200 =
+          _responseText === ''
+            ? null
+            : <OrganizationDto[]>JSON.parse(_responseText, this.jsonParseReviver);
+        return result200;
+      });
+    } else if (status !== 200 && status !== 204) {
+      return response.text().then(_responseText => {
+        return throwException(
+          'An unexpected server error occurred.',
+          status,
+          _responseText,
+          _headers
+        );
+      });
+    }
+    return Promise.resolve<OrganizationDto[]>(<any>null);
+  }
+
+  /**
+   * @param dto (optional)
+   * @return Success
+   */
+  apiAppOrganizationPost(
+    dto: CreateUpdateOrganizationDto | null | undefined
+  ): Promise<OrganizationDto> {
+    let url_ = this.baseUrl + '/api/app/organization';
+    url_ = url_.replace(/[?&]$/, '');
+
+    const content_ = JSON.stringify(dto);
+
+    let options_ = <RequestInit>{
+      body: content_,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    };
+
+    return this.http.fetch(url_, options_).then((_response: Response) => {
+      return this.processApiAppOrganizationPost(_response);
+    });
+  }
+
+  protected processApiAppOrganizationPost(response: Response): Promise<OrganizationDto> {
+    const status = response.status;
+    let _headers: any = {};
+    if (response.headers && response.headers.forEach) {
+      response.headers.forEach((v: any, k: any) => (_headers[k] = v));
+    }
+    if (status === 200) {
+      return response.text().then(_responseText => {
+        let result200: any = null;
+        result200 =
+          _responseText === ''
+            ? null
+            : <OrganizationDto>JSON.parse(_responseText, this.jsonParseReviver);
+        return result200;
+      });
+    } else if (status !== 200 && status !== 204) {
+      return response.text().then(_responseText => {
+        return throwException(
+          'An unexpected server error occurred.',
+          status,
+          _responseText,
+          _headers
+        );
+      });
+    }
+    return Promise.resolve<OrganizationDto>(<any>null);
+  }
+
+  /**
+   * @param dto (optional)
+   * @return Success
+   */
+  apiAppOrganizationByIdPut(
+    id: string,
+    dto: CreateUpdateOrganizationDto | null | undefined
+  ): Promise<OrganizationDto> {
+    let url_ = this.baseUrl + '/api/app/organization/{id}';
+    if (id === undefined || id === null) throw new Error("The parameter 'id' must be defined.");
+    url_ = url_.replace('{id}', encodeURIComponent('' + id));
+    url_ = url_.replace(/[?&]$/, '');
+
+    const content_ = JSON.stringify(dto);
+
+    let options_ = <RequestInit>{
+      body: content_,
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    };
+
+    return this.http.fetch(url_, options_).then((_response: Response) => {
+      return this.processApiAppOrganizationByIdPut(_response);
+    });
+  }
+
+  protected processApiAppOrganizationByIdPut(response: Response): Promise<OrganizationDto> {
+    const status = response.status;
+    let _headers: any = {};
+    if (response.headers && response.headers.forEach) {
+      response.headers.forEach((v: any, k: any) => (_headers[k] = v));
+    }
+    if (status === 200) {
+      return response.text().then(_responseText => {
+        let result200: any = null;
+        result200 =
+          _responseText === ''
+            ? null
+            : <OrganizationDto>JSON.parse(_responseText, this.jsonParseReviver);
+        return result200;
+      });
+    } else if (status !== 200 && status !== 204) {
+      return response.text().then(_responseText => {
+        return throwException(
+          'An unexpected server error occurred.',
+          status,
+          _responseText,
+          _headers
+        );
+      });
+    }
+    return Promise.resolve<OrganizationDto>(<any>null);
+  }
+
+  /**
+   * @return Success
+   */
+  apiAppOrganizationByIdDelete(id: string): Promise<void> {
+    let url_ = this.baseUrl + '/api/app/organization/{id}';
+    if (id === undefined || id === null) throw new Error("The parameter 'id' must be defined.");
+    url_ = url_.replace('{id}', encodeURIComponent('' + id));
+    url_ = url_.replace(/[?&]$/, '');
+
+    let options_ = <RequestInit>{
+      method: 'DELETE',
+      headers: {},
+    };
+
+    return this.http.fetch(url_, options_).then((_response: Response) => {
+      return this.processApiAppOrganizationByIdDelete(_response);
+    });
+  }
+
+  protected processApiAppOrganizationByIdDelete(response: Response): Promise<void> {
+    const status = response.status;
+    let _headers: any = {};
+    if (response.headers && response.headers.forEach) {
+      response.headers.forEach((v: any, k: any) => (_headers[k] = v));
+    }
+    if (status === 200) {
+      return response.text().then(_responseText => {
+        return;
+      });
+    } else if (status !== 200 && status !== 204) {
+      return response.text().then(_responseText => {
+        return throwException(
+          'An unexpected server error occurred.',
+          status,
+          _responseText,
+          _headers
+        );
+      });
+    }
+    return Promise.resolve<void>(<any>null);
+  }
 }
 
 export interface ApplicationApiDescriptionModel {
@@ -640,6 +840,17 @@ export interface CreateUpdateBookDto {
 export interface PagedResultDtoOfBookDto {
   totalCount: number | undefined;
   items: BookDto[] | undefined;
+}
+
+export interface CreateUpdateOrganizationDto {
+  parentId: string | undefined;
+  title: string;
+}
+
+export interface OrganizationDto {
+  key: string | undefined;
+  title: string | undefined;
+  children: OrganizationDto[] | undefined;
 }
 
 export enum TypeFilters {

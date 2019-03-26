@@ -14,7 +14,7 @@ namespace Crash.BookStoreSPA
             CreateMap<CreateUpdateBookDto, Book>();
 
             //组织单元配置
-            CreateMap<OrganizationUnit, OrganizationUnitDto>()
+            CreateMap<OrganizationUnit, OrganizationDto>()
                 .ForMember(d=>d.Key,opt=>opt.MapFrom(src=>src.Id));
 
         }
