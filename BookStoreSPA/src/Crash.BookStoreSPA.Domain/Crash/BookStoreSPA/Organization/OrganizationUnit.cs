@@ -53,13 +53,12 @@ namespace Crash.BookStoreSPA.Organization
         protected OrganizationUnit() { }
 
 
-        public OrganizationUnit(Guid id,Guid? parentId, string title,string code)
+        public OrganizationUnit(Guid id,Guid? parentId, string title,int code)
         {
             Check.NotNullOrEmpty(title, nameof(title));
-            Check.NotNullOrEmpty(code, nameof(code));
 
             Title = title;
-            Code = code;
+            Code = CreateCode(code);
             ParentId = parentId;
             Children = new List<OrganizationUnit>();
             OrganizationUnitUsers = new List<OrganizationUnitUser>();
@@ -74,12 +73,11 @@ namespace Crash.BookStoreSPA.Organization
         {
             Check.NotNullOrEmpty(title, nameof(title));
 
-            //TODO： 可以判断title名称是否重复
-            var node = new OrganizationUnit
+           var node = new OrganizationUnit()
             {
                 Title = title ,     //设置名称
                 ParentId = this.Id,//父亲节点id
-                Code = GetCode() //生成唯一的code编码
+                Code = CaculateCode() //生成唯一的code编码
             };
             this.Children.Add(node);
         }
@@ -128,21 +126,26 @@ namespace Crash.BookStoreSPA.Organization
 
 
         #region 私有方法
-        private string GetCode()
+        private string CaculateCode()
         {
             //获取父亲节点下级节点的最后一个元素
             var lastNode = Children.LastOrDefault();
-            if (lastNode != null)
-            {
-                var code = CreateCode(Convert.ToInt32(GetLastUnitCode(lastNode.Code)) + 1);
-            }
-            else
-            {
-                var code = "00001";
-            }
+            var nextCode = lastNode != null ?
+                CreateCode( Convert.ToInt32(GetLastUnitCode(lastNode.Code)) + 1) : CreateCode(1);
 
-            return this.Code + "." + Code;
 
+            return this.Code + "." + nextCode;
+
+        }
+
+
+        /// <summary>
+        /// 更新Title
+        /// </summary>
+        /// <param name="title"></param>
+        public void UpdateTitle(string title)
+        {
+            this.Title = title;
         }
 
         /// <summary>

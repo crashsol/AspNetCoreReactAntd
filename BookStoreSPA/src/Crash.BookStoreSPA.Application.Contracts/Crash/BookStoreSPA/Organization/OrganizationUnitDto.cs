@@ -10,7 +10,7 @@ namespace Crash.BookStoreSPA.Organization
    public class OrganizationUnitDto
     {
 
-        public Guid Id { get; set; } 
+        public Guid Key { get; set; } 
 
         public  string Title { get; set; }
 

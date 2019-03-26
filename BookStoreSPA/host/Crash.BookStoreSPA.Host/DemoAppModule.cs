@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Crash.BookStoreSPA.EntityFrameworkCore;
+using Crash.BookStoreSPA.Organization;
 using Swashbuckle.AspNetCore.Swagger;
 using Volo.Abp;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
@@ -17,6 +18,7 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.VirtualFileSystem;
 using Volo.Abp.AspNetCore.Mvc;
+using Volo.Abp.EntityFrameworkCore.DependencyInjection;
 
 namespace Crash.BookStoreSPA.Host
 {
@@ -90,11 +92,11 @@ namespace Crash.BookStoreSPA.Host
             });
 
             // 配置Sap
-            //context.Services.AddSpaStaticFiles(config =>
-            // {
-            //     //设置Sap访问的根目录，与ClientApp bulid文件输出路径一致
-            //     config.RootPath = "wwwroot/dist";
-            // });
+            context.Services.AddSpaStaticFiles(config =>
+             {
+                 //设置Sap访问的根目录，与ClientApp bulid文件输出路径一致
+                 config.RootPath = "wwwroot/dist";
+             });
 
             /*    context.Services.AddDistributedSqlServerCache(options =>
                {
@@ -147,14 +149,14 @@ namespace Crash.BookStoreSPA.Host
 
             app.UseMvc();
             //静态文件
-            // app.UseStaticFiles();
-            // app.UseSpaStaticFiles();
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
 
-            //app.UseSpa(spa =>
-            //{
-            //    spa.Options.SourcePath = "ClientApp";
-            //    spa.UseProxyToSpaDevelopmentServer("http://localhost:8000");
-            //});
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+                spa.UseProxyToSpaDevelopmentServer("http://localhost:8000");
+            });
         }
     }
 }

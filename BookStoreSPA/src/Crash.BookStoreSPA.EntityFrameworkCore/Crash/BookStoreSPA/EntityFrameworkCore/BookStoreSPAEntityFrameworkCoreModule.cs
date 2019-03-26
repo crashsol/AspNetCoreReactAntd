@@ -1,5 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Crash.BookStoreSPA.Organization;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore.DependencyInjection;
 using Volo.Abp.Modularity;
 
 namespace Crash.BookStoreSPA.EntityFrameworkCore
@@ -19,9 +22,17 @@ namespace Crash.BookStoreSPA.EntityFrameworkCore
                  */
                 options.AddDefaultRepositories(true);
 
+
+                options.Entity<OrganizationUnit>(sp =>
+                {
+                    sp.DefaultWithDetailsFunc = query => query.Include(b => b.Children)
+                        .Include(b => b.OrganizationUnitUsers);
+                });
+
                 //添加OrganizationUnit Repository
-                //options.AddRepository<IOrganizationUnitRepository, EfCoreOrganizationUnitRepository>();
+               // options.AddRepository<IOrganizationUnitRepository, EfCoreOrganizationUnitRepository>();
             });
+
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Crash.BookStoreSPA.Books;
 using Crash.BookStoreSPA.Organization;
+using Volo.Abp.AutoMapper;
 
 namespace Crash.BookStoreSPA
 {
@@ -13,7 +14,9 @@ namespace Crash.BookStoreSPA
             CreateMap<CreateUpdateBookDto, Book>();
 
             //组织单元配置
-            CreateMap<OrganizationUnit, OrganizationUnitDto>();
+            CreateMap<OrganizationUnit, OrganizationUnitDto>()
+                .ForMember(d=>d.Key,opt=>opt.MapFrom(src=>src.Id));
+
         }
     }
 }
