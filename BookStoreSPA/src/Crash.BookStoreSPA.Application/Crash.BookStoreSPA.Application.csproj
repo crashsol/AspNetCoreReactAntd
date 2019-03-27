@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="0.14.0" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="0.15.0" />
     <ProjectReference Include="..\Crash.BookStoreSPA.Application.Contracts\Crash.BookStoreSPA.Application.Contracts.csproj" />
     <ProjectReference Include="..\Crash.BookStoreSPA.Domain\Crash.BookStoreSPA.Domain.csproj" />
   </ItemGroup>

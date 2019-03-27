@@ -21,7 +21,9 @@ namespace Crash.BookStoreSPA.EntityFrameworkCore
         /// <summary>
         /// 组织单元
         /// </summary>
-        public DbSet<OrganizationUnit> OrganizationUnits { get; set; } 
+        public DbSet<OrganizationUnit> OrganizationUnits { get; set; }
+
+        public DbSet<OrganizationUnitUser> OrganizationUnitUsers { get; set; }
 
 
         public BookStoreSPADbContext(DbContextOptions<BookStoreSPADbContext> options) 

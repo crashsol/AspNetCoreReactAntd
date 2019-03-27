@@ -2,6 +2,7 @@
 using Crash.BookStoreSPA.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 
@@ -22,6 +23,7 @@ namespace Crash.BookStoreSPA.Host
             modelBuilder.ConfigureSettingManagement();
             modelBuilder.ConfigureBookStoreSPA();
             modelBuilder.ConfigureAuditLogging();
+            modelBuilder.ConfigureIdentity();
         }
     }
 }

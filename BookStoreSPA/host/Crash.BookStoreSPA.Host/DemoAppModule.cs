@@ -19,6 +19,9 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.VirtualFileSystem;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.EntityFrameworkCore.DependencyInjection;
+using Volo.Abp.Identity;
+using Volo.Abp.Identity.EntityFrameworkCore;
+using Volo.Abp.PermissionManagement;
 
 namespace Crash.BookStoreSPA.Host
 {
@@ -27,7 +30,9 @@ namespace Crash.BookStoreSPA.Host
         typeof(AbpAspNetCoreMvcModule),
         typeof(BookStoreSPAApplicationModule),
         typeof(BookStoreSPAEntityFrameworkCoreModule),
-        //typeof(BookStoreSPAHttpApiModule),
+        typeof(AbpIdentityApplicationModule),
+        typeof(AbpPermissionManagementApplicationModule),
+        typeof(AbpIdentityEntityFrameworkCoreModule),
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
         typeof(AbpSettingManagementEntityFrameworkCoreModule),
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),

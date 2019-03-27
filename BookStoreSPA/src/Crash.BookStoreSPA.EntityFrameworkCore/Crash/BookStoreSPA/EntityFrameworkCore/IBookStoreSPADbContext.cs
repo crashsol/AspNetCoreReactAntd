@@ -19,5 +19,10 @@ namespace Crash.BookStoreSPA.EntityFrameworkCore
         /// 组织单元
         /// </summary>
         DbSet<OrganizationUnit> OrganizationUnits { get; set; }
+
+        /// <summary>
+        /// 组织单元用户关联
+        /// </summary>
+        DbSet<OrganizationUnitUser> OrganizationUnitUsers { get; set; }
     }
 }

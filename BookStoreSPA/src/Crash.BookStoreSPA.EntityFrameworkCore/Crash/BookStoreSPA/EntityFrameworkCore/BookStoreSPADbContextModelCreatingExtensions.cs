@@ -42,6 +42,14 @@ namespace Crash.BookStoreSPA.EntityFrameworkCore
                 //AuditedAggregateRoot 基类 
                 a.ConfigureExtraProperties();
             });
+
+            builder.Entity<OrganizationUnitUser>(a =>
+                {
+                    a.ToTable(options.TablePrefix + "OrganizationUnitUser", options.Schema);
+                    a.HasIndex(b => new {b.IdentityUserId, b.OrganizationId});
+                    a.Property(b => b.IdentityUserId).IsRequired();
+                    a.Property(b => b.OrganizationId).IsRequired();
+                });
         }
     }
 }
