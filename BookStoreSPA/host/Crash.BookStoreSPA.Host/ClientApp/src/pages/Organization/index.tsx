@@ -22,19 +22,13 @@ const { TreeNode } = Tree;
  * @extends {FormComponentProps}
  */
 interface ICreateFormProps extends FormComponentProps {
-  values: CreateUpdateOrganizationDto;
+  title: string;
   modalVisible: boolean;
   handleAdd: (fields: any) => void;
   handleModalVisible: (flag?: boolean, res?: any) => void;
 }
 const CreateFormFunc: React.SFC<ICreateFormProps> = props => {
-  const {
-    modalVisible,
-    form,
-    handleAdd,
-    handleModalVisible,
-    values: { title },
-  } = props;
+  const { modalVisible, form, handleAdd, handleModalVisible, title } = props;
   const okHandle = () => {
     form.validateFields((err, fieldsValue) => {
       if (err) {
@@ -227,7 +221,7 @@ class Index extends Component<IIndexProps, IIndexState> {
       type: 'organization/add',
       payload: {
         model: {
-          id: createModel.id,
+          parentId: createModel.key,
           ...fields,
         },
       },
@@ -248,10 +242,11 @@ class Index extends Component<IIndexProps, IIndexState> {
   // 处理更新操作
   public handleUpdate = fields => {
     const { dispatch } = this.props;
+    console.log(fields);
     dispatch({
       type: 'organization/update',
       payload: {
-        id: fields.id,
+        id: fields.key,
         model: fields,
       },
     }).then(() => {
@@ -261,26 +256,11 @@ class Index extends Component<IIndexProps, IIndexState> {
   };
 
   // 控制UpdateModel的显示与隐藏
-  public handleUpdateModalVisible: (flag?: boolean, id?: any) => void = (flag, id) => {
-    const { dispatch } = this.props;
-    if (id) {
-      dispatch({
-        type: 'organization/get',
-        payload: {
-          id,
-        },
-      }).then(res => {
-        this.setState({
-          updateModelVisiable: !!flag,
-          updateModel: res || {},
-        });
-      });
-    } else {
-      this.setState({
-        updateModelVisiable: !!flag,
-        updateModel: {},
-      });
-    }
+  public handleUpdateModalVisible: (flag?: boolean, res?: any) => void = (flag, res) => {
+    this.setState({
+      updateModelVisiable: !!flag,
+      updateModel: res || {},
+    });
   };
 
   //#endregion
@@ -300,6 +280,17 @@ class Index extends Component<IIndexProps, IIndexState> {
       message.info('删除成功');
     });
   };
+
+  public handleDeleteConfirm = id => {
+    Modal.confirm({
+      title: '删除机构',
+      content: '确定删除该机构及其下属机构,删除后无法恢复?',
+      okText: '确认',
+      cancelText: '取消',
+      onOk: () => this.handleDelete(id),
+    });
+  };
+
   //#endregion
 
   public renderTreeRightMenu = () => (
@@ -322,7 +313,7 @@ class Index extends Component<IIndexProps, IIndexState> {
       </Item>
       <Item
         onClick={e => {
-          this.handleDelete(e.props.key);
+          this.handleDeleteConfirm(e.props.key);
         }}
       >
         <span>
