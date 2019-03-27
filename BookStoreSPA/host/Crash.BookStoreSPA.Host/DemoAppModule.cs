@@ -22,17 +22,25 @@ using Volo.Abp.EntityFrameworkCore.DependencyInjection;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement;
+using Volo.Abp.PermissionManagement.HttpApi;
 
 namespace Crash.BookStoreSPA.Host
 {
     [DependsOn(
         typeof(AbpAutofacModule),
         typeof(AbpAspNetCoreMvcModule),
+        // 自动生成代理类
         typeof(BookStoreSPAApplicationModule),
+
+        //获取Identity管理模块API
+        typeof(AbpIdentityHttpApiModule),
+        //获取权限管理API
+        typeof(AbpPermissionManagementHttpApiModule),
         typeof(BookStoreSPAEntityFrameworkCoreModule),
         typeof(AbpIdentityApplicationModule),
         typeof(AbpPermissionManagementApplicationModule),
         typeof(AbpIdentityEntityFrameworkCoreModule),
+
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
         typeof(AbpSettingManagementEntityFrameworkCoreModule),
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),
@@ -144,7 +152,6 @@ namespace Crash.BookStoreSPA.Host
             {
                 ///显示方法调用名称
                 //options.DisplayOperationId();
-
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Support APP API");
             });
 
