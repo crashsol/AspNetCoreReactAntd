@@ -18,11 +18,14 @@ using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.VirtualFileSystem;
 using Volo.Abp.AspNetCore.Mvc;
+using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.EntityFrameworkCore.DependencyInjection;
 using Volo.Abp.Identity;
+using Volo.Abp.Identity.AspNetCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.PermissionManagement.HttpApi;
+using Volo.Abp.Threading;
 
 namespace Crash.BookStoreSPA.Host
 {
@@ -39,8 +42,11 @@ namespace Crash.BookStoreSPA.Host
         typeof(BookStoreSPAEntityFrameworkCoreModule),
         typeof(AbpIdentityApplicationModule),
         typeof(AbpPermissionManagementApplicationModule),
-        typeof(AbpIdentityEntityFrameworkCoreModule),
 
+        // Authencation 相关配置
+        typeof(AbpIdentityAspNetCoreModule),
+
+        typeof(AbpIdentityEntityFrameworkCoreModule),
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
         typeof(AbpSettingManagementEntityFrameworkCoreModule),
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),
@@ -98,6 +104,16 @@ namespace Crash.BookStoreSPA.Host
                     options.DescribeAllEnumsAsStrings();
                 });
 
+            //配置权限管理的Policy
+            Configure<PermissionManagementOptions>(options =>
+            {
+                // 配置使用Role 设置权限列表（Policy）
+                options.ProviderPolicies.Add(RolePermissionValueProvider.ProviderName, IdentityPermissions.Roles.ManagePermissions);
+
+                // 配置使用User 设置权限列表（Policy）
+                options.ProviderPolicies.Add(UserPermissionValueProvider.ProviderName, IdentityPermissions.Users.ManagePermissions);
+            });
+
             Configure<AbpLocalizationOptions>(options =>
             {
                 options.Languages.Add(new LanguageInfo("en", "en", "English"));
@@ -138,7 +154,6 @@ namespace Crash.BookStoreSPA.Host
             var app = context.GetApplicationBuilder();
             app.UseVirtualFiles();
 
-
             app.UseCors(option =>
              {
                  option.AllowAnyHeader().AllowAnyMethod()
@@ -154,21 +169,52 @@ namespace Crash.BookStoreSPA.Host
                 //options.DisplayOperationId();
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Support APP API");
             });
-
-            app.UseAuthentication();
-            app.UseAbpRequestLocalization();
-            app.UseAuditing();
-
-            app.UseMvc();
             //静态文件
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+
+            // 启用验证
+            app.UseAuthentication();
+            app.UseAbpRequestLocalization();
+            app.UseAuditing();
+            app.UseMvc();
 
             app.UseSpa(spa =>
             {
                 spa.Options.SourcePath = "ClientApp";
                 spa.UseProxyToSpaDevelopmentServer("http://localhost:8000");
             });
+
+            //初始化数据种子数据
+            SeedDatabase(context);
+        }
+
+
+        //数据库初始化
+        private static void SeedDatabase(ApplicationInitializationContext context)
+        {
+            using (var scope = context.ServiceProvider.CreateScope())
+            {
+                AsyncHelper.RunSync(async () =>
+                {
+                    var identitySeedResult = await scope.ServiceProvider
+                        .GetRequiredService<IIdentityDataSeeder>()
+                        .SeedAsync(
+                            "123qwe!@#QWE"
+                        );
+
+                    if (identitySeedResult.CreatedAdminRole)
+                    {
+                        await scope.ServiceProvider
+                            .GetRequiredService<IPermissionDataSeeder>()
+                            .SeedAsync(
+                                RolePermissionValueProvider.ProviderName,
+                                "admin",
+                                IdentityPermissions.GetAll()
+                            );
+                    }
+                });
+            }
         }
     }
 }
