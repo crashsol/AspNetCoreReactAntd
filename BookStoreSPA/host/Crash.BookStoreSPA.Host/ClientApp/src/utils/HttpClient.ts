@@ -14,10 +14,7 @@ export class Client {
   private baseUrl: string;
   protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
 
-  constructor(
-    baseUrl?: string,
-    http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }
-  ) {
+  constructor(baseUrl?: string, http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
     this.http = http ? http : <any>window;
     this.baseUrl = baseUrl ? baseUrl : '';
   }
@@ -41,9 +38,7 @@ export class Client {
     });
   }
 
-  protected processApiAbpApiDefinitionGet(
-    response: Response
-  ): Promise<ApplicationApiDescriptionModel> {
+  protected processApiAbpApiDefinitionGet(response: Response): Promise<ApplicationApiDescriptionModel> {
     const status = response.status;
     let _headers: any = {};
     if (response.headers && response.headers.forEach) {
@@ -52,20 +47,12 @@ export class Client {
     if (status === 200) {
       return response.text().then(_responseText => {
         let result200: any = null;
-        result200 =
-          _responseText === ''
-            ? null
-            : <ApplicationApiDescriptionModel>JSON.parse(_responseText, this.jsonParseReviver);
+        result200 = _responseText === '' ? null : <ApplicationApiDescriptionModel>JSON.parse(_responseText, this.jsonParseReviver);
         return result200;
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
     return Promise.resolve<ApplicationApiDescriptionModel>(<any>null);
@@ -90,9 +77,7 @@ export class Client {
     });
   }
 
-  protected processApiAbpApplicationConfigurationGet(
-    response: Response
-  ): Promise<ApplicationConfigurationDto> {
+  protected processApiAbpApplicationConfigurationGet(response: Response): Promise<ApplicationConfigurationDto> {
     const status = response.status;
     let _headers: any = {};
     if (response.headers && response.headers.forEach) {
@@ -101,20 +86,12 @@ export class Client {
     if (status === 200) {
       return response.text().then(_responseText => {
         let result200: any = null;
-        result200 =
-          _responseText === ''
-            ? null
-            : <ApplicationConfigurationDto>JSON.parse(_responseText, this.jsonParseReviver);
+        result200 = _responseText === '' ? null : <ApplicationConfigurationDto>JSON.parse(_responseText, this.jsonParseReviver);
         return result200;
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
     return Promise.resolve<ApplicationConfigurationDto>(<any>null);
@@ -148,18 +125,12 @@ export class Client {
     if (status === 200) {
       return response.text().then(_responseText => {
         let result200: any = null;
-        result200 =
-          _responseText === '' ? null : <string>JSON.parse(_responseText, this.jsonParseReviver);
+        result200 = _responseText === '' ? null : <string>JSON.parse(_responseText, this.jsonParseReviver);
         return result200;
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
     return Promise.resolve<string>(<any>null);
@@ -171,11 +142,7 @@ export class Client {
    * @param returnUrl (optional)
    * @return Success
    */
-  abpLanguagesSwitchGet(
-    culture: string | null | undefined,
-    uiCulture: string | null | undefined,
-    returnUrl: string | null | undefined
-  ): Promise<void> {
+  abpLanguagesSwitchGet(culture: string | null | undefined, uiCulture: string | null | undefined, returnUrl: string | null | undefined): Promise<void> {
     let url_ = this.baseUrl + '/Abp/Languages/Switch?';
     if (culture !== undefined) url_ += 'culture=' + encodeURIComponent('' + culture) + '&';
     if (uiCulture !== undefined) url_ += 'uiCulture=' + encodeURIComponent('' + uiCulture) + '&';
@@ -204,12 +171,7 @@ export class Client {
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
     return Promise.resolve<void>(<any>null);
@@ -231,12 +193,10 @@ export class Client {
   ): Promise<string> {
     let url_ = this.baseUrl + '/Abp/ServiceProxyScript?';
     if (type !== undefined) url_ += 'Type=' + encodeURIComponent('' + type) + '&';
-    if (useCache === undefined || useCache === null)
-      throw new Error("The parameter 'useCache' must be defined and cannot be null.");
+    if (useCache === undefined || useCache === null) throw new Error("The parameter 'useCache' must be defined and cannot be null.");
     else url_ += 'UseCache=' + encodeURIComponent('' + useCache) + '&';
     if (modules !== undefined) url_ += 'Modules=' + encodeURIComponent('' + modules) + '&';
-    if (controllers !== undefined)
-      url_ += 'Controllers=' + encodeURIComponent('' + controllers) + '&';
+    if (controllers !== undefined) url_ += 'Controllers=' + encodeURIComponent('' + controllers) + '&';
     if (actions !== undefined) url_ += 'Actions=' + encodeURIComponent('' + actions) + '&';
     url_ = url_.replace(/[?&]$/, '');
 
@@ -261,18 +221,12 @@ export class Client {
     if (status === 200) {
       return response.text().then(_responseText => {
         let result200: any = null;
-        result200 =
-          _responseText === '' ? null : <string>JSON.parse(_responseText, this.jsonParseReviver);
+        result200 = _responseText === '' ? null : <string>JSON.parse(_responseText, this.jsonParseReviver);
         return result200;
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
     return Promise.resolve<string>(<any>null);
@@ -308,18 +262,12 @@ export class Client {
     if (status === 200) {
       return response.text().then(_responseText => {
         let result200: any = null;
-        result200 =
-          _responseText === '' ? null : <BookDto>JSON.parse(_responseText, this.jsonParseReviver);
+        result200 = _responseText === '' ? null : <BookDto>JSON.parse(_responseText, this.jsonParseReviver);
         return result200;
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
     return Promise.resolve<BookDto>(<any>null);
@@ -360,18 +308,12 @@ export class Client {
     if (status === 200) {
       return response.text().then(_responseText => {
         let result200: any = null;
-        result200 =
-          _responseText === '' ? null : <BookDto>JSON.parse(_responseText, this.jsonParseReviver);
+        result200 = _responseText === '' ? null : <BookDto>JSON.parse(_responseText, this.jsonParseReviver);
         return result200;
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
     return Promise.resolve<BookDto>(<any>null);
@@ -408,12 +350,7 @@ export class Client {
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
     return Promise.resolve<void>(<any>null);
@@ -440,11 +377,9 @@ export class Client {
           url_ += 'TypeFilters=' + encodeURIComponent('' + item) + '&';
         });
     if (sorting !== undefined) url_ += 'Sorting=' + encodeURIComponent('' + sorting) + '&';
-    if (skipCount === undefined || skipCount === null)
-      throw new Error("The parameter 'skipCount' must be defined and cannot be null.");
+    if (skipCount === undefined || skipCount === null) throw new Error("The parameter 'skipCount' must be defined and cannot be null.");
     else url_ += 'SkipCount=' + encodeURIComponent('' + skipCount) + '&';
-    if (maxResultCount === undefined || maxResultCount === null)
-      throw new Error("The parameter 'maxResultCount' must be defined and cannot be null.");
+    if (maxResultCount === undefined || maxResultCount === null) throw new Error("The parameter 'maxResultCount' must be defined and cannot be null.");
     else url_ += 'MaxResultCount=' + encodeURIComponent('' + maxResultCount) + '&';
     url_ = url_.replace(/[?&]$/, '');
 
@@ -469,20 +404,12 @@ export class Client {
     if (status === 200) {
       return response.text().then(_responseText => {
         let result200: any = null;
-        result200 =
-          _responseText === ''
-            ? null
-            : <PagedResultDtoOfBookDto>JSON.parse(_responseText, this.jsonParseReviver);
+        result200 = _responseText === '' ? null : <PagedResultDtoOfBookDto>JSON.parse(_responseText, this.jsonParseReviver);
         return result200;
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
     return Promise.resolve<PagedResultDtoOfBookDto>(<any>null);
@@ -521,18 +448,12 @@ export class Client {
     if (status === 200) {
       return response.text().then(_responseText => {
         let result200: any = null;
-        result200 =
-          _responseText === '' ? null : <BookDto>JSON.parse(_responseText, this.jsonParseReviver);
+        result200 = _responseText === '' ? null : <BookDto>JSON.parse(_responseText, this.jsonParseReviver);
         return result200;
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
     return Promise.resolve<BookDto>(<any>null);
@@ -566,20 +487,12 @@ export class Client {
     if (status === 200) {
       return response.text().then(_responseText => {
         let result200: any = null;
-        result200 =
-          _responseText === ''
-            ? null
-            : <OrganizationDto[]>JSON.parse(_responseText, this.jsonParseReviver);
+        result200 = _responseText === '' ? null : <OrganizationDto[]>JSON.parse(_responseText, this.jsonParseReviver);
         return result200;
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
     return Promise.resolve<OrganizationDto[]>(<any>null);
@@ -589,9 +502,7 @@ export class Client {
    * @param dto (optional)
    * @return Success
    */
-  apiAppOrganizationPost(
-    dto: CreateUpdateOrganizationDto | null | undefined
-  ): Promise<OrganizationDto> {
+  apiAppOrganizationPost(dto: CreateUpdateOrganizationDto | null | undefined): Promise<OrganizationDto[]> {
     let url_ = this.baseUrl + '/api/app/organization';
     url_ = url_.replace(/[?&]$/, '');
 
@@ -611,7 +522,7 @@ export class Client {
     });
   }
 
-  protected processApiAppOrganizationPost(response: Response): Promise<OrganizationDto> {
+  protected processApiAppOrganizationPost(response: Response): Promise<OrganizationDto[]> {
     const status = response.status;
     let _headers: any = {};
     if (response.headers && response.headers.forEach) {
@@ -620,33 +531,22 @@ export class Client {
     if (status === 200) {
       return response.text().then(_responseText => {
         let result200: any = null;
-        result200 =
-          _responseText === ''
-            ? null
-            : <OrganizationDto>JSON.parse(_responseText, this.jsonParseReviver);
+        result200 = _responseText === '' ? null : <OrganizationDto[]>JSON.parse(_responseText, this.jsonParseReviver);
         return result200;
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
-    return Promise.resolve<OrganizationDto>(<any>null);
+    return Promise.resolve<OrganizationDto[]>(<any>null);
   }
 
   /**
    * @param dto (optional)
    * @return Success
    */
-  apiAppOrganizationByIdPut(
-    id: string,
-    dto: CreateUpdateOrganizationDto | null | undefined
-  ): Promise<OrganizationDto> {
+  apiAppOrganizationByIdPut(id: string, dto: CreateUpdateOrganizationDto | null | undefined): Promise<OrganizationDto[]> {
     let url_ = this.baseUrl + '/api/app/organization/{id}';
     if (id === undefined || id === null) throw new Error("The parameter 'id' must be defined.");
     url_ = url_.replace('{id}', encodeURIComponent('' + id));
@@ -668,7 +568,7 @@ export class Client {
     });
   }
 
-  protected processApiAppOrganizationByIdPut(response: Response): Promise<OrganizationDto> {
+  protected processApiAppOrganizationByIdPut(response: Response): Promise<OrganizationDto[]> {
     const status = response.status;
     let _headers: any = {};
     if (response.headers && response.headers.forEach) {
@@ -677,29 +577,21 @@ export class Client {
     if (status === 200) {
       return response.text().then(_responseText => {
         let result200: any = null;
-        result200 =
-          _responseText === ''
-            ? null
-            : <OrganizationDto>JSON.parse(_responseText, this.jsonParseReviver);
+        result200 = _responseText === '' ? null : <OrganizationDto[]>JSON.parse(_responseText, this.jsonParseReviver);
         return result200;
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
-    return Promise.resolve<OrganizationDto>(<any>null);
+    return Promise.resolve<OrganizationDto[]>(<any>null);
   }
 
   /**
    * @return Success
    */
-  apiAppOrganizationByIdDelete(id: string): Promise<void> {
+  apiAppOrganizationByIdDelete(id: string): Promise<OrganizationDto[]> {
     let url_ = this.baseUrl + '/api/app/organization/{id}';
     if (id === undefined || id === null) throw new Error("The parameter 'id' must be defined.");
     url_ = url_.replace('{id}', encodeURIComponent('' + id));
@@ -707,7 +599,9 @@ export class Client {
 
     let options_ = <RequestInit>{
       method: 'DELETE',
-      headers: {},
+      headers: {
+        Accept: 'application/json',
+      },
     };
 
     return this.http.fetch(url_, options_).then((_response: Response) => {
@@ -715,7 +609,7 @@ export class Client {
     });
   }
 
-  protected processApiAppOrganizationByIdDelete(response: Response): Promise<void> {
+  protected processApiAppOrganizationByIdDelete(response: Response): Promise<OrganizationDto[]> {
     const status = response.status;
     let _headers: any = {};
     if (response.headers && response.headers.forEach) {
@@ -723,19 +617,16 @@ export class Client {
     }
     if (status === 200) {
       return response.text().then(_responseText => {
-        return;
+        let result200: any = null;
+        result200 = _responseText === '' ? null : <OrganizationDto[]>JSON.parse(_responseText, this.jsonParseReviver);
+        return result200;
       });
     } else if (status !== 200 && status !== 204) {
       return response.text().then(_responseText => {
-        return throwException(
-          'An unexpected server error occurred.',
-          status,
-          _responseText,
-          _headers
-        );
+        return throwException('An unexpected server error occurred.', status, _responseText, _headers);
       });
     }
-    return Promise.resolve<void>(<any>null);
+    return Promise.resolve<OrganizationDto[]>(<any>null);
   }
 }
 
@@ -896,13 +787,7 @@ export class SwaggerException extends Error {
   headers: { [key: string]: any };
   result: any;
 
-  constructor(
-    message: string,
-    status: number,
-    response: string,
-    headers: { [key: string]: any },
-    result: any
-  ) {
+  constructor(message: string, status: number, response: string, headers: { [key: string]: any }, result: any) {
     super();
 
     this.message = message;
@@ -919,13 +804,7 @@ export class SwaggerException extends Error {
   }
 }
 
-function throwException(
-  message: string,
-  status: number,
-  response: string,
-  headers: { [key: string]: any },
-  result?: any
-): any {
+function throwException(message: string, status: number, response: string, headers: { [key: string]: any }, result?: any): any {
   if (result !== null && result !== undefined) throw result;
   else throw new SwaggerException(message, status, response, headers, null);
 }

@@ -42,4 +42,5 @@ export default {
   'menu.system': '后台管理',
   'menu.system.book': '书籍管理',
   'menu.system.organization': '组织机构',
+  'menu.system.rightclick': '右键菜单',
 };

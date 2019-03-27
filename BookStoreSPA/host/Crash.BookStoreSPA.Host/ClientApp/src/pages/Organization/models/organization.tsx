@@ -38,54 +38,40 @@ const OrganizationModel: IOrganizationModel = {
     *fetch({ payload }, { put, call, select }) {
       // 请求前构建后台查询
       const response = yield http.apiAppOrganizationGet();
-      console.log(response);
-      const data = {
-        list: response,
-      };
       yield put({
         type: 'save',
-        payload: data,
+        payload: {
+          list: response,
+        },
       });
     },
     *add({ payload }, { put, select }) {
-      const response = yield http.apiAppOrganizationPost(payload.model);
-      const stateTemp: IOrganizationModelState = yield select(state => state.organization);
-      const data = {
-        list: [response, ...stateTemp.data.list.splice(0, 9)],
-      };
+      const response: OrganizationDto = yield http.apiAppOrganizationPost(payload.model);
       yield put({
         type: 'save',
-        payload: data,
+        payload: {
+          list: response,
+        },
       });
     },
     *update({ payload }, { put, call, select }) {
       const { id, model } = payload;
       const response = yield http.apiAppOrganizationByIdPut(id, model);
-      const stateTemp: IOrganizationModelState = yield select(state => state.organization);
-      const data = {
-        list: stateTemp.data.list.map(item => {
-          if (item.key === id) {
-            return response;
-          } else {
-            return item;
-          }
-        }),
-      };
       yield put({
         type: 'save',
-        payload: data,
+        payload: {
+          list: response,
+        },
       });
     },
     *remove({ payload }, { put, call, select }) {
       const { id } = payload;
-      yield http.apiAppOrganizationByIdDelete(id);
-      const stateTemp: IOrganizationModelState = yield select(state => state.organization);
-      const data = {
-        list: stateTemp.data.list.filter(b => b.key !== id),
-      };
+      const response = yield http.apiAppOrganizationByIdDelete(id);
       yield put({
         type: 'save',
-        payload: data,
+        payload: {
+          list: response,
+        },
       });
     },
   },

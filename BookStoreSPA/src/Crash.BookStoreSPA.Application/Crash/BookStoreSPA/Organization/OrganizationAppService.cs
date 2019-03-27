@@ -22,7 +22,7 @@ namespace Crash.BookStoreSPA.Organization
 
         #region 组织单元管理
 
-        public async Task<OrganizationDto> CreateAsync(CreateUpdateOrganizationDto dto)
+        public async Task<List<OrganizationDto>> CreateAsync(CreateUpdateOrganizationDto dto)
         {
             if (dto.ParentId.HasValue)
             {
@@ -30,7 +30,6 @@ namespace Crash.BookStoreSPA.Organization
                 var parent = await _repository.GetAsync(dto.ParentId.Value);
                 parent.AddChildrenNode(dto.Title);
                 await _repository.UpdateAsync(parent,true);
-                return ObjectMapper.Map<OrganizationUnit, OrganizationDto>(parent);
             }
             else
             {
@@ -39,34 +38,42 @@ namespace Crash.BookStoreSPA.Organization
                 //添加根节点
                 var rootNode = new OrganizationUnit(id, null, dto.Title, rootCount);
                 await _repository.InsertAsync(rootNode,true);
-                return ObjectMapper.Map<OrganizationUnit, OrganizationDto>(rootNode);
             }
+
+            return await OrganizationTree();
         }
 
-        public async Task DeleteAsync(Guid id)
+        public async Task<List<OrganizationDto>> DeleteAsync(Guid id)
         {
             var entity = await _repository.GetAsync(id);
             if (entity != null)
             {
-               await _repository.DeleteAsync(entity,true);
+                //移除该节点下所有的节点
+               await _repository.DeleteAsync(b=>b.Code.StartsWith(entity.Code),true);
             }
+
+            return await OrganizationTree();
         }
 
         public async Task<List<OrganizationDto>> GetListAsync()
+        {
+            return await OrganizationTree();
+        }
+
+        public async Task<List<OrganizationDto>> UpdateAsync(Guid id, CreateUpdateOrganizationDto dto)
+        {
+            var entity =await _repository.GetAsync(id);
+            entity.UpdateTitle(dto.Title);
+            await _repository.UpdateAsync(entity,true);
+            return await OrganizationTree();
+        }
+
+        private async Task<List<OrganizationDto>> OrganizationTree()
         {
             var allNodes = await _repository.GetListAsync(true);
             return ObjectMapper.Map<List<OrganizationUnit>, List<OrganizationDto>>(
                 allNodes.Where(b => b.ParentId == null).ToList());
         }
-
-        public async Task<OrganizationDto> UpdateAsync(Guid id, CreateUpdateOrganizationDto dto)
-        {
-            var entity =await _repository.GetAsync(id);
-            entity.UpdateTitle(dto.Title);
-            await _repository.UpdateAsync(entity,true);
-            return ObjectMapper.Map<OrganizationUnit, OrganizationDto>(entity);
-        }
-     
         
 
         #endregion

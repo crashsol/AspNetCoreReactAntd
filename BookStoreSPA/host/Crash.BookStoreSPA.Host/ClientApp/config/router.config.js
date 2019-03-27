@@ -63,6 +63,11 @@ export default [
             name: 'organization',
             component: './Organization/Index',
           },
+          {
+            path: '/system/rightlick',
+            name: 'rightclick',
+            component: './Organization/rightClick',
+          },
         ],
       },
       // forms

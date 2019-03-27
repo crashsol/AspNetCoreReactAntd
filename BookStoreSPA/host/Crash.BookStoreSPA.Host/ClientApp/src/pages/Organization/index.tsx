@@ -1,46 +1,17 @@
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
-import StandardTable from '@/components/StandardTable';
 import { CreateUpdateOrganizationDto, OrganizationDto } from '@/utils/HttpClient';
-import {
-  Button,
-  Card,
-  Col,
-  Divider,
-  Dropdown,
-  Icon,
-  Input,
-  Menu,
-  message,
-  Modal,
-  Popconfirm,
-  Row,
-  Tree,
-} from 'antd';
+import { Button, Card, Col, Icon, Input, message, Modal, Row, Tree } from 'antd';
 import Form, { FormComponentProps } from 'antd/lib/form';
 import FormItem from 'antd/lib/form/FormItem';
-import { PaginationConfig, SorterResult } from 'antd/lib/table';
 import { connect } from 'dva';
-import React, { Component, Fragment, PureComponent } from 'react';
-// import styles from './Index.less';
-const styles = require('./Index.less');
+import React, { Component, PureComponent } from 'react';
+
+// 导入右键菜单选项
+import { Item, Menu as RightMenu, MenuProvider } from 'react-contexify';
+import 'react-contexify/dist/ReactContexify.min.css';
 import { IOrganizationModelState } from './models/organization';
 
 const { TreeNode } = Tree;
-/* 如果创建的表单中有Enum类型，可以使用以下方法
-import { EnumToStatusMap, EnumToTableFilter } from '@/utils/AbpUtils';
-const SelectOption = Select.Option;
-const statusMap = EnumToStatusMap();
-const fileterMap = EnumToTableFilter();
-const EnumToSelectOptions = enumType => {
-  return Object.keys(enumType).map(key => {
-    return (
-      <SelectOption key={key} value={key}>
-        {enumType[key]}
-      </SelectOption>
-    );
-  });
-};
-*/
 
 //#region Create页面
 
@@ -51,12 +22,19 @@ const EnumToSelectOptions = enumType => {
  * @extends {FormComponentProps}
  */
 interface ICreateFormProps extends FormComponentProps {
+  values: CreateUpdateOrganizationDto;
   modalVisible: boolean;
   handleAdd: (fields: any) => void;
-  handleModalVisible: (flag?: boolean) => void;
+  handleModalVisible: (flag?: boolean, res?: any) => void;
 }
 const CreateFormFunc: React.SFC<ICreateFormProps> = props => {
-  const { modalVisible, form, handleAdd, handleModalVisible } = props;
+  const {
+    modalVisible,
+    form,
+    handleAdd,
+    handleModalVisible,
+    values: { title },
+  } = props;
   const okHandle = () => {
     form.validateFields((err, fieldsValue) => {
       if (err) {
@@ -81,10 +59,10 @@ const CreateFormFunc: React.SFC<ICreateFormProps> = props => {
     <Modal
       width={640}
       destroyOnClose={true}
-      title="新增数据"
+      title={title ? `新增 ${title} 下级机构` : '新增机构'}
       visible={modalVisible}
       onOk={okHandle}
-      onCancel={() => handleModalVisible()}
+      onCancel={() => handleModalVisible(false)}
     >
       <Form>
         <FormItem {...formLayout} label="机构名称">
@@ -126,21 +104,20 @@ interface IUpdateFormState {
 
 class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
   // 页面布局
-  public formLayout: object;
+  public formLayout = {
+    labelCol: {
+      xs: { span: 24 },
+      sm: { span: 6 },
+    },
+    wrapperCol: {
+      xs: { span: 24 },
+      sm: { span: 16 },
+    },
+  };
   constructor(props) {
     super(props);
     this.state = {
       updateModel: props.values,
-    };
-    this.formLayout = {
-      labelCol: {
-        xs: { span: 24 },
-        sm: { span: 6 },
-      },
-      wrapperCol: {
-        xs: { span: 24 },
-        sm: { span: 16 },
-      },
     };
   }
 
@@ -160,13 +137,7 @@ class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
     const { form, updateModalVisible, handleUpdateModalVisible } = this.props;
     const { updateModel } = this.state;
     return (
-      <Modal
-        width={640}
-        title="更新机构"
-        visible={updateModalVisible}
-        onCancel={() => handleUpdateModalVisible(false)}
-        onOk={this.handleUpdateFunc}
-      >
+      <Modal width={640} title="更新机构" visible={updateModalVisible} onCancel={() => handleUpdateModalVisible(false)} onOk={this.handleUpdateFunc}>
         <Form>
           <FormItem {...this.formLayout} label="机构名称">
             {form.getFieldDecorator('title', {
@@ -203,10 +174,8 @@ interface IIndexProps extends FormComponentProps {
  */
 interface IIndexState {
   createModelVisiable: boolean;
+  createModel: object;
   updateModelVisiable: boolean;
-  expandForm: boolean; // 是否展开查询Form
-  selectedRows: any[]; // 已经选中的行
-  searchForm: object; // 查询对象的值
   updateModel: object; // 页面要更新的对象
 }
 // tslint:disable-next-line:max-classes-per-file
@@ -215,36 +184,13 @@ interface IIndexState {
   loading: loading.models.organization,
 }))
 class Index extends Component<IIndexProps, IIndexState> {
-  /* 创建 table columns 的列定义*/
-  public columns = [
-    {
-      title: '书籍名称',
-      dataIndex: 'name',
-    },
-
-    {
-      title: '操作',
-      render: (text, record) => (
-        <Fragment>
-          <a onClick={() => this.handleUpdateModalVisible(true, record.id)}>编辑</a>
-          <Divider type="vertical" />
-          <Popconfirm title="是否要删除此行？" onConfirm={() => this.handleDelete(record.id)}>
-            <a>删除</a>
-          </Popconfirm>
-        </Fragment>
-      ),
-    },
-  ];
-
-  public constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       createModelVisiable: false,
       updateModelVisiable: false,
-      expandForm: false,
-      selectedRows: [],
       updateModel: {},
-      searchForm: {},
+      createModel: {},
     };
   }
 
@@ -256,32 +202,6 @@ class Index extends Component<IIndexProps, IIndexState> {
     });
   }
 
-  //#region 查询表单
-  /**
-   * from查询
-   * @memberof index
-   */
-  public handleSearch = e => {
-    e.preventDefault();
-    const { dispatch, form } = this.props;
-    form.validateFields((err, fieldsValues) => {
-      if (err) {
-        return;
-      }
-      const values = {
-        ...fieldsValues,
-      };
-      this.setState({
-        searchForm: values,
-      });
-      // 进行查询
-      dispatch({
-        type: 'organization/fetch',
-        payload: values,
-      });
-    });
-  };
-
   /**
    * 重置查询表单
    * @memberof index
@@ -290,10 +210,6 @@ class Index extends Component<IIndexProps, IIndexState> {
     const { form, dispatch } = this.props;
     // 重置表单
     form.resetFields();
-    // 清空正在编辑
-    this.setState({
-      searchForm: {},
-    });
     /// 发出请求
     dispatch({
       type: 'organization/fetch',
@@ -306,10 +222,14 @@ class Index extends Component<IIndexProps, IIndexState> {
   // 处理创建操作
   public handleCreate = fields => {
     const { dispatch } = this.props;
+    const { createModel } = this.state;
     dispatch({
       type: 'organization/add',
       payload: {
-        model: fields,
+        model: {
+          id: createModel.id,
+          ...fields,
+        },
       },
     }).then(() => {
       message.success('添加成功');
@@ -318,9 +238,10 @@ class Index extends Component<IIndexProps, IIndexState> {
   };
 
   /// 控制CreateModel的显示与隐藏
-  public handleCreateModalVisible: (flag?: boolean) => void = flag => {
+  public handleCreateModalVisible: (flag?: boolean, res?: any) => void = (flag, res) => {
     this.setState({
       createModelVisiable: !!flag,
+      createModel: res || {},
     });
   };
 
@@ -381,113 +302,58 @@ class Index extends Component<IIndexProps, IIndexState> {
   };
   //#endregion
 
-  //#region 菜单操作
-  /**
-   * 选中多行菜单时间，可以扩展导出Excle
-   * @memberof index
-   */
-  public handleMenuClick = e => {
-    const { dispatch } = this.props;
-    const { selectedRows } = this.state;
-    if (selectedRows.length === 0) {
-      return;
-    }
-    switch (e.key) {
-      case 'remove':
-        dispatch({
-          type: 'organization/remove',
-          payload: {
-            key: selectedRows.map(row => row.key),
-          },
-        }).then(() => {
-          this.setState({
-            selectedRows: [],
-          });
-        });
-        break;
-      default:
-        break;
-    }
-  };
+  public renderTreeRightMenu = () => (
+    <RightMenu id="menu_id">
+      <Item onClick={e => this.handleCreateModalVisible(true, e.props)}>
+        <span>
+          <Icon type="plus" />
+          添加下级机构
+        </span>
+      </Item>
+      <Item
+        onClick={e => {
+          this.handleUpdateModalVisible(true, e.props);
+        }}
+      >
+        <span>
+          <Icon type="edit" />
+          修改名称
+        </span>
+      </Item>
+      <Item
+        onClick={e => {
+          this.handleDelete(e.props.key);
+        }}
+      >
+        <span>
+          <Icon type="delete" />
+          删除机构
+        </span>
+      </Item>
+    </RightMenu>
+  );
 
-  /// 选中行操作
-  public handleSelectRows = rows => {
-    this.setState({
-      selectedRows: rows,
-    });
-  };
-  //#endregion
-
-  //#region  分页操作
-  // 表格分页操作
-
-  public handleStandardTableChange: (
-    pagination: PaginationConfig,
-    filters: Record<any, any>,
-    sorter: SorterResult<any>
-  ) => void = (pagination, filtersArg, sorter) => {
-    const { dispatch } = this.props;
-    const { searchForm } = this.state;
-    // filtersArg 为table过滤参数
-    const params = {
-      current: pagination.current,
-      pageSize: pagination.pageSize,
-      sorting: '',
-      ...filtersArg,
-      ...searchForm,
-    };
-    // 排序条件
-    if (sorter.field) {
-      // 将AntdTable内置的排序转换成服务端排序
-      const serverSort = sorter.order === 'ascend' ? 'Asc' : 'Desc';
-      params.sorting = `${sorter.field} ${serverSort}`;
-    }
-    dispatch({
-      type: 'organization/fetch',
-      payload: params,
-    });
-  };
-
-  //#endregion
-
-  // 查询条件表单生成
-  public renderForm() {
-    const { getFieldDecorator } = this.props.form;
-    return (
-      <Form onSubmit={this.handleSearch} layout="inline">
-        <Row gutter={{ md: 8, lg: 24, xl: 48 }}>
-          <Col md={8} sm={24}>
-            <FormItem label="书籍名称">
-              {getFieldDecorator('name')(<Input placeholder="请输入书籍名称进行查询" />)}
-            </FormItem>
-          </Col>
-          {/* 构建查询from表单*/}
-          <Col md={4} sm={24}>
-            <span>
-              <Button type="primary" htmlType="submit">
-                查询
-              </Button>
-              <Button style={{ marginLeft: 8 }} onClick={this.handleFormReset}>
-                重置
-              </Button>
-            </span>
-          </Col>
-        </Row>
-      </Form>
-    );
-  }
-
+  // 创建树形节点
   public renderTreeNodes = (data: OrganizationDto[]) =>
     data.map((item: OrganizationDto) => {
-      if (item.children) {
+      const temp = {
+        title: item.title,
+        key: item.key,
+      };
+      const title = (
+        <MenuProvider id="menu_id" data-key={item.key} data={temp}>
+          {item.title}
+        </MenuProvider>
+      );
+      if (item.children && item.children.length > 0) {
         return (
-          <TreeNode title={item.title} key={item.key} dataRef={item}>
+          <TreeNode title={title} key={item.key} dataRef={item}>
             {this.renderTreeNodes(item.children)}
           </TreeNode>
         );
       }
       // tslint:disable-next-line:jsx-key
-      return <TreeNode {...item} />;
+      return <TreeNode key={item.key} title={title} />;
     });
 
   public render() {
@@ -495,16 +361,8 @@ class Index extends Component<IIndexProps, IIndexState> {
       organization: { data },
       loading,
     } = this.props;
-    const { selectedRows, createModelVisiable, updateModelVisiable, updateModel } = this.state;
-    console.log(data.list);
+    const { createModelVisiable, updateModelVisiable, updateModel, createModel } = this.state;
 
-    // 选中操作菜单
-    const menu = (
-      <Menu onClick={this.handleMenuClick} selectedKeys={[]}>
-        <Menu.Item key="remove">删除</Menu.Item>
-        <Menu.Item key="export">批量导出</Menu.Item>
-      </Menu>
-    );
     // 新增操作
     const createMethods = {
       handleAdd: this.handleCreate,
@@ -520,73 +378,26 @@ class Index extends Component<IIndexProps, IIndexState> {
     return (
       <PageHeaderWrapper title="组织架构">
         <Row gutter={24}>
-          <Col span={6}>
+          <Col span={10}>
             <Card
+              loading={loading}
               bordered={true}
               title="组织架构"
               extra={
-                <Button
-                  icon="plus"
-                  type="primary"
-                  onClick={() => this.handleCreateModalVisible(true)}
-                >
+                <Button icon="plus" type="primary" onClick={() => this.handleCreateModalVisible(true)}>
                   添加机构
                 </Button>
               }
             >
-              <Tree>{this.renderTreeNodes(data.list)}</Tree>
-            </Card>
-          </Col>
-          <Col span={18}>
-            <Card bordered={true}>
-              <div className={styles.tableList}>
-                <div className={styles.tableListForm}>{this.renderForm()}</div>
-                <div className={styles.tableListOperator}>
-                  <Button
-                    icon="plus"
-                    type="primary"
-                    onClick={() => this.handleCreateModalVisible(true)}
-                  >
-                    新建
-                  </Button>
-                  {selectedRows.length > 0 && (
-                    <span>
-                      <Button type="danger" icon="delete">
-                        批量删除
-                      </Button>
-                      {
-                        <Dropdown overlay={menu}>
-                          <Button>
-                            更多操作 <Icon type="down" />
-                          </Button>
-                        </Dropdown>
-                      }
-                    </span>
-                  )}
-                </div>
-                {
-                  <StandardTable
-                    selectedRows={selectedRows}
-                    loading={loading}
-                    data={data}
-                    columns={this.columns}
-                    onSelectRow={this.handleSelectRows}
-                    onChange={this.handleStandardTableChange}
-                    rowKey="id"
-                  />
-                }
-              </div>
+              <Tree showLine={true} defaultExpandAll={true}>
+                {this.renderTreeNodes(data.list)}
+              </Tree>
             </Card>
           </Col>
         </Row>
-        <CreateForm {...createMethods} modalVisible={createModelVisiable} />
-        {updateModel && Object.keys(updateModel).length ? (
-          <UpdateForm
-            {...updateMethods}
-            updateModalVisible={updateModelVisiable}
-            values={updateModel}
-          />
-        ) : null}
+        <CreateForm {...createMethods} modalVisible={createModelVisiable} title={createModel.title} />
+        {updateModel && Object.keys(updateModel).length ? <UpdateForm {...updateMethods} updateModalVisible={updateModelVisiable} values={updateModel} /> : null}
+        {this.renderTreeRightMenu()}
       </PageHeaderWrapper>
     );
   }
