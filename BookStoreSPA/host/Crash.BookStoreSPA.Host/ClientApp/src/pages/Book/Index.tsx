@@ -1,25 +1,8 @@
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import StandardTable from '@/components/StandardTable';
-import { EnumToStatusMap, EnumToTableFilter } from '@/utils/AbpUtils';
-import { CreateUpdateBookDto, CreateUpdateBookDtoType } from '@/utils/HttpClient';
-import {
-  Badge,
-  Button,
-  Card,
-  Col,
-  DatePicker,
-  Divider,
-  Dropdown,
-  Icon,
-  Input,
-  InputNumber,
-  Menu,
-  message,
-  Modal,
-  Popconfirm,
-  Row,
-  Select,
-} from 'antd';
+import { EnumToTableFilter as ConvertEnumToTableFilter, EnumTypeStatusNames as GetEnumTypeNames } from '@/utils/AbpUtils';
+import { BookType, CreateUpdateBookDto } from '@/utils/HttpClient';
+import { Badge, Button, Card, Col, DatePicker, Divider, Dropdown, Icon, Input, InputNumber, Menu, message, Modal, Popconfirm, Row, Select } from 'antd';
 import Form, { FormComponentProps } from 'antd/lib/form';
 import FormItem from 'antd/lib/form/FormItem';
 import { connect } from 'dva';
@@ -29,14 +12,14 @@ import styles from './Index.less';
 import { IBookModelState } from './models/book';
 const SelectOption = Select.Option;
 
-const statusMap = EnumToStatusMap(CreateUpdateBookDtoType);
-const fileterMap = EnumToTableFilter(CreateUpdateBookDtoType);
+const statusMap = GetEnumTypeNames(BookType);
+const fileterMap = ConvertEnumToTableFilter(BookType);
 
 const EnumToSelectOptions = enumType => {
-  return Object.keys(enumType).map(key => {
+  return ConvertEnumToTableFilter(enumType).map(item => {
     return (
-      <SelectOption key={key} value={key}>
-        {enumType[key]}
+      <SelectOption key={item.value} value={item.value}>
+        {item.text}
       </SelectOption>
     );
   });
@@ -78,14 +61,7 @@ const CreateFormFunc: React.SFC<ICreateFormProps> = props => {
   };
 
   return (
-    <Modal
-      width={640}
-      destroyOnClose={true}
-      title="新增数据"
-      visible={modalVisible}
-      onOk={okHandle}
-      onCancel={() => handleModalVisible()}
-    >
+    <Modal width={640} destroyOnClose={true} title="新增数据" visible={modalVisible} onOk={okHandle} onCancel={() => handleModalVisible()}>
       <Form>
         <FormItem {...formLayout} label="书籍名称">
           {form.getFieldDecorator('name', {
@@ -102,11 +78,7 @@ const CreateFormFunc: React.SFC<ICreateFormProps> = props => {
           {form.getFieldDecorator('type', {
             rules: [{ required: true, message: '请选择书籍类型' }],
             initialValue: 'Undefined',
-          })(
-            <Select placeholder="选择书籍类型">
-              {EnumToSelectOptions(CreateUpdateBookDtoType)}
-            </Select>
-          )}
+          })(<Select placeholder="选择书籍类型">{EnumToSelectOptions(BookType)}</Select>)}
         </FormItem>
         <FormItem {...formLayout} label="发布时间">
           {form.getFieldDecorator('publishDate', {
@@ -181,13 +153,7 @@ class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
     const { form, updateModalVisible, handleUpdateModalVisible } = this.props;
     const { updateModel } = this.state;
     return (
-      <Modal
-        width={640}
-        title="更新书籍"
-        visible={updateModalVisible}
-        onCancel={() => handleUpdateModalVisible(false)}
-        onOk={this.handleUpdateFunc}
-      >
+      <Modal width={640} title="更新书籍" visible={updateModalVisible} onCancel={() => handleUpdateModalVisible(false)} onOk={this.handleUpdateFunc}>
         <Form>
           <FormItem {...this.formLayout} label="书籍名称">
             {form.getFieldDecorator('name', {
@@ -205,11 +171,7 @@ class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
             {form.getFieldDecorator('type', {
               rules: [{ required: true, message: '请选择书籍类型' }],
               initialValue: statusMap[updateModel.type],
-            })(
-              <Select placeholder="选择书籍类型">
-                {EnumToSelectOptions(CreateUpdateBookDtoType)}
-              </Select>
-            )}
+            })(<Select placeholder="选择书籍类型">{EnumToSelectOptions(BookType)}</Select>)}
           </FormItem>
           <FormItem {...this.formLayout} label="发布时间">
             {form.getFieldDecorator('publishDate', {
@@ -481,11 +443,7 @@ class Index extends Component<IIndexProps, IIndexState> {
   //#region  分页操作
   // 表格分页操作
 
-  public handleStandardTableChange: (
-    pagination: PaginationConfig,
-    filters: Record<any, any>,
-    sorter: SorterResult<any>
-  ) => void = (pagination, filtersArg, sorter) => {
+  public handleStandardTableChange: (pagination: PaginationConfig, filters: Record<any, any>, sorter: SorterResult<any>) => void = (pagination, filtersArg, sorter) => {
     const { dispatch } = this.props;
     const { searchForm } = this.state;
     // filtersArg 为table过滤参数
@@ -517,15 +475,13 @@ class Index extends Component<IIndexProps, IIndexState> {
       <Form onSubmit={this.handleSearch} layout="inline">
         <Row gutter={{ md: 8, lg: 24, xl: 48 }}>
           <Col md={8} sm={24}>
-            <FormItem label="书籍名称">
-              {getFieldDecorator('name')(<Input placeholder="请输入书籍名称进行查询" />)}
-            </FormItem>
+            <FormItem label="书籍名称">{getFieldDecorator('name')(<Input placeholder="请输入书籍名称进行查询" />)}</FormItem>
           </Col>
           <Col md={12} sm={24}>
             <FormItem label="书籍类型">
               {getFieldDecorator('type')(
                 <Select placeholder="书籍类型" mode="multiple">
-                  {EnumToSelectOptions(CreateUpdateBookDtoType)}
+                  {EnumToSelectOptions(BookType)}
                 </Select>
               )}
             </FormItem>
@@ -578,11 +534,7 @@ class Index extends Component<IIndexProps, IIndexState> {
           <div className={styles.tableList}>
             <div className={styles.tableListForm}>{this.renderForm()}</div>
             <div className={styles.tableListOperator}>
-              <Button
-                icon="plus"
-                type="primary"
-                onClick={() => this.handleCreateModalVisible(true)}
-              >
+              <Button icon="plus" type="primary" onClick={() => this.handleCreateModalVisible(true)}>
                 新建
               </Button>
               {selectedRows.length > 0 && (
@@ -614,13 +566,7 @@ class Index extends Component<IIndexProps, IIndexState> {
           </div>
         </Card>
         <CreateForm {...createMethods} modalVisible={createModelVisiable} />
-        {updateModel && Object.keys(updateModel).length ? (
-          <UpdateForm
-            {...updateMethods}
-            updateModalVisible={updateModelVisiable}
-            values={updateModel}
-          />
-        ) : null}
+        {updateModel && Object.keys(updateModel).length ? <UpdateForm {...updateMethods} updateModalVisible={updateModelVisiable} values={updateModel} /> : null}
       </PageHeaderWrapper>
     );
   }

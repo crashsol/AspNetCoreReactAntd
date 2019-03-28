@@ -1,8 +1,8 @@
-import { Client, OrganizationDto } from '@/utils/HttpClient';
+import { OrganizationClient, OrganizationDto } from '@/utils/HttpClient';
 import { Effect } from 'dva';
 import { Reducer } from 'redux';
 
-const http = new Client();
+const organizationClient = new OrganizationClient();
 
 // 定义OrganizationStateModel
 export interface IOrganizationModelState {
@@ -37,7 +37,7 @@ const OrganizationModel: IOrganizationModel = {
   effects: {
     *fetch({ payload }, { put, call, select }) {
       // 请求前构建后台查询
-      const response = yield http.apiAppOrganizationGet();
+      const response = yield organizationClient.getList();
       yield put({
         type: 'save',
         payload: {
@@ -46,7 +46,7 @@ const OrganizationModel: IOrganizationModel = {
       });
     },
     *add({ payload }, { put, select }) {
-      const response: OrganizationDto = yield http.apiAppOrganizationPost(payload.model);
+      const response: OrganizationDto = yield organizationClient.create(payload.model);
       yield put({
         type: 'save',
         payload: {
@@ -56,7 +56,7 @@ const OrganizationModel: IOrganizationModel = {
     },
     *update({ payload }, { put, call, select }) {
       const { id, model } = payload;
-      const response = yield http.apiAppOrganizationByIdPut(id, model);
+      const response = yield organizationClient.update(id, model);
       yield put({
         type: 'save',
         payload: {
@@ -66,7 +66,7 @@ const OrganizationModel: IOrganizationModel = {
     },
     *remove({ payload }, { put, call, select }) {
       const { id } = payload;
-      const response = yield http.apiAppOrganizationByIdDelete(id);
+      const response = yield organizationClient.delete(id);
       yield put({
         type: 'save',
         payload: {

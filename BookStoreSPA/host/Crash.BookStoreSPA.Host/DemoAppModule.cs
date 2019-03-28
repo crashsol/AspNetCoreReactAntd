@@ -1,11 +1,10 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Crash.BookStoreSPA.EntityFrameworkCore;
-using Crash.BookStoreSPA.Organization;
-using Swashbuckle.AspNetCore.Swagger;
 using Volo.Abp;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.Autofac;
@@ -19,13 +18,13 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.VirtualFileSystem;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Authorization.Permissions;
-using Volo.Abp.EntityFrameworkCore.DependencyInjection;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.AspNetCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.Threading;
+using NSwag.AspNetCore;
 
 namespace Crash.BookStoreSPA.Host
 {
@@ -91,18 +90,11 @@ namespace Crash.BookStoreSPA.Host
                 });
             }
 
-            ///用于配置生成Swagger documents
-            context.Services.AddSwaggerGen(
-                options =>
-                {
-                    options.SwaggerDoc("v1", new Info { Title = "BookStoreSPA API", Version = "v1" });
-                    options.DocInclusionPredicate((docName, description) => true);
-                    ///使用model的命名空间区分model，(e.g. "RequestModels.Product" & "ResponseModels.Product")
-                    //options.CustomSchemaIds(type => type.Name);                   
-
-                    //将enum装换成字符串
-                    options.DescribeAllEnumsAsStrings();
-                });
+            // NSwag 注入
+            context.Services.AddSwaggerDocument(doc =>
+            {
+                doc.DocumentName = "BookStore";
+            });
 
             //配置权限管理的Policy
             Configure<PermissionManagementOptions>(options =>
@@ -160,16 +152,13 @@ namespace Crash.BookStoreSPA.Host
                  .AllowAnyOrigin()
                  .AllowCredentials();
              });
-            //swagger中间件
+
+
+
+            // NSwag
             app.UseSwagger();
-            //swagger UI显示
-            app.UseSwaggerUI(options =>
-            {
-                ///显示方法调用名称
-                //options.DisplayOperationId();
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Support APP API");
-            });
-            //静态文件
+            app.UseSwaggerUi3();
+          
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 

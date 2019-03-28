@@ -1,9 +1,9 @@
 import { IPagination } from '@/utils/AbpUtils';
-import { BookDto, Client } from '@/utils/HttpClient';
+import { BookClient, BookDto } from '@/utils/HttpClient';
 import { Effect } from 'dva';
 import { Reducer } from 'redux';
 
-const http = new Client();
+const http = new BookClient();
 
 // 定义BookStateModel
 export interface IBookModelState {
@@ -53,13 +53,7 @@ const BookModel: IBookModel = {
         skipCount = pageSize * (current - 1);
         maxResultCount = pageSize;
       }
-      const response = yield http.apiAppBookGet(
-        name ? name : '',
-        type ? type : [],
-        sorting,
-        skipCount,
-        maxResultCount
-      );
+      const response = yield http.getList(name ? name : '', type ? type : [], sorting, skipCount, maxResultCount);
       const stateTemp: IBookModelState = yield select(state => state.book);
       const data = {
         list: response.items,
@@ -76,11 +70,11 @@ const BookModel: IBookModel = {
       });
     },
     *get({ payload }, {}) {
-      const response = yield http.apiAppBookByIdGet(payload.id);
+      const response = yield http.get(payload.id);
       return response;
     },
     *add({ payload }, { put, select }) {
-      const response = yield http.apiAppBookPost(payload.model);
+      const response = yield http.create(payload.model);
       const stateTemp: IBookModelState = yield select(state => state.book);
       const data = {
         list: [response, ...stateTemp.data.list.splice(0, 9)],
@@ -96,7 +90,7 @@ const BookModel: IBookModel = {
     },
     *update({ payload }, { put, call, select }) {
       const { id, model } = payload;
-      const response = yield http.apiAppBookByIdPut(id, model);
+      const response = yield http.update(id, model);
       const stateTemp: IBookModelState = yield select(state => state.book);
       const data = {
         list: stateTemp.data.list.map(item => {
@@ -115,7 +109,7 @@ const BookModel: IBookModel = {
     },
     *remove({ payload }, { put, call, select }) {
       const { id } = payload;
-      yield http.apiAppBookByIdDelete(id);
+      yield http.delete(id);
       const stateTemp: IBookModelState = yield select(state => state.book);
       const data = {
         list: stateTemp.data.list.filter(b => b.id !== id),

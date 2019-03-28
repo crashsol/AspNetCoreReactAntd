@@ -18,10 +18,22 @@ export interface IPagination {
  * @param {*} obj EnumTable
  * @returns
  */
-export function EnumToStatusMap(obj) {
-  return Object.keys(obj).map(item => item);
+export function EnumTypeStatusNames(obj) {
+  const keys = Object.keys(obj);
+  console.log(keys);
+  if (keys.length > 0) {
+    const flag = keys.length / 2;
+    console.log(flag);
+    return keys.filter((item, index) => index >= flag);
+  } else {
+    return [];
+  }
 }
 
+export interface IOption {
+  text: string;
+  value: string;
+}
 /**
  * 使用EnumType创建Table的过滤查询条件
  *
@@ -29,11 +41,15 @@ export function EnumToStatusMap(obj) {
  * @param {*} obj obj限定为Enumtype
  * @returns
  */
-export function EnumToTableFilter(obj) {
-  return Object.keys(obj).map((item, index) => {
-    return {
-      text: item,
-      value: item,
-    };
-  });
+export function EnumToTableFilter(obj): IOption[] {
+  const keyValues = Object.keys(obj);
+  const flag = keyValues.length / 2;
+  const result = [];
+  for (let index = 0; index < flag; index++) {
+    result.push({
+      text: keyValues[flag + index],
+      value: keyValues[index],
+    });
+  }
+  return result;
 }
