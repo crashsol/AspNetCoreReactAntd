@@ -4,6 +4,10 @@ import { fakeAccountLogin, getFakeCaptcha } from '@/services/api';
 import { setAuthority } from '@/utils/authority';
 import { getPageQuery } from '@/utils/utils';
 import { reloadAuthorized } from '@/utils/Authorized';
+import { AccountClient, AbpApplicationConfigurationClient } from '@/utils/HttpClient';
+
+const accountClient = new AccountClient();
+const configurationClient = new AbpApplicationConfigurationClient();
 
 export default {
   namespace: 'login',
@@ -14,13 +18,42 @@ export default {
 
   effects: {
     *login({ payload }, { call, put }) {
-      const response = yield call(fakeAccountLogin, payload);
+      const { userName, password, type } = payload;
+      const loginViewModel = {
+        userNameOrEmailAddress: userName,
+        password: password,
+        rememberMe: true,
+        tenanId: '',
+      };
+      // 用户登录
+      const response = yield accountClient.login(loginViewModel);
+
+      let currentAuthority;
+      if (response.result === 1) {
+        const config = yield configurationClient.get();
+        currentAuthority = Object.keys(config.auth.grantedPolicies);
+        console.log(currentAuthority);
+      }
+
+      //构建登录结果
+      const result = {
+        status: response.result === 1 ? 'ok' : 'error',
+        type: type,
+        currentAuthority: currentAuthority,
+      };
+      console.log(result);
+
       yield put({
         type: 'changeLoginStatus',
-        payload: response,
+        payload: result,
       });
+
+      // status: 'ok',
+      //type,
+      //currentAuthority: 'admin',
       // Login successfully
-      if (response.status === 'ok') {
+      if (result.status === 'ok') {
+        // 成功登录
         reloadAuthorized();
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();

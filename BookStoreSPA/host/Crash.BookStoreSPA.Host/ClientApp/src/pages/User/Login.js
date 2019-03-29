@@ -59,9 +59,7 @@ class LoginPage extends Component {
     });
   };
 
-  renderMessage = content => (
-    <Alert style={{ marginBottom: 24 }} message={content} type="error" showIcon />
-  );
+  renderMessage = content => <Alert style={{ marginBottom: 24 }} message={content} type="error" showIcon />;
 
   render() {
     const { login, submitting } = this.props;
@@ -77,10 +75,7 @@ class LoginPage extends Component {
           }}
         >
           <Tab key="account" tab={formatMessage({ id: 'app.login.tab-login-credentials' })}>
-            {login.status === 'error' &&
-              login.type === 'account' &&
-              !submitting &&
-              this.renderMessage(formatMessage({ id: 'app.login.message-invalid-credentials' }))}
+            {login.status === 'error' && login.type === 'account' && !submitting && this.renderMessage(formatMessage({ id: 'app.login.message-invalid-credentials' }))}
             <UserName
               name="userName"
               placeholder={`${formatMessage({ id: 'app.login.userName' })}: admin or user`}
@@ -107,12 +102,7 @@ class LoginPage extends Component {
             />
           </Tab>
           <Tab key="mobile" tab={formatMessage({ id: 'app.login.tab-login-mobile' })}>
-            {login.status === 'error' &&
-              login.type === 'mobile' &&
-              !submitting &&
-              this.renderMessage(
-                formatMessage({ id: 'app.login.message-invalid-verification-code' })
-              )}
+            {login.status === 'error' && login.type === 'mobile' && !submitting && this.renderMessage(formatMessage({ id: 'app.login.message-invalid-verification-code' }))}
             <Mobile
               name="mobile"
               placeholder={formatMessage({ id: 'form.phone-number.placeholder' })}
