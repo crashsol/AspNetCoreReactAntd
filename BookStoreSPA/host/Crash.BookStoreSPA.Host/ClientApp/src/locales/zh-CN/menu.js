@@ -43,4 +43,6 @@ export default {
   'menu.system.book': '书籍管理',
   'menu.system.organization': '组织机构',
   'menu.system.rightclick': '右键菜单',
+  'menu.system.identityuser': '人员管理',
+  'menu.system.identityrole': '角色管理',
 };

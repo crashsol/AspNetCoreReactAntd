@@ -64,6 +64,16 @@ export default [
             component: './Organization/Index',
           },
           {
+            path: '/system/idenityuser',
+            name: 'identityuser',
+            component: './Identity/IdentityUser',
+          },
+          {
+            path: '/system/idenityrole',
+            name: 'identityrole',
+            component: './Identity/IdentityRole',
+          },
+          {
             path: '/system/rightlick',
             name: 'rightclick',
             component: './Organization/rightClick',

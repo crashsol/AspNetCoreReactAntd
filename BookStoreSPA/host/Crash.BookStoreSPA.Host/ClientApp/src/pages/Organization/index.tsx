@@ -131,7 +131,13 @@ class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
     const { form, updateModalVisible, handleUpdateModalVisible } = this.props;
     const { updateModel } = this.state;
     return (
-      <Modal width={640} title="更新机构" visible={updateModalVisible} onCancel={() => handleUpdateModalVisible(false)} onOk={this.handleUpdateFunc}>
+      <Modal
+        width={640}
+        title="更新机构"
+        visible={updateModalVisible}
+        onCancel={() => handleUpdateModalVisible(false)}
+        onOk={this.handleUpdateFunc}
+      >
         <Form>
           <FormItem {...this.formLayout} label="机构名称">
             {form.getFieldDecorator('title', {
@@ -375,7 +381,11 @@ class Index extends Component<IIndexProps, IIndexState> {
               bordered={true}
               title="组织架构"
               extra={
-                <Button icon="plus" type="primary" onClick={() => this.handleCreateModalVisible(true)}>
+                <Button
+                  icon="plus"
+                  type="primary"
+                  onClick={() => this.handleCreateModalVisible(true)}
+                >
                   添加机构
                 </Button>
               }
@@ -386,8 +396,18 @@ class Index extends Component<IIndexProps, IIndexState> {
             </Card>
           </Col>
         </Row>
-        <CreateForm {...createMethods} modalVisible={createModelVisiable} title={createModel.title} />
-        {updateModel && Object.keys(updateModel).length ? <UpdateForm {...updateMethods} updateModalVisible={updateModelVisiable} values={updateModel} /> : null}
+        <CreateForm
+          {...createMethods}
+          modalVisible={createModelVisiable}
+          title={createModel.title}
+        />
+        {updateModel && Object.keys(updateModel).length ? (
+          <UpdateForm
+            {...updateMethods}
+            updateModalVisible={updateModelVisiable}
+            values={updateModel}
+          />
+        ) : null}
         {this.renderTreeRightMenu()}
       </PageHeaderWrapper>
     );
