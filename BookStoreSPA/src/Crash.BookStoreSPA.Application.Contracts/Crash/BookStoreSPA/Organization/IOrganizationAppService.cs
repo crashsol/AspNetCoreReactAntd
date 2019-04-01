@@ -20,7 +20,7 @@ namespace Crash.BookStoreSPA.Organization
         /// </summary>
         /// <param name="dto"><see cref="CreateUpdateOrganizationDto"/></param>
         /// <returns></returns>
-        Task<List<OrganizationDto>> CreateAsync(CreateUpdateOrganizationDto dto);
+        Task<OrganizationDto> CreateAsync(CreateUpdateOrganizationDto dto);
 
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace Crash.BookStoreSPA.Organization
         /// <param name="dto">删除</param>
         /// <returns></returns>
 
-        Task<List<OrganizationDto>> UpdateAsync(Guid id, CreateUpdateOrganizationDto dto);
+        Task<OrganizationDto> UpdateAsync(Guid id, CreateUpdateOrganizationDto dto);
 
         /// <summary>
         /// 删除组织节点
@@ -38,7 +38,7 @@ namespace Crash.BookStoreSPA.Organization
         /// <param name="id">要删除的节点</param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        Task<List<OrganizationDto>> DeleteAsync(Guid id);
+        Task DeleteAsync(Guid id);
 
          
 
