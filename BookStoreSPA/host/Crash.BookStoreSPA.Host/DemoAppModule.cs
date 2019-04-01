@@ -108,8 +108,9 @@ namespace Crash.BookStoreSPA.Host
 
             Configure<AbpLocalizationOptions>(options =>
             {
-                options.Languages.Add(new LanguageInfo("en", "en", "English"));
+                //options.Languages.Add(new LanguageInfo("en", "en", "English"));
                 //...add other languages
+                 options.Languages.Add(new LanguageInfo("zh-CN", "zh-Hans", "简体中文"));
             });
 
             // 配置Sap

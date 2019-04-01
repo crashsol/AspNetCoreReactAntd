@@ -1,7 +1,22 @@
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import StandardTable from '@/components/StandardTable';
 import { IdentityRoleCreateDto, IdentityRoleUpdateDto } from '@/utils/HttpClient';
-import { Badge, Button, Card, Checkbox, Col, Divider, Dropdown, Icon, Input, Menu, message, Modal, Popconfirm, Row } from 'antd';
+import {
+  Badge,
+  Button,
+  Card,
+  Checkbox,
+  Col,
+  Divider,
+  Dropdown,
+  Icon,
+  Input,
+  Menu,
+  message,
+  Modal,
+  Popconfirm,
+  Row,
+} from 'antd';
 import Form, { FormComponentProps } from 'antd/lib/form';
 import FormItem from 'antd/lib/form/FormItem';
 import { PaginationConfig, SorterResult } from 'antd/lib/table';
@@ -9,7 +24,7 @@ import { connect } from 'dva';
 import React, { Component, Fragment, PureComponent } from 'react';
 import styles from './Index.less';
 import { IIdentityRoleModelState } from './models/identityRole';
-import PermissionModal from './PermissionModal';
+import PermissionModal from './components/PermissionModal';
 //#region Create页面
 
 /**
@@ -46,7 +61,14 @@ const CreateFormFunc: React.SFC<ICreateFormProps> = props => {
   };
 
   return (
-    <Modal width={640} destroyOnClose={true} title="创建角色" visible={modalVisible} onOk={okHandle} onCancel={() => handleModalVisible()}>
+    <Modal
+      width={640}
+      destroyOnClose={true}
+      title="创建角色"
+      visible={modalVisible}
+      onOk={okHandle}
+      onCancel={() => handleModalVisible()}
+    >
       <Form>
         <FormItem {...formLayout} label="角色名称">
           {form.getFieldDecorator('name', {
@@ -126,7 +148,13 @@ class UpateFormClass extends PureComponent<IUpdateFormProps, IUpdateFormState> {
     const { form, updateModalVisible, handleUpdateModalVisible } = this.props;
     const { updateModel } = this.state;
     return (
-      <Modal width={640} title="更新角色" visible={updateModalVisible} onCancel={() => handleUpdateModalVisible(false)} onOk={this.handleUpdateFunc}>
+      <Modal
+        width={640}
+        title="更新角色"
+        visible={updateModalVisible}
+        onCancel={() => handleUpdateModalVisible(false)}
+        onOk={this.handleUpdateFunc}
+      >
         <Form>
           <FormItem {...this.formLayout} label="角色名称">
             {form.getFieldDecorator('name', {
@@ -465,7 +493,11 @@ class IdentityRole extends Component<IIndexProps, IIndexState> {
   //#region  分页操作
   // 表格分页操作
 
-  public handleStandardTableChange: (pagination: PaginationConfig, filters: Record<any, any>, sorter: SorterResult<any>) => void = (pagination, filtersArg, sorter) => {
+  public handleStandardTableChange: (
+    pagination: PaginationConfig,
+    filters: Record<any, any>,
+    sorter: SorterResult<any>
+  ) => void = (pagination, filtersArg, sorter) => {
     const { dispatch } = this.props;
     const { searchForm } = this.state;
     // filtersArg 为table过滤参数
@@ -497,7 +529,9 @@ class IdentityRole extends Component<IIndexProps, IIndexState> {
       <Form onSubmit={this.handleSearch} layout="inline">
         <Row gutter={{ md: 8, lg: 24, xl: 48 }}>
           <Col md={8} sm={24}>
-            <FormItem label="书籍名称">{getFieldDecorator('name')(<Input placeholder="请输入书籍名称进行查询" />)}</FormItem>
+            <FormItem label="书籍名称">
+              {getFieldDecorator('name')(<Input placeholder="请输入书籍名称进行查询" />)}
+            </FormItem>
           </Col>
           {/* 构建查询from表单*/}
           <Col md={4} sm={24}>
@@ -520,7 +554,14 @@ class IdentityRole extends Component<IIndexProps, IIndexState> {
       identityRole: { data },
       loading,
     } = this.props;
-    const { selectedRows, permissionForm, permissionModelVisiable, createModelVisiable, updateModelVisiable, updateModel } = this.state;
+    const {
+      selectedRows,
+      permissionForm,
+      permissionModelVisiable,
+      createModelVisiable,
+      updateModelVisiable,
+      updateModel,
+    } = this.state;
 
     // 选中操作菜单
     const menu = (
@@ -553,7 +594,11 @@ class IdentityRole extends Component<IIndexProps, IIndexState> {
           <div className={styles.tableList}>
             <div className={styles.tableListForm}>{this.renderForm()}</div>
             <div className={styles.tableListOperator}>
-              <Button icon="plus" type="primary" onClick={() => this.handleCreateModalVisible(true)}>
+              <Button
+                icon="plus"
+                type="primary"
+                onClick={() => this.handleCreateModalVisible(true)}
+              >
                 新建
               </Button>
               {selectedRows.length > 0 && (
@@ -585,9 +630,19 @@ class IdentityRole extends Component<IIndexProps, IIndexState> {
           </div>
         </Card>
         <CreateForm {...createMethods} modalVisible={createModelVisiable} />
-        {updateModel && Object.keys(updateModel).length ? <UpdateForm {...updateMethods} updateModalVisible={updateModelVisiable} values={updateModel} /> : null}
+        {updateModel && Object.keys(updateModel).length ? (
+          <UpdateForm
+            {...updateMethods}
+            updateModalVisible={updateModelVisiable}
+            values={updateModel}
+          />
+        ) : null}
         {permissionForm && Object.keys(permissionForm).length ? (
-          <PermissionModal {...permissionMethods} values={permissionForm} permissionModalVisible={permissionModelVisiable} />
+          <PermissionModal
+            {...permissionMethods}
+            values={permissionForm}
+            permissionModalVisible={permissionModelVisiable}
+          />
         ) : null}
       </PageHeaderWrapper>
     );

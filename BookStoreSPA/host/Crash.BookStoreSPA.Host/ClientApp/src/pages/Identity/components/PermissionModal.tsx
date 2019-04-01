@@ -27,12 +27,12 @@ export default class PermissionModal extends React.Component<
     // 解析获取所有已经选中的权限并赋值给selectedKeys
     this.state = {
       permissionModel: values,
-      checkedKeys: ['AbpIdentity.Roles.Create'],
+      checkedKeys: [],
     };
   }
 
   public onCheck = (checkedKeys, info) => {
-    console.log(checkedKeys);
+    console.log(info);
     this.setState({ checkedKeys });
   };
 
