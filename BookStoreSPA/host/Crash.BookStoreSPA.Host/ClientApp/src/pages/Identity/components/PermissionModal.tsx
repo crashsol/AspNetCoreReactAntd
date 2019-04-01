@@ -1,6 +1,5 @@
 import { GetPermissionListResultDto } from '@/utils/HttpClient';
 import { Modal, Tree } from 'antd';
-import { element } from 'prop-types';
 import React from 'react';
 const TreeNode = Tree.TreeNode;
 
@@ -13,6 +12,7 @@ interface IPermissionModalProps {
 }
 // 定义Permission 传出参数
 interface IPermissionState {
+  permissionModel: GetPermissionListResultDto;
   checkedKeys: string[];
 }
 
@@ -20,25 +20,29 @@ export default class PermissionModal extends React.Component<
   IPermissionModalProps,
   IPermissionState
 > {
-  public defaultSelectedKeys: string[] = [];
   constructor(props) {
     super(props);
+    // 从父组件获取传入的参数
+    const { values } = props;
+    // 解析获取所有已经选中的权限并赋值给selectedKeys
     this.state = {
+      permissionModel: values,
       checkedKeys: [],
     };
   }
 
   public onCheck = (checkedKeys, info) => {
-    const { halfCheckedKeys } = info;
-    this.setState({
-      checkedKeys: [...checkedKeys, ...halfCheckedKeys],
-    });
+    console.log(info);
+    this.setState({ checkedKeys });
   };
+
   // 处理更新操作
   public handleUpdateFunc = () => {
-    // const { handlePermission } = this.props;
-    console.log(123);
+    console.log(1);
+    // 更新操作
+    // 根据选中的keys组合成更新权限Dto
   };
+
   // 渲染
   public renderTreeNodesFunc = permissionArray => {
     const treeNodes = permissionArray.groups.map(item => {
@@ -67,25 +71,27 @@ export default class PermissionModal extends React.Component<
       return root;
     });
     return treeNodes;
+    // return this.renderTreeNodesFunc(treeNodes);
   };
 
   public renderTreeNodes = data => {
     return data.map(item => {
       if (item.children && item.children.length > 0) {
         return (
-          <TreeNode title={item.title} key={item.key} dataRef={item} checked={element.isGran}>
+          <TreeNode title={item.title} key={item.key} dataRef={item}>
             {this.renderTreeNodes(item.children)}
           </TreeNode>
         );
       }
+      // tslint:disable-next-line:jsx-key
       return <TreeNode key={item.key} title={item.title} />;
     });
   };
 
   public render() {
-    const { permissionModalVisible, handlePermissionlVisible, values } = this.props;
-    const { checkedKeys } = this.state;
-    const result = this.renderTreeNodesFunc(values);
+    const { permissionModalVisible, handlePermissionlVisible } = this.props;
+    const { permissionModel, checkedKeys: selectedKeys } = this.state;
+    const result = this.renderTreeNodesFunc(permissionModel);
     return (
       <Modal
         width={640}
@@ -96,7 +102,7 @@ export default class PermissionModal extends React.Component<
       >
         <Tree
           defaultExpandAll={true}
-          defaultCheckedKeys={checkedKeys}
+          defaultCheckedKeys={selectedKeys}
           checkable={true}
           onCheck={this.onCheck}
         >
