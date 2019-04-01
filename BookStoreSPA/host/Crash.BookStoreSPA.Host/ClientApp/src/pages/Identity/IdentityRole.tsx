@@ -22,9 +22,9 @@ import FormItem from 'antd/lib/form/FormItem';
 import { PaginationConfig, SorterResult } from 'antd/lib/table';
 import { connect } from 'dva';
 import React, { Component, Fragment, PureComponent } from 'react';
+import PermissionModal from './components/PermissionModal';
 import styles from './Index.less';
 import { IIdentityRoleModelState } from './models/identityRole';
-import PermissionModal from './components/PermissionModal';
 //#region Create页面
 
 /**
@@ -252,7 +252,7 @@ class IdentityRole extends Component<IIndexProps, IIndexState> {
       title: '操作',
       render: (text, record) => (
         <Fragment>
-          <a onClick={() => this.handlePermissionModalVisible(true, record.id)}>授权</a>
+          <a onClick={() => this.handlePermissionModalVisible(true, record.name)}>授权</a>
           <Divider type="vertical" />
           <a onClick={() => this.handleUpdateModalVisible(true, record.id)}>编辑</a>
           <Divider type="vertical" />
@@ -428,7 +428,6 @@ class IdentityRole extends Component<IIndexProps, IIndexState> {
 
   // 控制UpdateModel的显示与隐藏
   public handlePermissionModalVisible: (flag?: boolean, id?: any) => void = (flag, id) => {
-    console.log(flag, id);
     const { dispatch } = this.props;
     if (id) {
       dispatch({
