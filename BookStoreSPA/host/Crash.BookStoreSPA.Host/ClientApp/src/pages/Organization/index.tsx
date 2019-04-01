@@ -390,7 +390,7 @@ class Index extends Component<IIndexProps, IIndexState> {
                 </Button>
               }
             >
-              <Tree showLine={true} defaultExpandAll={true}>
+              <Tree blockNode={true} defaultExpandAll={true}>
                 {this.renderTreeNodes(data.list)}
               </Tree>
             </Card>

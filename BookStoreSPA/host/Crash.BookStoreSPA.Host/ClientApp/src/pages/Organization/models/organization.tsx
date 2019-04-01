@@ -4,13 +4,23 @@ import { Reducer } from 'redux';
 
 const organizationClient = new OrganizationClient();
 
+const loop = (tree: OrganizationDto[], key: string, callback) => {
+  tree.forEach((item, index, arr) => {
+    if (item.key === key) {
+      return callback(index, arr);
+    }
+    if (item.children) {
+      return loop(item.children, key, callback);
+    }
+  });
+};
+
 // 定义OrganizationStateModel
 export interface IOrganizationModelState {
   data: {
     list: OrganizationDto[];
   };
 }
-
 // 定义OrganizationModel
 export interface IOrganizationModel {
   namespace: 'organization';
@@ -46,31 +56,55 @@ const OrganizationModel: IOrganizationModel = {
       });
     },
     *add({ payload }, { put, select }) {
+      const { model } = payload;
       const response: OrganizationDto = yield organizationClient.create(payload.model);
-      yield put({
-        type: 'save',
-        payload: {
-          list: response,
-        },
-      });
+      const temp: IOrganizationModelState = yield select(state => state.organization);
+      if (model.parentId) {
+        //  添加叶节点
+        loop(temp.data.list, response.key, (index: number, arr: OrganizationDto[]) => {
+          arr.splice(index, 1, response);
+        });
+        yield put({
+          type: 'save',
+          payload: {
+            list: temp.data.list,
+          },
+        });
+      } else {
+        // 新增根节点
+        yield put({
+          type: 'save',
+          payload: {
+            list: [...temp.data.list, response],
+          },
+        });
+      }
     },
     *update({ payload }, { put, call, select }) {
       const { id, model } = payload;
       const response = yield organizationClient.update(id, model);
+      const temp: IOrganizationModelState = yield select(state => state.organization);
+      loop(temp.data.list, response.key, (index: number, arr: OrganizationDto[]) => {
+        arr.splice(index, 1, response);
+      });
       yield put({
         type: 'save',
         payload: {
-          list: response,
+          list: temp.data.list,
         },
       });
     },
     *remove({ payload }, { put, call, select }) {
       const { id } = payload;
-      const response = yield organizationClient.delete(id);
+      yield organizationClient.delete(id);
+      const temp: IOrganizationModelState = yield select(state => state.organization);
+      loop(temp.data.list, id, (index: number, arr: OrganizationDto[]) => {
+        arr.splice(index, 1);
+      });
       yield put({
         type: 'save',
         payload: {
-          list: response,
+          list: temp.data.list,
         },
       });
     },

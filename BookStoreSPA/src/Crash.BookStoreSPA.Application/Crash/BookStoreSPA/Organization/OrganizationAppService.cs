@@ -48,7 +48,7 @@ namespace Crash.BookStoreSPA.Organization
             var entity = await _repository.GetAsync(id);
             if (entity != null)
             {
-                await _repository.DeleteAsync(entity, true);
+                await _repository.DeleteAsync(b=>b.Code.StartsWith(entity.Code), true);
             }
         }
 
