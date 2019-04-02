@@ -7,7 +7,7 @@ const organizationClient = new OrganizationClient();
 const loop = (tree: OrganizationDto[], key: string, callback) => {
   tree.forEach((item, index, arr) => {
     if (item.key === key) {
-      return callback(index, arr);
+      return callback(item, index, arr);
     }
     if (item.children) {
       return loop(item.children, key, callback);
@@ -61,9 +61,19 @@ const OrganizationModel: IOrganizationModel = {
       const temp: IOrganizationModelState = yield select(state => state.organization);
       if (model.parentId) {
         //  添加叶节点
-        loop(temp.data.list, response.key, (index: number, arr: OrganizationDto[]) => {
-          arr.splice(index, 1, response);
-        });
+        loop(
+          temp.data.list,
+          response.key,
+          (item: OrganizationDto, index: number, arr: OrganizationDto[]) => {
+            const addNodeKey = response.children.find(b => b.title === model.title);
+            const result: OrganizationDto = {
+              key: item.key,
+              title: item.title,
+              children: [...item.children, addNodeKey],
+            };
+            arr.splice(index, 1, result);
+          }
+        );
         yield put({
           type: 'save',
           payload: {
@@ -84,9 +94,14 @@ const OrganizationModel: IOrganizationModel = {
       const { id, model } = payload;
       const response = yield organizationClient.update(id, model);
       const temp: IOrganizationModelState = yield select(state => state.organization);
-      loop(temp.data.list, response.key, (index: number, arr: OrganizationDto[]) => {
-        arr.splice(index, 1, response);
-      });
+      loop(
+        temp.data.list,
+        response.key,
+        (item: OrganizationDto, index: number, arr: OrganizationDto[]) => {
+          const result = { ...item, ...response };
+          arr.splice(index, 1, result);
+        }
+      );
       yield put({
         type: 'save',
         payload: {
@@ -98,7 +113,7 @@ const OrganizationModel: IOrganizationModel = {
       const { id } = payload;
       yield organizationClient.delete(id);
       const temp: IOrganizationModelState = yield select(state => state.organization);
-      loop(temp.data.list, id, (index: number, arr: OrganizationDto[]) => {
+      loop(temp.data.list, id, (item: OrganizationDto, index: number, arr: OrganizationDto[]) => {
         arr.splice(index, 1);
       });
       yield put({

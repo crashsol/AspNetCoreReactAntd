@@ -24,7 +24,6 @@ export default class PermissionModal extends React.Component<
     super(props);
     // 解析获取所有已经选中的权限并赋值给selectedKeys
     const { defaultKeys, treeNodes } = this.setDefaultSelectKeys();
-    console.log(defaultKeys, treeNodes);
     this.state = {
       checkedKeys: defaultKeys,
       treeNodes,
@@ -37,7 +36,6 @@ export default class PermissionModal extends React.Component<
   } => {
     const { values } = this.props;
     const defaultKeys: string[] = [];
-    console.log(values);
     const treeNodes = values.groups.map(item => {
       const root = {
         key: item.name,

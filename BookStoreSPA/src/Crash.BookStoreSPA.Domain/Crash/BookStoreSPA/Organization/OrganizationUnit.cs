@@ -73,6 +73,12 @@ namespace Crash.BookStoreSPA.Organization
         {
             Check.NotNullOrEmpty(title, nameof(title));
 
+            if (Children.Any(b => b.Title == title))
+            {
+                throw new UserFriendlyException($"{title} 已被占用!");
+
+            }
+
            var node = new OrganizationUnit()
             {
                 Title = title ,     //设置名称

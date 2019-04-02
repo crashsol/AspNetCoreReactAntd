@@ -25,6 +25,7 @@ using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.Threading;
 using NSwag.AspNetCore;
 using Volo.Abp.PermissionManagement.Identity;
+using Volo.Abp.AspNetCore.Mvc.ExceptionHandling;
 
 namespace Crash.BookStoreSPA.Host
 {
@@ -97,6 +98,9 @@ namespace Crash.BookStoreSPA.Host
                 doc.DocumentName = "BookStore";
             });
 
+
+
+
             //配置权限管理的Policy
             //Configure<PermissionManagementOptions>(options =>
             //{
@@ -120,6 +124,7 @@ namespace Crash.BookStoreSPA.Host
                  //设置Sap访问的根目录，与ClientApp bulid文件输出路径一致
                  config.RootPath = "wwwroot/dist";
              });
+           
 
             /*    context.Services.AddDistributedSqlServerCache(options =>
                {
