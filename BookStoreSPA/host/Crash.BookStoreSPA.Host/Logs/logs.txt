@@ -1,0 +1,463 @@
+2019-04-02 10:45:54.558 +08:00 [INF] Starting web host.
+2019-04-02 10:46:03.455 +08:00 [INF] User profile is available. Using 'C:\Users\Crashsol\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-04-02 10:46:03.532 +08:00 [INF] Loaded modules:
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainSharedModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationContractsModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationModule
+2019-04-02 10:46:03.532 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainSharedModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.Users.AbpUsersAbstractionModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Crash.BookStoreSPA.EntityFrameworkCore.BookStoreSPAEntityFrameworkCoreModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.PermissionManagement.IdentityServer.AbpPermissionManagementDomainIdentityServerModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2019-04-02 10:46:03.533 +08:00 [INF] - Crash.BookStoreSPA.Host.DemoAppModule
+2019-04-02 10:46:03.571 +08:00 [DBG] No class found with auto mapping attributes.
+2019-04-02 10:46:08.577 +08:00 [INF] Initialized all modules.
+2019-04-02 10:46:08.889 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/  
+2019-04-02 10:46:09.043 +08:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-04-02 10:46:09.063 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-04-02 10:46:12.564 +08:00 [ERR] Connection id "0HLLN2LE1GDO8", Request id "0HLLN2LE1GDO8:00000001": An unhandled exception was thrown by the application.
+System.Net.Http.HttpRequestException: Failed to proxy the request to http://localhost:8000/, because the request to the proxy target failed. Check that the proxy target server is running and accepting requests to http://localhost:8000/.
+
+The underlying exception message was '由于目标计算机积极拒绝，无法连接。'.Check the InnerException for more details. ---> System.Net.Http.HttpRequestException: 由于目标计算机积极拒绝，无法连接。 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.CreateConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.WaitForCreatedConnectionAsync(ValueTask`1 creationTask)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.Invoke(HttpContext httpContext) in D:\Github\abp\framework\src\Volo.Abp.AspNetCore\Volo\Abp\AspNetCore\Auditing\AbpAuditingMiddleware.cs:line 35
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware`1.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.SwaggerDocumentMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-04-02 10:46:12.626 +08:00 [INF] Request finished in 3744.4789ms 500 
+2019-04-02 10:47:17.651 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+2019-04-02 10:47:17.738 +08:00 [INF] Request finished in 87.6724ms 200 text/html; charset=utf-8
+2019-04-02 10:47:19.359 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/BookStore/swagger.json  
+2019-04-02 10:47:20.347 +08:00 [INF] Request finished in 987.8929ms 200 application/json; charset=utf-8
+2019-04-02 10:47:40.112 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json-patch+json 108
+2019-04-02 10:47:40.113 +08:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-04-02 10:47:40.113 +08:00 [INF] CORS policy execution successful.
+2019-04-02 10:47:40.149 +08:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2019-04-02 10:47:40.149 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-04-02 10:47:40.208 +08:00 [INF] Route matched with {area = "Login", action = "Login", controller = "Account"}. Executing action Crash.BookStoreSPA.Host.Controllers.AccountController.Login (Crash.BookStoreSPA.Host)
+2019-04-02 10:47:40.653 +08:00 [INF] Executing action method Crash.BookStoreSPA.Host.Controllers.AccountController.Login (Crash.BookStoreSPA.Host) with arguments (["Crash.BookStoreSPA.Host.Models.LoginVModel"]) - Validation state: "Valid"
+2019-04-02 10:47:41.043 +08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-04-02 10:47:41.050 +08:00 [INF] Executed action method Crash.BookStoreSPA.Host.Controllers.AccountController.Login (Crash.BookStoreSPA.Host), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 394.85810000000004ms.
+2019-04-02 10:47:41.058 +08:00 [DBG] Added 0 entity changes to the current audit log
+2019-04-02 10:47:41.077 +08:00 [INF] Executing ObjectResult, writing value of type 'Crash.BookStoreSPA.Host.Models.AbpLoginResult'.
+2019-04-02 10:47:41.091 +08:00 [INF] Executed action Crash.BookStoreSPA.Host.Controllers.AccountController.Login (Crash.BookStoreSPA.Host) in 880.6101ms
+2019-04-02 10:47:41.100 +08:00 [INF] Request finished in 988.8173ms 200 application/json; charset=utf-8
+2019-04-02 10:47:50.956 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/abp/permissions?providerName=Role&providerKey=admin  
+2019-04-02 10:47:51.260 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-04-02 10:47:51.265 +08:00 [INF] Route matched with {area = "abp", action = "GetAsync", controller = "Permissions"}. Executing action Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi)
+2019-04-02 10:47:51.811 +08:00 [INF] Executing action method Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi) with arguments (["Role","admin"]) - Validation state: "Valid"
+2019-04-02 10:47:52.007 +08:00 [INF] Authorization was successful.
+2019-04-02 10:47:52.045 +08:00 [INF] Executed action method Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 233.6199ms.
+2019-04-02 10:47:52.048 +08:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.PermissionManagement.GetPermissionListResultDto'.
+2019-04-02 10:47:52.050 +08:00 [INF] Executed action Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi) in 785.3762ms
+2019-04-02 10:47:52.050 +08:00 [INF] Request finished in 1094.08ms 200 application/json; charset=utf-8
+2019-04-02 10:48:13.871 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/abp/permissions?providerName=Role&providerKey=admin  
+2019-04-02 10:48:13.875 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-04-02 10:48:13.876 +08:00 [INF] Route matched with {area = "abp", action = "GetAsync", controller = "Permissions"}. Executing action Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi)
+2019-04-02 10:48:13.898 +08:00 [INF] Executing action method Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi) with arguments (["Role","admin"]) - Validation state: "Valid"
+2019-04-02 10:48:13.902 +08:00 [INF] Authorization was successful.
+2019-04-02 10:48:13.905 +08:00 [INF] Executed action method Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 7.0797000000000008ms.
+2019-04-02 10:48:13.905 +08:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.PermissionManagement.GetPermissionListResultDto'.
+2019-04-02 10:48:13.905 +08:00 [INF] Executed action Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi) in 29.2757ms
+2019-04-02 10:48:13.905 +08:00 [INF] Request finished in 34.5596ms 200 application/json; charset=utf-8
+2019-04-02 10:51:49.096 +08:00 [INF] Starting web host.
+2019-04-02 10:51:56.519 +08:00 [INF] User profile is available. Using 'C:\Users\Crashsol\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-04-02 10:51:56.596 +08:00 [INF] Loaded modules:
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainSharedModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationContractsModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainSharedModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Users.AbpUsersAbstractionModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2019-04-02 10:51:56.596 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Crash.BookStoreSPA.EntityFrameworkCore.BookStoreSPAEntityFrameworkCoreModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2019-04-02 10:51:56.597 +08:00 [INF] - Crash.BookStoreSPA.Host.DemoAppModule
+2019-04-02 10:51:56.646 +08:00 [DBG] No class found with auto mapping attributes.
+2019-04-02 10:52:01.726 +08:00 [INF] Initialized all modules.
+2019-04-02 10:52:02.381 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/  
+2019-04-02 10:52:02.504 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-04-02 10:52:05.923 +08:00 [ERR] Connection id "0HLLN2OND3KGU", Request id "0HLLN2OND3KGU:00000001": An unhandled exception was thrown by the application.
+System.Net.Http.HttpRequestException: Failed to proxy the request to http://localhost:8000/, because the request to the proxy target failed. Check that the proxy target server is running and accepting requests to http://localhost:8000/.
+
+The underlying exception message was '由于目标计算机积极拒绝，无法连接。'.Check the InnerException for more details. ---> System.Net.Http.HttpRequestException: 由于目标计算机积极拒绝，无法连接。 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.CreateConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.WaitForCreatedConnectionAsync(ValueTask`1 creationTask)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncUnbuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.Invoke(HttpContext httpContext) in D:\Github\abp\framework\src\Volo.Abp.AspNetCore\Volo\Abp\AspNetCore\Auditing\AbpAuditingMiddleware.cs:line 35
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware`1.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.SwaggerDocumentMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2019-04-02 10:52:05.975 +08:00 [INF] Request finished in 3593.5667ms 500 
+2019-04-02 11:00:52.972 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/abp/permissions?providerName=Role&providerKey=admin  
+2019-04-02 11:00:52.979 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-04-02 11:00:53.040 +08:00 [INF] Route matched with {area = "abp", action = "GetAsync", controller = "Permissions"}. Executing action Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi)
+2019-04-02 11:00:54.020 +08:00 [ERR] ---------- RemoteServiceErrorInfo ----------
+2019-04-02 11:00:54.058 +08:00 [ERR] {
+  "code": null,
+  "message": "An internal error occurred during your request!",
+  "details": null,
+  "validationErrors": null
+}
+2019-04-02 11:00:54.079 +08:00 [ERR] An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionsController (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.PermissionsController], Lifetime = Autofac.Core.Lifetime.CurrentScopeLifetime, Sharing = None, Ownership = OwnedByLifetimeScope ---> An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionAppService (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionAppService], Lifetime = Autofac.Core.Lifetime.CurrentScopeLifetime, Sharing = None, Ownership = OwnedByLifetimeScope ---> An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionManager (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionManager], Lifetime = Autofac.Core.Lifetime.RootScopeLifetime, Sharing = Shared, Ownership = OwnedByLifetimeScope ---> An exception was thrown while invoking the constructor 'Void .ctor(Volo.Abp.Authorization.Permissions.IPermissionDefinitionManager, Volo.Abp.PermissionManagement.IPermissionGrantRepository, System.IServiceProvider, Volo.Abp.Guids.IGuidGenerator, Microsoft.Extensions.Options.IOptions`1[Volo.Abp.PermissionManagement.PermissionManagementOptions])' on type 'PermissionManager'. ---> An item with the same key has already been added. Key: Role (See inner exception for details.) (See inner exception for details.) (See inner exception for details.) (See inner exception for details.)
+Autofac.Core.DependencyResolutionException: An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionsController (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.PermissionsController], Lifetime = Autofac.Core.Lifetime.CurrentScopeLifetime, Sharing = None, Ownership = OwnedByLifetimeScope ---> An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionAppService (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionAppService], Lifetime = Autofac.Core.Lifetime.CurrentScopeLifetime, Sharing = None, Ownership = OwnedByLifetimeScope ---> An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionManager (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionManager], Lifetime = Autofac.Core.Lifetime.RootScopeLifetime, Sharing = Shared, Ownership = OwnedByLifetimeScope ---> An exception was thrown while invoking the constructor 'Void .ctor(Volo.Abp.Authorization.Permissions.IPermissionDefinitionManager, Volo.Abp.PermissionManagement.IPermissionGrantRepository, System.IServiceProvider, Volo.Abp.Guids.IGuidGenerator, Microsoft.Extensions.Options.IOptions`1[Volo.Abp.PermissionManagement.PermissionManagementOptions])' on type 'PermissionManager'. ---> An item with the same key has already been added. Key: Role (See inner exception for details.) (See inner exception for details.) (See inner exception for details.) (See inner exception for details.) ---> Autofac.Core.DependencyResolutionException: An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionAppService (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionAppService], Lifetime = Autofac.Core.Lifetime.CurrentScopeLifetime, Sharing = None, Ownership = OwnedByLifetimeScope ---> An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionManager (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionManager], Lifetime = Autofac.Core.Lifetime.RootScopeLifetime, Sharing = Shared, Ownership = OwnedByLifetimeScope ---> An exception was thrown while invoking the constructor 'Void .ctor(Volo.Abp.Authorization.Permissions.IPermissionDefinitionManager, Volo.Abp.PermissionManagement.IPermissionGrantRepository, System.IServiceProvider, Volo.Abp.Guids.IGuidGenerator, Microsoft.Extensions.Options.IOptions`1[Volo.Abp.PermissionManagement.PermissionManagementOptions])' on type 'PermissionManager'. ---> An item with the same key has already been added. Key: Role (See inner exception for details.) (See inner exception for details.) (See inner exception for details.) ---> Autofac.Core.DependencyResolutionException: An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionManager (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionManager], Lifetime = Autofac.Core.Lifetime.RootScopeLifetime, Sharing = Shared, Ownership = OwnedByLifetimeScope ---> An exception was thrown while invoking the constructor 'Void .ctor(Volo.Abp.Authorization.Permissions.IPermissionDefinitionManager, Volo.Abp.PermissionManagement.IPermissionGrantRepository, System.IServiceProvider, Volo.Abp.Guids.IGuidGenerator, Microsoft.Extensions.Options.IOptions`1[Volo.Abp.PermissionManagement.PermissionManagementOptions])' on type 'PermissionManager'. ---> An item with the same key has already been added. Key: Role (See inner exception for details.) (See inner exception for details.) ---> Autofac.Core.DependencyResolutionException: An exception was thrown while invoking the constructor 'Void .ctor(Volo.Abp.Authorization.Permissions.IPermissionDefinitionManager, Volo.Abp.PermissionManagement.IPermissionGrantRepository, System.IServiceProvider, Volo.Abp.Guids.IGuidGenerator, Microsoft.Extensions.Options.IOptions`1[Volo.Abp.PermissionManagement.PermissionManagementOptions])' on type 'PermissionManager'. ---> An item with the same key has already been added. Key: Role (See inner exception for details.) ---> System.ArgumentException: An item with the same key has already been added. Key: Role
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Crash.BookStoreSPA.Host.DemoAppModule.<>c.<ConfigureServices>b__0_5(PermissionManagementOptions options) in D:\Projects\AspNetCoreReactAntd\BookStoreSPA\host\Crash.BookStoreSPA.Host\DemoAppModule.cs:line 104
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.<>c__DisplayClass5_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsManager`1.Get(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.get_Value()
+   at Volo.Abp.PermissionManagement.PermissionManager..ctor(IPermissionDefinitionManager permissionDefinitionManager, IPermissionGrantRepository permissionGrantRepository, IServiceProvider serviceProvider, IGuidGenerator guidGenerator, IOptions`1 options) in D:\Github\abp\modules\permission-management\src\Volo.Abp.PermissionManagement.Domain\Volo\Abp\PermissionManagement\PermissionManager.cs:line 37
+   at lambda_method(Closure , Object[] )
+   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
+   at Autofac.Core.Lifetime.LifetimeScope.GetOrCreateAndShare(Guid id, Func`1 creator)
+   at Autofac.Core.Resolving.InstanceLookup.Execute()
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.Execute()
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.Execute()
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.ResolveOperation.Execute(IComponentRegistration registration, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+   at Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+2019-04-02 11:00:54.096 +08:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.Http.RemoteServiceErrorResponse'.
+2019-04-02 11:00:54.113 +08:00 [INF] Executed action Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi) in 1070.4816ms
+2019-04-02 11:00:54.115 +08:00 [INF] Request finished in 1142.3812ms 500 application/json; charset=utf-8
+2019-04-02 11:01:05.470 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/account/login application/json-patch+json 108
+2019-04-02 11:01:05.472 +08:00 [WRN] The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported.
+2019-04-02 11:01:05.472 +08:00 [INF] CORS policy execution successful.
+2019-04-02 11:01:05.476 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-04-02 11:01:05.491 +08:00 [INF] Route matched with {area = "Login", action = "Login", controller = "Account"}. Executing action Crash.BookStoreSPA.Host.Controllers.AccountController.Login (Crash.BookStoreSPA.Host)
+2019-04-02 11:01:05.865 +08:00 [INF] Executing action method Crash.BookStoreSPA.Host.Controllers.AccountController.Login (Crash.BookStoreSPA.Host) with arguments (["Crash.BookStoreSPA.Host.Models.LoginVModel"]) - Validation state: "Valid"
+2019-04-02 11:01:06.279 +08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2019-04-02 11:01:06.285 +08:00 [INF] Executed action method Crash.BookStoreSPA.Host.Controllers.AccountController.Login (Crash.BookStoreSPA.Host), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 418.16490000000005ms.
+2019-04-02 11:01:06.293 +08:00 [DBG] Added 0 entity changes to the current audit log
+2019-04-02 11:01:06.303 +08:00 [INF] Executing ObjectResult, writing value of type 'Crash.BookStoreSPA.Host.Models.AbpLoginResult'.
+2019-04-02 11:01:06.308 +08:00 [INF] Executed action Crash.BookStoreSPA.Host.Controllers.AccountController.Login (Crash.BookStoreSPA.Host) in 816.4733ms
+2019-04-02 11:01:06.315 +08:00 [INF] Request finished in 845.4652ms 200 application/json; charset=utf-8
+2019-04-02 11:01:10.466 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/abp/permissions?providerName=Role&providerKey=admin  
+2019-04-02 11:01:10.469 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-04-02 11:01:10.470 +08:00 [INF] Route matched with {area = "abp", action = "GetAsync", controller = "Permissions"}. Executing action Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi)
+2019-04-02 11:01:10.726 +08:00 [ERR] ---------- RemoteServiceErrorInfo ----------
+2019-04-02 11:01:10.726 +08:00 [ERR] {
+  "code": null,
+  "message": "An internal error occurred during your request!",
+  "details": null,
+  "validationErrors": null
+}
+2019-04-02 11:01:10.726 +08:00 [ERR] An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionsController (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.PermissionsController], Lifetime = Autofac.Core.Lifetime.CurrentScopeLifetime, Sharing = None, Ownership = OwnedByLifetimeScope ---> An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionAppService (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionAppService], Lifetime = Autofac.Core.Lifetime.CurrentScopeLifetime, Sharing = None, Ownership = OwnedByLifetimeScope ---> An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionManager (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionManager], Lifetime = Autofac.Core.Lifetime.RootScopeLifetime, Sharing = Shared, Ownership = OwnedByLifetimeScope ---> An exception was thrown while invoking the constructor 'Void .ctor(Volo.Abp.Authorization.Permissions.IPermissionDefinitionManager, Volo.Abp.PermissionManagement.IPermissionGrantRepository, System.IServiceProvider, Volo.Abp.Guids.IGuidGenerator, Microsoft.Extensions.Options.IOptions`1[Volo.Abp.PermissionManagement.PermissionManagementOptions])' on type 'PermissionManager'. ---> An item with the same key has already been added. Key: Role (See inner exception for details.) (See inner exception for details.) (See inner exception for details.) (See inner exception for details.)
+Autofac.Core.DependencyResolutionException: An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionsController (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.PermissionsController], Lifetime = Autofac.Core.Lifetime.CurrentScopeLifetime, Sharing = None, Ownership = OwnedByLifetimeScope ---> An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionAppService (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionAppService], Lifetime = Autofac.Core.Lifetime.CurrentScopeLifetime, Sharing = None, Ownership = OwnedByLifetimeScope ---> An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionManager (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionManager], Lifetime = Autofac.Core.Lifetime.RootScopeLifetime, Sharing = Shared, Ownership = OwnedByLifetimeScope ---> An exception was thrown while invoking the constructor 'Void .ctor(Volo.Abp.Authorization.Permissions.IPermissionDefinitionManager, Volo.Abp.PermissionManagement.IPermissionGrantRepository, System.IServiceProvider, Volo.Abp.Guids.IGuidGenerator, Microsoft.Extensions.Options.IOptions`1[Volo.Abp.PermissionManagement.PermissionManagementOptions])' on type 'PermissionManager'. ---> An item with the same key has already been added. Key: Role (See inner exception for details.) (See inner exception for details.) (See inner exception for details.) (See inner exception for details.) ---> Autofac.Core.DependencyResolutionException: An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionAppService (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionAppService], Lifetime = Autofac.Core.Lifetime.CurrentScopeLifetime, Sharing = None, Ownership = OwnedByLifetimeScope ---> An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionManager (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionManager], Lifetime = Autofac.Core.Lifetime.RootScopeLifetime, Sharing = Shared, Ownership = OwnedByLifetimeScope ---> An exception was thrown while invoking the constructor 'Void .ctor(Volo.Abp.Authorization.Permissions.IPermissionDefinitionManager, Volo.Abp.PermissionManagement.IPermissionGrantRepository, System.IServiceProvider, Volo.Abp.Guids.IGuidGenerator, Microsoft.Extensions.Options.IOptions`1[Volo.Abp.PermissionManagement.PermissionManagementOptions])' on type 'PermissionManager'. ---> An item with the same key has already been added. Key: Role (See inner exception for details.) (See inner exception for details.) (See inner exception for details.) ---> Autofac.Core.DependencyResolutionException: An error occurred during the activation of a particular registration. See the inner exception for details. Registration: Activator = PermissionManager (ReflectionActivator), Services = [Volo.Abp.PermissionManagement.IPermissionManager], Lifetime = Autofac.Core.Lifetime.RootScopeLifetime, Sharing = Shared, Ownership = OwnedByLifetimeScope ---> An exception was thrown while invoking the constructor 'Void .ctor(Volo.Abp.Authorization.Permissions.IPermissionDefinitionManager, Volo.Abp.PermissionManagement.IPermissionGrantRepository, System.IServiceProvider, Volo.Abp.Guids.IGuidGenerator, Microsoft.Extensions.Options.IOptions`1[Volo.Abp.PermissionManagement.PermissionManagementOptions])' on type 'PermissionManager'. ---> An item with the same key has already been added. Key: Role (See inner exception for details.) (See inner exception for details.) ---> Autofac.Core.DependencyResolutionException: An exception was thrown while invoking the constructor 'Void .ctor(Volo.Abp.Authorization.Permissions.IPermissionDefinitionManager, Volo.Abp.PermissionManagement.IPermissionGrantRepository, System.IServiceProvider, Volo.Abp.Guids.IGuidGenerator, Microsoft.Extensions.Options.IOptions`1[Volo.Abp.PermissionManagement.PermissionManagementOptions])' on type 'PermissionManager'. ---> An item with the same key has already been added. Key: Role (See inner exception for details.) ---> System.ArgumentException: An item with the same key has already been added. Key: Role
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at Crash.BookStoreSPA.Host.DemoAppModule.<>c.<ConfigureServices>b__0_5(PermissionManagementOptions options) in D:\Projects\AspNetCoreReactAntd\BookStoreSPA\host\Crash.BookStoreSPA.Host\DemoAppModule.cs:line 104
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.<>c__DisplayClass5_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsManager`1.Get(String name)
+   at Microsoft.Extensions.Options.OptionsManager`1.get_Value()
+   at Volo.Abp.PermissionManagement.PermissionManager..ctor(IPermissionDefinitionManager permissionDefinitionManager, IPermissionGrantRepository permissionGrantRepository, IServiceProvider serviceProvider, IGuidGenerator guidGenerator, IOptions`1 options) in D:\Github\abp\modules\permission-management\src\Volo.Abp.PermissionManagement.Domain\Volo\Abp\PermissionManagement\PermissionManager.cs:line 37
+   at lambda_method(Closure , Object[] )
+   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
+   at Autofac.Core.Lifetime.LifetimeScope.GetOrCreateAndShare(Guid id, Func`1 creator)
+   at Autofac.Core.Resolving.InstanceLookup.Execute()
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.Execute()
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)
+   at Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()
+   at Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
+   --- End of inner exception stack trace ---
+   at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.InstanceLookup.Execute()
+   at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)
+   at Autofac.Core.Resolving.ResolveOperation.Execute(IComponentRegistration registration, IEnumerable`1 parameters)
+   at Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+   at Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Mvc.Controllers.ServiceBasedControllerActivator.Create(ControllerContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextExceptionFilterAsync()
+2019-04-02 11:01:10.727 +08:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.Http.RemoteServiceErrorResponse'.
+2019-04-02 11:01:10.727 +08:00 [INF] Executed action Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi) in 256.94800000000004ms
+2019-04-02 11:01:10.727 +08:00 [INF] Request finished in 261.5188ms 500 application/json; charset=utf-8
+2019-04-02 11:05:14.024 +08:00 [INF] Starting web host.
+2019-04-02 11:05:22.796 +08:00 [INF] User profile is available. Using 'C:\Users\Crashsol\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-04-02 11:05:22.902 +08:00 [INF] Loaded modules:
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyAbstractionsModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-04-02 11:05:22.902 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainSharedModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPADomainModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationContractsModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Crash.BookStoreSPA.BookStoreSPAApplicationModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainSharedModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.Users.AbpUsersAbstractionModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Crash.BookStoreSPA.EntityFrameworkCore.BookStoreSPAEntityFrameworkCoreModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.Users.AbpUsersDomainModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityDomainModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.Identity.AbpIdentityApplicationModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2019-04-02 11:05:22.903 +08:00 [INF] - Crash.BookStoreSPA.Host.DemoAppModule
+2019-04-02 11:05:22.977 +08:00 [DBG] No class found with auto mapping attributes.
+2019-04-02 11:05:35.984 +08:00 [INF] Initialized all modules.
+2019-04-02 11:05:37.094 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/  
+2019-04-02 11:05:37.325 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-04-02 11:05:40.198 +08:00 [INF] Request finished in 3105.8484ms 0 
+2019-04-02 11:12:41.460 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html  
+2019-04-02 11:12:41.548 +08:00 [INF] Request finished in 87.6888ms 200 text/html; charset=utf-8
+2019-04-02 11:12:41.784 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/BookStore/swagger.json  
+2019-04-02 11:12:42.762 +08:00 [INF] Request finished in 978.3434ms 200 application/json; charset=utf-8
+2019-04-02 11:12:50.172 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/abp/permissions?providerName=Role&providerKey=admin  
+2019-04-02 11:12:50.179 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-CN","zh"]'.
+2019-04-02 11:12:50.237 +08:00 [INF] Route matched with {area = "abp", action = "GetAsync", controller = "Permissions"}. Executing action Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi)
+2019-04-02 11:12:50.863 +08:00 [INF] Executing action method Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi) with arguments (["Role","admin"]) - Validation state: "Valid"
+2019-04-02 11:12:51.080 +08:00 [INF] Authorization was successful.
+2019-04-02 11:12:51.506 +08:00 [INF] Executed action method Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 640.9537ms.
+2019-04-02 11:12:51.517 +08:00 [INF] Executing ObjectResult, writing value of type 'Volo.Abp.PermissionManagement.GetPermissionListResultDto'.
+2019-04-02 11:12:51.527 +08:00 [INF] Executed action Volo.Abp.PermissionManagement.PermissionsController.GetAsync (Volo.Abp.PermissionManagement.HttpApi) in 1287.9757ms
+2019-04-02 11:12:51.528 +08:00 [INF] Request finished in 1355.3402ms 200 application/json; charset=utf-8

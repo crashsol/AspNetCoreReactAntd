@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +24,7 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.Threading;
 using NSwag.AspNetCore;
+using Volo.Abp.PermissionManagement.Identity;
 
 namespace Crash.BookStoreSPA.Host
 {
@@ -44,6 +44,7 @@ namespace Crash.BookStoreSPA.Host
 
         // Authencation 相关配置
         typeof(AbpIdentityAspNetCoreModule),
+        typeof(AbpPermissionManagementDomainIdentityModule),
 
         typeof(AbpIdentityEntityFrameworkCoreModule),
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
@@ -97,14 +98,14 @@ namespace Crash.BookStoreSPA.Host
             });
 
             //配置权限管理的Policy
-            Configure<PermissionManagementOptions>(options =>
-            {
-                // 配置使用Role 设置权限列表（Policy）
-                options.ProviderPolicies.Add(RolePermissionValueProvider.ProviderName, IdentityPermissions.Roles.ManagePermissions);
+            //Configure<PermissionManagementOptions>(options =>
+            //{
+            //    // 配置使用Role 设置权限列表（Policy）
+            //    options.ProviderPolicies.Add(RolePermissionValueProvider.ProviderName, IdentityPermissions.Roles.ManagePermissions);
 
-                // 配置使用User 设置权限列表（Policy）
-                options.ProviderPolicies.Add(UserPermissionValueProvider.ProviderName, IdentityPermissions.Users.ManagePermissions);
-            });
+            //    // 配置使用User 设置权限列表（Policy）
+            //    options.ProviderPolicies.Add(UserPermissionValueProvider.ProviderName, IdentityPermissions.Users.ManagePermissions);
+            //});
 
             Configure<AbpLocalizationOptions>(options =>
             {
