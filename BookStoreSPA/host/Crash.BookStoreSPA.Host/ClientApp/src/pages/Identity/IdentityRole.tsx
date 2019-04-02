@@ -1,6 +1,10 @@
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import StandardTable from '@/components/StandardTable';
-import { IdentityRoleCreateDto, IdentityRoleUpdateDto } from '@/utils/HttpClient';
+import {
+  GetPermissionListResultDto,
+  IdentityRoleCreateDto,
+  IdentityRoleUpdateDto,
+} from '@/utils/HttpClient';
 import {
   Badge,
   Button,
@@ -184,10 +188,6 @@ const UpdateForm = Form.create()(UpateFormClass);
 
 //#endregion
 
-//#region 权限管理Modal
-
-//#endregion
-
 //#region Index页面
 
 /**
@@ -213,7 +213,10 @@ interface IIndexState {
   searchForm: object; // 查询对象的值
   updateModel: object; // 页面要更新的对象
   permissionModelVisiable: boolean; // 控制授权对话框的显示
-  permissionForm: {}; // 权限对话框Form
+  permissionForm: {}; // 权限FORM
+  providerTitle: string; // 权限授权的角色
+  providerName: string; // 权限授权的名称 Role,User
+  providerKey: string; // 授权角色名称
 }
 // tslint:disable-next-line:max-classes-per-file
 @connect(({ identityRole, loading }) => ({
@@ -275,6 +278,9 @@ class IdentityRole extends Component<IIndexProps, IIndexState> {
       searchForm: {},
       permissionModelVisiable: false,
       permissionForm: {},
+      providerKey: '',
+      providerName: 'Role',
+      providerTitle: '',
     };
   }
 
@@ -416,10 +422,7 @@ class IdentityRole extends Component<IIndexProps, IIndexState> {
     const { dispatch } = this.props;
     dispatch({
       type: 'permissions/update',
-      payload: {
-        id: values.id,
-        model: values,
-      },
+      payload: values,
     }).then(() => {
       message.success('更新成功');
       this.handlePermissionModalVisible();
@@ -427,25 +430,29 @@ class IdentityRole extends Component<IIndexProps, IIndexState> {
   };
 
   // 控制UpdateModel的显示与隐藏
-  public handlePermissionModalVisible: (flag?: boolean, id?: any) => void = (flag, id) => {
+  public handlePermissionModalVisible: (flag?: boolean, name?: any) => void = (flag, name) => {
     const { dispatch } = this.props;
-    if (id) {
+    if (name) {
       dispatch({
         type: 'permissions/fetch',
         payload: {
           providerName: 'Role',
-          providerKey: id,
+          providerKey: name,
         },
       }).then(res => {
         this.setState({
           permissionModelVisiable: !!flag,
           permissionForm: res || {},
+          providerKey: name,
+          providerTitle: name,
         });
       });
     } else {
       this.setState({
         permissionModelVisiable: !!flag,
         permissionForm: {},
+        providerKey: '',
+        providerTitle: '',
       });
     }
   };
@@ -560,6 +567,9 @@ class IdentityRole extends Component<IIndexProps, IIndexState> {
       createModelVisiable,
       updateModelVisiable,
       updateModel,
+      providerKey,
+      providerName,
+      providerTitle,
     } = this.state;
 
     // 选中操作菜单
@@ -639,7 +649,10 @@ class IdentityRole extends Component<IIndexProps, IIndexState> {
         {permissionForm && Object.keys(permissionForm).length ? (
           <PermissionModal
             {...permissionMethods}
-            values={permissionForm}
+            permissions={permissionForm as GetPermissionListResultDto}
+            providerName={providerName}
+            providerTitle={providerKey}
+            providerKey={providerKey}
             permissionModalVisible={permissionModelVisiable}
           />
         ) : null}
