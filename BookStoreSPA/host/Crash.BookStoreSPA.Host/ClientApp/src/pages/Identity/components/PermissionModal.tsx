@@ -16,8 +16,8 @@ interface IPermissionModalProps {
 // 定义Permission 传出参数
 interface IPermissionState {
   checkedKeys: string[]; // 已选中的权限
-  defaultGroupNames: string[]; // 权限分组name集合
   treeNodes: OrganizationDto[]; // 权限TreeNode集合列表
+  allPermissionKeys: string[]; // 所有权限Keys集合
 }
 
 export default class PermissionModal extends React.Component<
@@ -27,34 +27,37 @@ export default class PermissionModal extends React.Component<
   constructor(props) {
     super(props);
     // 解析获取所有已经选中的权限并赋值给selectedKeys
-    const { defaultKeys, treeNodes, defaultGroupNames } = this.setDefaultSelectKeys();
+    const { defaultKeys, treeNodes, allPermissionKeys } = this.setDefaultSelectKeys();
     this.state = {
       checkedKeys: defaultKeys,
       treeNodes,
-      defaultGroupNames,
+      allPermissionKeys,
     };
   }
 
   public setDefaultSelectKeys = (): {
     defaultKeys: string[];
     treeNodes: OrganizationDto[];
-    defaultGroupNames: string[];
+    allPermissionKeys: string[];
   } => {
     const { permissions } = this.props;
     const defaultKeys: string[] = [];
-    const defaultGroupNames: string[] = [];
+
+    const allPermissionKeys: string[] = [];
     const treeNodes = permissions.groups.map(item => {
-      defaultGroupNames.push(item.name);
+      // allPermissionKeys.push(item.name);
       const root = {
         key: item.name,
         title: item.displayName,
         children: [],
       };
       item.permissions.forEach(element => {
-        if (element.isGranted) {
-          defaultKeys.push(element.name);
-        }
+        allPermissionKeys.push(element.name);
         if (element.parentName) {
+          // 只需要坚持叶子节点是否已经授权
+          if (element.isGranted) {
+            defaultKeys.push(element.name);
+          }
           // 如果存在上级，则在上级中查找
           const node = root.children.find(pr => pr.key === element.parentName);
           node.children.push({
@@ -75,7 +78,7 @@ export default class PermissionModal extends React.Component<
     return {
       defaultKeys,
       treeNodes,
-      defaultGroupNames,
+      allPermissionKeys,
     };
   };
 
@@ -88,19 +91,19 @@ export default class PermissionModal extends React.Component<
   // 处理更新操作
   public handleUpdateFunc = () => {
     const { handlePermission, providerName, providerKey } = this.props;
-    const { checkedKeys, defaultGroupNames } = this.state;
-    const permissions: string[] = [];
-    checkedKeys.forEach(item => {
-      if (!defaultGroupNames.some(b => b === item)) {
-        permissions.push(item);
+    const { checkedKeys, allPermissionKeys } = this.state;
+    const dtos = allPermissionKeys.map(item => {
+      if (checkedKeys.some(b => b === item)) {
+        return {
+          name: item,
+          isGranted: true,
+        };
+      } else {
+        return {
+          name: item,
+          isGranted: false,
+        };
       }
-    });
-    // 构建更新权限操作
-    const dtos = permissions.map(item => {
-      return {
-        name: item,
-        isGranted: true,
-      };
     });
     // 构建更新对象
     const updatePermission = {
@@ -122,7 +125,6 @@ export default class PermissionModal extends React.Component<
           </TreeNode>
         );
       }
-      // tslint:disable-next-line:jsx-key
       return <TreeNode key={item.key} title={item.title} />;
     });
   };
